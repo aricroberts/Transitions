@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Transitions — Tools for Every Career Moment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#080C14;
+  --bg2:#0C1120;
+  --surface:#111827;
+  --surface2:#1a2236;
+  --border:#1e2d47;
+  --border2:#243350;
+
+  --text:#E8EDF8;
+  --text2:#8899BB;
+  --text3:#4A5878;
+
+  --blue:#5B8DEF;
+  --blue2:#3B6ED4;
+  --teal:#22D4C8;
+  --teal2:#16A89E;
+  --amber:#F5A623;
+  --green:#2ECC8A;
+  --purple:#9B8BF8;
+
+  --road:#131f35;
+  --mark:#1e3258;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Syne',system-ui,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ─── NOISE OVERLAY ─── */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.5;
+}
+
+/* hero brand lockup */
+.hero-brand-lockup{
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+  margin-bottom:2.5rem;
+}
+.hero-icon{
+  width:96px;height:96px;
+  border-radius:22px;
+  box-shadow:0 0 60px rgba(34,212,200,.25), 0 0 120px rgba(34,212,200,.08);
+  /* icon has light bg — add a subtle dark vignette ring */
+  outline:1px solid rgba(34,212,200,.2);
+}
+.hero-wordmark{
+  height:44px;width:auto;
+  /* logo has black bg — blend it into the dark page */
+  mix-blend-mode:screen;
+  opacity:.95;
+}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2rem;
+  background:rgba(8,12,20,.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;
+}
+.nav-brand img.wordmark{height:32px;width:auto;display:block}
+.nav-lab{
+  font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text3);border-left:1px solid var(--border2);padding-left:10px;margin-left:2px;
+  font-family:'Syne',sans-serif;
+}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{
+  font-size:13px;font-weight:600;padding:7px 16px;
+  background:var(--teal);color:#080C14;
+  border-radius:6px;text-decoration:none;letter-spacing:.01em;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--teal2);transform:translateY(-1px)}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:7rem 2rem 4rem;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* horizon glow */
+.hero-glow{
+  position:absolute;
+  bottom:-80px;left:50%;transform:translateX(-50%);
+  width:900px;height:300px;
+  background:radial-gradient(ellipse at 50% 80%, rgba(34,212,200,.13) 0%, rgba(91,141,239,.07) 40%, transparent 70%);
+  pointer-events:none;
+}
+/* top vignette */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(34,212,200,.04) 0%, transparent 60%);
+  pointer-events:none;
+}
+
+.hero-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:8px;justify-content:center;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{
+  content:'';display:block;width:28px;height:1px;background:var(--teal);opacity:.5;
+}
+
+.hero-headline{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2.8rem,7vw,5.5rem);
+  line-height:1.08;letter-spacing:-.02em;
+  color:var(--text);
+  margin-bottom:1.5rem;
+  max-width:820px;
+}
+.hero-headline em{
+  font-style:italic;color:var(--teal);
+}
+
+.hero-sub{
+  font-size:clamp(1rem,2vw,1.15rem);
+  color:var(--text2);line-height:1.7;
+  max-width:560px;margin:0 auto 2.5rem;
+  font-family:'Syne',sans-serif;font-weight:400;
+}
+
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-primary{
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  padding:13px 28px;background:var(--teal);color:#080C14;
+  border-radius:8px;text-decoration:none;letter-spacing:.01em;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  box-shadow:0 0 32px rgba(34,212,200,.2);
+}
+.btn-primary:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 0 48px rgba(34,212,200,.3)}
+.btn-ghost{
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:600;
+  padding:13px 28px;background:transparent;color:var(--text2);
+  border:1px solid var(--border2);border-radius:8px;text-decoration:none;letter-spacing:.01em;
+  transition:border-color .2s,color .2s,transform .15s;
+}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+/* scroll cue */
+.scroll-cue{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--text3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+}
+.scroll-cue-arrow{
+  width:1px;height:40px;background:linear-gradient(to bottom,var(--teal),transparent);
+  animation:scrollpulse 2s ease-in-out infinite;
+}
+@keyframes scrollpulse{0%,100%{opacity:.3;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ─── SECTION SHELL ─── */
+.section{
+  position:relative;z-index:1;
+  padding:6rem 2rem;
+  max-width:1100px;margin:0 auto;
+}
+.section-label{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1rem;
+}
+.section-heading{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.15;letter-spacing:-.02em;color:var(--text);
+  margin-bottom:1.25rem;max-width:680px;
+}
+.section-heading em{font-style:italic;color:var(--teal)}
+.section-sub{
+  font-size:1rem;color:var(--text2);line-height:1.7;
+  max-width:560px;margin-bottom:3.5rem;
+}
+
+/* ─── ROADMAP ─── */
+.roadmap-wrap{
+  position:relative;
+  padding:2rem 0 4rem;
+}
+
+/* the road itself — vertical center line */
+.road-line{
+  position:absolute;
+  left:50%;transform:translateX(-50%);
+  top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(to bottom,
+    transparent 0%,
+    var(--border2) 5%,
+    var(--border2) 92%,
+    transparent 100%
+  );
+}
+/* dashed center stripe */
+.road-line::after{
+  content:'';
+  position:absolute;
+  left:50%;transform:translateX(-50%);
+  top:5%;bottom:8%;
+  width:1px;
+  background:repeating-linear-gradient(
+    to bottom,
+    var(--teal) 0px,
+    var(--teal) 10px,
+    transparent 10px,
+    transparent 24px
+  );
+  opacity:.25;
+}
+
+/* each milestone row */
+.milestone{
+  display:grid;
+  grid-template-columns:1fr 80px 1fr;
+  align-items:start;
+  margin-bottom:3.5rem;
+  position:relative;
+}
+.milestone:last-child{margin-bottom:0}
+
+/* card on left */
+.milestone .ms-left{
+  padding-right:2.5rem;
+  text-align:right;
+}
+/* card on right */
+.milestone .ms-right{
+  padding-left:2.5rem;
+  text-align:left;
+}
+/* empty side */
+.milestone .ms-empty{opacity:0;pointer-events:none}
+
+/* the node */
+.ms-node{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  position:relative;z-index:2;
+  padding-top:.25rem;
+}
+.ms-dot{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  border:2px solid;
+  transition:transform .3s;
+  position:relative;
+}
+.ms-dot::after{
+  content:'';
+  position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid;
+  opacity:.2;
+  transition:opacity .3s;
+}
+.milestone:hover .ms-dot{transform:scale(1.1)}
+.milestone:hover .ms-dot::after{opacity:.5}
+
+.ms-num{
+  font-family:'DM Mono',monospace;
+  font-size:10px;font-weight:500;letter-spacing:.06em;
+  color:var(--text3);
+}
+
+/* card */
+.ms-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.25rem 1.375rem;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  cursor:default;
+}
+.ms-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+}
+.ms-tag{
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:.5rem;display:flex;align-items:center;gap:5px;
+}
+.ms-title{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;
+  color:var(--text);margin-bottom:.5rem;
+}
+.ms-desc{
+  font-size:.8125rem;color:var(--text2);line-height:1.65;
+  margin-bottom:.875rem;
+}
+.ms-tools{display:flex;flex-wrap:wrap;gap:5px}
+.ms-tool{
+  font-size:11px;font-weight:600;padding:3px 9px;
+  border-radius:99px;border:1px solid;
+  text-decoration:none;transition:opacity .2s;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.ms-tool:hover{opacity:.75}
+
+/* color theming per milestone */
+.ms-entry .ms-dot{background:rgba(34,212,200,.1);border-color:var(--teal);color:var(--teal)}
+.ms-entry .ms-dot::after{border-color:var(--teal)}
+.ms-entry .ms-tag{color:var(--teal)}
+.ms-entry .ms-card:hover{border-color:rgba(34,212,200,.3);box-shadow:0 12px 40px rgba(34,212,200,.08)}
+.ms-entry .ms-tool{background:rgba(34,212,200,.08);border-color:rgba(34,212,200,.25);color:var(--teal)}
+
+.ms-build .ms-dot{background:rgba(91,141,239,.1);border-color:var(--blue);color:var(--blue)}
+.ms-build .ms-dot::after{border-color:var(--blue)}
+.ms-build .ms-tag{color:var(--blue)}
+.ms-build .ms-card:hover{border-color:rgba(91,141,239,.3);box-shadow:0 12px 40px rgba(91,141,239,.08)}
+.ms-build .ms-tool{background:rgba(91,141,239,.08);border-color:rgba(91,141,239,.25);color:var(--blue)}
+
+.ms-pivot .ms-dot{background:rgba(245,166,35,.1);border-color:var(--amber);color:var(--amber)}
+.ms-pivot .ms-dot::after{border-color:var(--amber)}
+.ms-pivot .ms-tag{color:var(--amber)}
+.ms-pivot .ms-card:hover{border-color:rgba(245,166,35,.3);box-shadow:0 12px 40px rgba(245,166,35,.08)}
+.ms-pivot .ms-tool{background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.25);color:var(--amber)}
+
+.ms-exit .ms-dot{background:rgba(155,139,248,.1);border-color:var(--purple);color:var(--purple)}
+.ms-exit .ms-dot::after{border-color:var(--purple)}
+.ms-exit .ms-tag{color:var(--purple)}
+.ms-exit .ms-card:hover{border-color:rgba(155,139,248,.3);box-shadow:0 12px 40px rgba(155,139,248,.08)}
+.ms-exit .ms-tool{background:rgba(155,139,248,.08);border-color:rgba(155,139,248,.25);color:var(--purple)}
+
+.ms-coach .ms-dot{background:rgba(46,204,138,.1);border-color:var(--green);color:var(--green)}
+.ms-coach .ms-dot::after{border-color:var(--green)}
+.ms-coach .ms-tag{color:var(--green)}
+.ms-coach .ms-card:hover{border-color:rgba(46,204,138,.3);box-shadow:0 12px 40px rgba(46,204,138,.08)}
+.ms-coach .ms-tool{background:rgba(46,204,138,.08);border-color:rgba(46,204,138,.25);color:var(--green)}
+
+/* origin and destination markers */
+.road-origin,.road-dest{
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  position:relative;z-index:2;margin:0 auto;
+  width:fit-content;
+}
+.road-origin{margin-bottom:2rem}
+.road-dest{margin-top:2rem}
+
+.origin-badge,.dest-badge{
+  font-family:'Syne',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:8px 20px;border-radius:99px;
+}
+.origin-badge{
+  background:var(--surface2);border:1px solid var(--border2);
+  color:var(--text3);
+}
+.dest-badge{
+  background:rgba(34,212,200,.15);border:1px solid rgba(34,212,200,.4);
+  color:var(--teal);
+  box-shadow:0 0 32px rgba(34,212,200,.15);
+}
+.dest-glow{
+  position:absolute;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(34,212,200,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+/* connector lines from node to card — horizontal */
+.ms-connector{
+  position:absolute;
+  top:22px;
+  height:1px;
+  background:var(--border2);
+  width:2.5rem;
+}
+.ms-connector.left{right:0}
+.ms-connector.right{left:0}
+
+/* ─── HOW IT WORKS ─── */
+.hiw-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+.hiw-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.5rem;
+  position:relative;overflow:hidden;
+  transition:transform .3s,border-color .3s;
+}
+.hiw-card:hover{transform:translateY(-4px)}
+.hiw-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,var(--teal),var(--blue));
+  opacity:0;transition:opacity .3s;
+}
+.hiw-card:hover::before{opacity:1}
+.hiw-num{
+  font-family:'DM Mono',monospace;
+  font-size:11px;color:var(--text3);letter-spacing:.08em;
+  margin-bottom:1rem;
+}
+.hiw-icon{font-size:1.5rem;margin-bottom:.75rem}
+.hiw-title{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:1.1rem;letter-spacing:-.01em;color:var(--text);
+  margin-bottom:.5rem;
+}
+.hiw-desc{font-size:.8125rem;color:var(--text2);line-height:1.65}
+
+/* ─── STATS BAND ─── */
+.stats-band{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:2rem;
+  display:flex;justify-content:center;gap:0;
+  position:relative;z-index:1;
+}
+.stat-item{
+  text-align:center;
+  padding:0 3rem;
+  border-right:1px solid var(--border);
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'DM Mono',monospace;
+  font-size:2rem;font-weight:500;color:var(--teal);
+  line-height:1;margin-bottom:.375rem;
+  letter-spacing:-.02em;
+}
+.stat-label{font-size:.75rem;color:var(--text3);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+/* ─── WHO IT'S FOR ─── */
+.personas-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+}
+.persona-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:1.375rem;
+  display:flex;gap:1rem;align-items:flex-start;
+  transition:transform .3s,border-color .3s;
+}
+.persona-card:hover{transform:translateY(-3px);border-color:var(--border2)}
+.persona-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.persona-role{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.3rem;letter-spacing:-.01em}
+.persona-desc{font-size:.8rem;color:var(--text2);line-height:1.6}
+
+/* ─── PRIVACY STRIP ─── */
+.privacy-strip{
+  background:rgba(34,212,200,.04);
+  border-top:1px solid rgba(34,212,200,.1);
+  border-bottom:1px solid rgba(34,212,200,.1);
+  padding:1rem 2rem;
+  display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;
+  position:relative;z-index:1;
+}
+.privacy-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:.75rem;font-weight:600;letter-spacing:.04em;
+  color:var(--teal);text-transform:uppercase;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-section{
+  text-align:center;
+  padding:6rem 2rem 8rem;
+  position:relative;z-index:1;
+}
+.cta-section::before{
+  content:'';
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:400px;
+  background:radial-gradient(ellipse,rgba(34,212,200,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-label{
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1.25rem;
+}
+.cta-heading{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2rem,4vw,3.25rem);
+  line-height:1.1;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:1rem;
+}
+.cta-heading em{font-style:italic;color:var(--teal)}
+.cta-sub{font-size:1rem;color:var(--text2);line-height:1.7;max-width:480px;margin:0 auto 2.5rem}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  padding:2rem;
+  text-align:center;
+  font-size:.8rem;color:var(--text3);
+  position:relative;z-index:1;
+}
+footer a{color:var(--text2);text-decoration:none}
+footer a:hover{color:var(--text)}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:.75rem}
+
+/* ─── DIVIDER ─── */
+.divider{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:0;
+  position:relative;z-index:1;
+}
+
+/* ─── CLICKABLE CARDS ─── */
+a.ms-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+a.ms-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+}
+/* suppress double-hover from old rule */
+.ms-card:hover{ transform:none; box-shadow:none; }
+a.ms-card:hover{ transform:translateY(-3px); box-shadow:0 12px 40px rgba(0,0,0,.3); }
+
+/* color hover borders per theme */
+.ms-entry a.ms-card:hover{border-color:rgba(34,212,200,.35);box-shadow:0 12px 40px rgba(34,212,200,.1)}
+.ms-build a.ms-card:hover{border-color:rgba(91,141,239,.35);box-shadow:0 12px 40px rgba(91,141,239,.1)}
+.ms-pivot a.ms-card:hover{border-color:rgba(245,166,35,.35);box-shadow:0 12px 40px rgba(245,166,35,.1)}
+.ms-exit a.ms-card:hover{border-color:rgba(155,139,248,.35);box-shadow:0 12px 40px rgba(155,139,248,.1)}
+.ms-coach a.ms-card:hover{border-color:rgba(46,204,138,.35);box-shadow:0 12px 40px rgba(46,204,138,.1)}
+
+/* pointer cursor on whole card, show visit affordance */
+a.ms-card .ms-title::after{
+  content:' ↗';
+  font-size:.75em;
+  opacity:0;
+  transition:opacity .2s;
+}
+a.ms-card:hover .ms-title::after{opacity:.5}
+
+/* ─── ECOSYSTEM SECTION ─── */
+.ecosystem-section{
+  position:relative;z-index:1;
+  padding:5rem 2rem 6rem;
+  max-width:1100px;margin:0 auto;
+}
+.ecosystem-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  margin-top:3rem;
+}
+.eco-card{
+  border-radius:14px;
+  border:1px solid var(--border);
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  display:flex;flex-direction:column;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+  position:relative;
+}
+.eco-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+
+.eco-card-receipts{background:linear-gradient(135deg,#0d1a2e 0%,#111827 60%)}
+.eco-card-receipts:hover{border-color:rgba(91,141,239,.4);box-shadow:0 16px 48px rgba(91,141,239,.1)}
+.eco-card-lab{background:linear-gradient(135deg,#0c1a18 0%,#111827 60%)}
+.eco-card-lab:hover{border-color:rgba(34,212,200,.4);box-shadow:0 16px 48px rgba(34,212,200,.1)}
+
+.eco-card-header{
+  padding:1.75rem 1.75rem 1rem;
+  display:flex;align-items:center;gap:14px;
+}
+.eco-card-logo{height:36px;width:auto;display:block}
+.eco-card-logo-img{
+  height:36px;width:auto;
+  mix-blend-mode:screen;
+}
+.eco-card-body{
+  padding:0 1.75rem 1.75rem;
+  flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:1.25rem;
+}
+.eco-card-desc{
+  font-size:.875rem;color:var(--text2);line-height:1.7;
+}
+.eco-card-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.8125rem;font-weight:700;letter-spacing:.04em;
+  padding:9px 18px;border-radius:7px;border:1px solid;
+  width:fit-content;transition:opacity .2s;
+}
+.eco-card-cta:hover{opacity:.8}
+.eco-receipts-cta{
+  background:rgba(91,141,239,.1);
+  border-color:rgba(91,141,239,.35);
+  color:var(--blue);
+}
+.eco-lab-cta{
+  background:rgba(34,212,200,.1);
+  border-color:rgba(34,212,200,.35);
+  color:var(--teal);
+}
+.eco-tag{
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 9px;border-radius:99px;border:1px solid;
+  margin-left:auto;
+}
+.eco-tag-receipts{background:rgba(91,141,239,.1);border-color:rgba(91,141,239,.3);color:var(--blue)}
+.eco-tag-lab{background:rgba(34,212,200,.1);border-color:rgba(34,212,200,.3);color:var(--teal)}
+
+@media(max-width:640px){.ecosystem-grid{grid-template-columns:1fr}}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── MOBILE ─── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .road-line,.ms-connector{display:none}
+  .milestone{grid-template-columns:1fr;gap:.75rem}
+  .ms-empty{display:none}
+  .ms-node{flex-direction:row;justify-content:flex-start;margin-bottom:.25rem}
+  .milestone .ms-left,.milestone .ms-right{padding:0;text-align:left}
+  .hiw-grid{grid-template-columns:1fr}
+  .stats-band{flex-wrap:wrap;gap:1.5rem}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border);padding:0 0 1.5rem;width:100%}
+  .stat-item:last-child{border-bottom:none;padding-bottom:0}
+  .personas-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <img class="wordmark" src="transitionslogo.png" alt="Transitions"/>
+    <span class="nav-lab">A product of AricCivicLabs</span>
+  </a>
+  <div class="nav-links">
+    <a href="#tools">Tools</a>
+    <a href="#how">How it works</a>
+    <a href="#who">Who it's for</a>
+  </div>
+  <a href="#tools" class="nav-cta">Find my tool →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+
+  <div class="hero-brand-lockup">
+    <img src="transitionsicon.png" alt="Transitions icon" class="hero-icon"/>
+    <img src="transitionslogo.png" alt="Transitions" class="hero-wordmark"/>
+  </div>
+
+  <p class="hero-eyebrow">Career tools that meet you where you are</p>
+
+  <h1 class="hero-headline">
+    Every career has<br>a <em>next chapter.</em><br>We help you get there.
+  </h1>
+
+  <p class="hero-sub">
+    Eight specialized tools — one for every major career moment. Free to use, private by default, built around the decisions that actually matter.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#tools" class="btn-primary">Start your journey →</a>
+    <a href="#how" class="btn-ghost">See how it works</a>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="scroll-cue-arrow"></div>
+    The roadmap below
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stat-item">
+    <div class="stat-num">8</div>
+    <div class="stat-label">Specialized tools</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">$0</div>
+    <div class="stat-label">To get started</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">0</div>
+    <div class="stat-label">Data stored</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">∞</div>
+    <div class="stat-label">Career moments</div>
+  </div>
+</div>
+
+<!-- ROADMAP SECTION -->
+<section class="section" id="tools">
+  <p class="section-label reveal">The Transitions Roadmap</p>
+  <h2 class="section-heading reveal">Eight tools.<br><em>One journey.</em></h2>
+  <p class="section-sub reveal">
+    Career paths aren't linear — but the moments that define them are recognizable. Find yours.
+  </p>
+
+  <div class="roadmap-wrap">
+    <div class="road-line"></div>
+
+    <!-- ORIGIN MARKER -->
+    <div class="road-origin reveal">
+      <div class="origin-badge">📍 Where you are now</div>
+    </div>
+
+    <!-- MILESTONE 1 — Entry (left) -->
+    <div class="milestone ms-entry reveal">
+      <div class="ms-left">
+        <a class="ms-card" href="entry_tool.html">
+          <div class="ms-tag">
+            <span>🎓</span> Starting out
+          </div>
+          <div class="ms-title">Workforce Entry</div>
+          <div class="ms-desc">
+            First job, first offer, first negotiation. Build your case before you even have a track record — because your potential has real market value.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🎓</div>
+        <div class="ms-num">01</div>
+      </div>
+      <div class="ms-empty ms-right">
+        <div class="ms-card"></div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 2 — Reentry (right) -->
+    <div class="milestone ms-build reveal">
+      <div class="ms-empty ms-left">
+        <div class="ms-card"></div>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🔄</div>
+        <div class="ms-num">02</div>
+      </div>
+      <div class="ms-right">
+        <a class="ms-card" href="reentry_tool.html">
+          <div class="ms-tag">
+            <span>🔄</span> Coming back
+          </div>
+          <div class="ms-title">Career Re-entry</div>
+          <div class="ms-desc">
+            Back after caregiving, illness, a layoff, or time away. Your gap is not a liability. We help you reframe it and re-enter with confidence.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- MILESTONE 3 — Equity (left) -->
+    <div class="milestone ms-pivot reveal">
+      <div class="ms-left">
+        <a class="ms-card" href="equity_tool.html">
+          <div class="ms-tag">
+            <span>💰</span> Building wealth
+          </div>
+          <div class="ms-title">Equity & Wealth Building</div>
+          <div class="ms-desc">
+            Stock options, deferred comp, real estate, retirement accounts. Understand what you actually have — and how to build more of it, on purpose.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">💰</div>
+        <div class="ms-num">03</div>
+      </div>
+      <div class="ms-empty ms-right">
+        <div class="ms-card"></div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 4 — Career Change (right) -->
+    <div class="milestone ms-build reveal">
+      <div class="ms-empty ms-left">
+        <div class="ms-card"></div>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🧭</div>
+        <div class="ms-num">04</div>
+      </div>
+      <div class="ms-right">
+        <a class="ms-card" href="change_tool.html">
+          <div class="ms-tag">
+            <span>🧭</span> Changing direction
+          </div>
+          <div class="ms-title">Career Change Planner</div>
+          <div class="ms-desc">
+            Switching fields, industries, or functions. Map your transferable skills, quantify the risk, and build a bridge — not a leap of faith.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- MILESTONE 5 — Compare (left) -->
+    <div class="milestone ms-pivot reveal">
+      <div class="ms-left">
+        <a class="ms-card" href="compare_tool.html">
+          <div class="ms-tag">
+            <span>⚖️</span> Deciding between options
+          </div>
+          <div class="ms-title">Career Path Comparison</div>
+          <div class="ms-desc">
+            Two offers. Two directions. A promotion vs. a lateral move. Side-by-side financial and quality-of-life analysis so the right choice becomes obvious.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">⚖️</div>
+        <div class="ms-num">05</div>
+      </div>
+      <div class="ms-empty ms-right">
+        <div class="ms-card"></div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 6 — Motivation Coach (right) -->
+    <div class="milestone ms-coach reveal">
+      <div class="ms-empty ms-left">
+        <div class="ms-card"></div>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🔥</div>
+        <div class="ms-num">06</div>
+      </div>
+      <div class="ms-right">
+        <a class="ms-card" href="motivation_coach.html">
+          <div class="ms-tag">
+            <span>🔥</span> Stuck or burned out
+          </div>
+          <div class="ms-title">Motivation Coach</div>
+          <div class="ms-desc">
+            When you've lost the thread. An AI coach that asks the right questions — no performance, no cheerleading — to help you find what actually matters next.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- MILESTONE 7 — Speaking Coach (left) -->
+    <div class="milestone ms-coach reveal">
+      <div class="ms-left">
+        <a class="ms-card" href="speaking_coach.html">
+          <div class="ms-tag">
+            <span>🎤</span> Getting heard
+          </div>
+          <div class="ms-title">Speaking & Influence Coach</div>
+          <div class="ms-desc">
+            Interviews, presentations, performance reviews, high-stakes conversations. Turn what you know into language that lands — and gets you what you deserve.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🎤</div>
+        <div class="ms-num">07</div>
+      </div>
+      <div class="ms-empty ms-right">
+        <div class="ms-card"></div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 8 — Exit (right) -->
+    <div class="milestone ms-exit reveal">
+      <div class="ms-empty ms-left">
+        <div class="ms-card"></div>
+      </div>
+      <div class="ms-node">
+        <div class="ms-dot">🏁</div>
+        <div class="ms-num">08</div>
+      </div>
+      <div class="ms-right">
+        <a class="ms-card" href="exit_tool.html">
+          <div class="ms-tag">
+            <span>🏁</span> Planning the finish line
+          </div>
+          <div class="ms-title">Exit & Retirement Planning</div>
+          <div class="ms-desc">
+            Voluntary exit, retirement, or a planned wind-down. Model your runway, your income gap, your legacy — and know the exact number that makes it possible.
+          </div>
+          <div class="ms-tools">
+            <span class="ms-tool">Open tool →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- DESTINATION MARKER -->
+    <div class="road-dest reveal">
+      <div class="dest-glow"></div>
+      <div class="dest-badge">✦ Where you're going</div>
+    </div>
+
+  </div><!-- /roadmap-wrap -->
+</section>
+
+<hr class="divider"/>
+
+<!-- PRIVACY STRIP -->
+<div class="privacy-strip">
+  <div class="privacy-item">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Private by default
+  </div>
+  <div class="privacy-item">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+    Your data stays in your browser
+  </div>
+  <div class="privacy-item">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 8v4l2 2"/></svg>
+    No account required
+  </div>
+  <div class="privacy-item">
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+    Destroy all data instantly
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <p class="section-label reveal">How it works</p>
+  <h2 class="section-heading reveal">From uncertain to <em>decided.</em></h2>
+  <p class="section-sub reveal">No jargon. No sign-up. No spreadsheets. Just honest analysis of where you stand and where you're going.</p>
+
+  <div class="hiw-grid">
+    <div class="hiw-card reveal">
+      <div class="hiw-num">01</div>
+      <div class="hiw-icon">📍</div>
+      <div class="hiw-title">Find your moment</div>
+      <div class="hiw-desc">Pick the tool that matches where you are right now — entering, returning, pivoting, building, comparing, or planning your exit.</div>
+    </div>
+    <div class="hiw-card reveal" style="transition-delay:.1s">
+      <div class="hiw-num">02</div>
+      <div class="hiw-icon">📊</div>
+      <div class="hiw-title">Answer guided questions</div>
+      <div class="hiw-desc">No formulas to know. Fill in what you know — salary, timeline, skills, situation — and the tool does the math. Honest estimates beat paralysis.</div>
+    </div>
+    <div class="hiw-card reveal" style="transition-delay:.2s">
+      <div class="hiw-num">03</div>
+      <div class="hiw-icon">🤖</div>
+      <div class="hiw-title">Get AI-powered coaching</div>
+      <div class="hiw-desc">Each tool includes an AI coach that asks one question at a time, helps you think through tradeoffs, and produces output you can actually use.</div>
+    </div>
+    <div class="hiw-card reveal" style="transition-delay:.05s">
+      <div class="hiw-num">04</div>
+      <div class="hiw-icon">📄</div>
+      <div class="hiw-title">Export what you need</div>
+      <div class="hiw-desc">Plans, reports, scripts, and summaries — ready to take into conversations, interviews, meetings, or your own files. Your data, your words.</div>
+    </div>
+    <div class="hiw-card reveal" style="transition-delay:.15s">
+      <div class="hiw-num">05</div>
+      <div class="hiw-icon">🔒</div>
+      <div class="hiw-title">Walk away, nothing stored</div>
+      <div class="hiw-desc">When you close the tab, everything is gone. We never see your data. Nothing is tracked, sold, or kept. It never leaves your browser.</div>
+    </div>
+    <div class="hiw-card reveal" style="transition-delay:.25s">
+      <div class="hiw-num">06</div>
+      <div class="hiw-icon">🚀</div>
+      <div class="hiw-title">Enter the room ready</div>
+      <div class="hiw-desc">Interviews. Negotiations. Family conversations about retirement. You'll have the numbers, the framing, and the clarity to say the right thing.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- WHO IT'S FOR -->
+<section class="section" id="who">
+  <p class="section-label reveal">Who uses Transitions</p>
+  <h2 class="section-heading reveal">Built for anyone at a <em>turning point.</em></h2>
+  <p class="section-sub reveal">Career crossroads don't care about your age, industry, or title. They care whether you're ready.</p>
+
+  <div class="personas-grid">
+    <div class="persona-card reveal">
+      <div class="persona-icon">🎓</div>
+      <div>
+        <div class="persona-role">The first-generation professional</div>
+        <div class="persona-desc">No one in your family has done this before. You're figuring out offer letters, salary ranges, and workplace norms without a guide. We can be that guide.</div>
+      </div>
+    </div>
+    <div class="persona-card reveal" style="transition-delay:.05s">
+      <div class="persona-icon">👩‍👧</div>
+      <div>
+        <div class="persona-role">The caregiver returning to work</div>
+        <div class="persona-desc">You stepped out to care for someone you love. The gap on your resume is real — and so is the value you built during it. We help you reframe both.</div>
+      </div>
+    </div>
+    <div class="persona-card reveal" style="transition-delay:.1s">
+      <div class="persona-icon">🔀</div>
+      <div>
+        <div class="persona-role">The mid-career pivoter</div>
+        <div class="persona-desc">You've spent ten years mastering something, and now you want something else. Your skills transfer. We help you prove it — in language the new industry understands.</div>
+      </div>
+    </div>
+    <div class="persona-card reveal" style="transition-delay:.15s">
+      <div class="persona-icon">📈</div>
+      <div>
+        <div class="persona-role">The equity-building professional</div>
+        <div class="persona-desc">Stock options, 401k, real estate, side income. You're trying to build wealth while working full time — without a financial advisor you can afford yet.</div>
+      </div>
+    </div>
+    <div class="persona-card reveal" style="transition-delay:.2s">
+      <div class="persona-icon">🎯</div>
+      <div>
+        <div class="persona-role">The person choosing between offers</div>
+        <div class="persona-desc">Two paths. Different salaries, different locations, different trajectories. You need a framework, not more opinions from people who don't know your situation.</div>
+      </div>
+    </div>
+    <div class="persona-card reveal" style="transition-delay:.25s">
+      <div class="persona-icon">🏁</div>
+      <div>
+        <div class="persona-role">The person planning their exit</div>
+        <div class="persona-desc">Ready to retire, step back, or just stop. You need to know the number — the actual, honest, sustainable number — before you make the call.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-label reveal">No account. No email. No catch.</p>
+  <div style="display:flex;justify-content:center;margin-bottom:1.25rem" class="reveal">
+    <img src="transitionsicon.png" alt="" style="width:56px;height:56px;border-radius:14px;box-shadow:0 0 40px rgba(34,212,200,.2);opacity:.9"/>
+  </div>
+  <h2 class="cta-heading reveal">Your next chapter<br>starts <em>right now.</em></h2>
+  <p class="cta-sub reveal">Pick the tool that matches your moment. Everything else follows.</p>
+  <div class="hero-actions reveal">
+    <a href="#tools" class="btn-primary">Find my tool →</a>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ECOSYSTEM -->
+<section class="ecosystem-section">
+  <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
+  <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
+  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. Both are free, private, and built by AricCivicLabs.</p>
+
+  <div class="ecosystem-grid">
+
+    <!-- receipts card -->
+    <a class="eco-card eco-card-receipts reveal" href="https://receipts.aricciviclabs.org" target="_blank" rel="noopener">
+      <div class="eco-card-header">
+        <img src="receipts_wordmark.png" alt="receipts." class="eco-card-logo-img" style="height:28px"/>
+        <span class="eco-tag eco-tag-receipts">Value proof engine</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          Once you've navigated a career moment, you need to prove the value you created. receipts. helps employees, founders, nonprofit leaders, and teams quantify their real impact — and turn it into documents that open doors, make cases, and change conversations.
+        </p>
+        <span class="eco-card-cta eco-receipts-cta">
+          Open receipts. →
+        </span>
+      </div>
+    </a>
+
+    <!-- AricCivicLabs card -->
+    <a class="eco-card eco-card-lab reveal" href="https://aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.1s">
+      <div class="eco-card-header">
+        <img src="aric_civic_labs_wordmark.png" alt="AricCivicLabs" class="eco-card-logo-img" style="height:28px"/>
+        <span class="eco-tag eco-tag-lab">Aric Civic Labs</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          AricCivicLabs builds AI-powered tools for people who create value that goes unnoticed — workers, nonprofit leaders, small business owners, and communities navigating systems that weren't designed with them in mind.
+        </p>
+        <span class="eco-card-cta eco-lab-cta">
+          Visit AricCivicLabs →
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;justify-content:center;margin-bottom:1rem">
+    <img src="transitionsicon.png" alt="Transitions" style="width:36px;height:36px;border-radius:8px;opacity:.6"/>
+  </div>
+  <div class="footer-links">
+    <a href="https://aricciviclabs.org">AricCivicLabs.Org</a>
+    <a href="https://receipts.aricciviclabs.org">receipts.</a>
+    <a href="legal.html">Privacy & Terms</a>
+  </div>
+  <div>Transitions is a free tool from AricCivicLabs. No data is collected, stored, or shared. &copy; 2025 AricCivicLabs.</div>
+</footer>
+
+<script>
+// Scroll reveal
+var reveals = document.querySelectorAll('.reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(function(el) { observer.observe(el); });
+
+// Nav shrink on scroll
+var nav = document.querySelector('nav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 60) {
+    nav.style.padding = '.625rem 2rem';
+  } else {
+    nav.style.padding = '1rem 2rem';
+  }
+});
+</script>
+</body>
+</html>
