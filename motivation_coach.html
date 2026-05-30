@@ -267,6 +267,14 @@ function renderCoach(){
 
     '<div id="coach-session" style="display:none">'+
 
+      /* turn counter banner — outside input area so hiding input never hides it */
+      (!_mcUnlocked
+        ? '<div id="mc-turn-counter" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 12px;font-size:12px;color:var(--text2);justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:6px;align-items:center">'+
+            '<span><i class="ti ti-info-circle" style="font-size:12px;vertical-align:-1px;color:var(--amber);margin-right:4px"></i>Free &mdash; <strong id="mc-turn-num" style="color:var(--amber)">0</strong> of 3 turns used</span>'+
+            '<span style="font-size:11px;color:var(--text3)">Roadmap unlocks after turn 3</span>'+
+          '</div>'
+        : '')+
+
       /* messages */
       '<div id="coach-msgs" style="margin-bottom:8px"></div>'+
 
@@ -371,6 +379,12 @@ async function startCoach(mode){
   byId('mc-roadmap-btn').style.display = 'none';
   byId('chat-export').style.display = 'none';
   byId('mc-input-area').style.display = 'block';
+  /* show turn counter immediately */
+  var tc0 = byId('mc-turn-counter');
+  if (tc0) { tc0.style.display = 'flex'; }
+  var tn0 = byId('mc-turn-num');
+  if (tn0) tn0.textContent = '0';
+
   byId('coach-msgs').innerHTML = '<div class="cmsg cmai"><span class="spin"></span>Starting session...</div>';
 
   try {
@@ -421,10 +435,23 @@ async function sendCoach(){
   /* turn tracking */
   _coachTurns++;
 
-  /* free mode: after turn 3, generate mini preview */
+  /* update visible counter */
+  if (!_mcUnlocked) {
+    var tcEl = byId('mc-turn-counter');
+    var tnEl = byId('mc-turn-num');
+    if (tcEl) tcEl.style.display = 'flex';
+    if (tnEl) tnEl.textContent = Math.min(_coachTurns, 3);
+  }
+
+  /* free mode: after turn 3, show paywall immediately, fill preview in background */
   if (!_mcUnlocked && _coachTurns >= 3 && !_miniShown) {
     _miniShown = true;
-    generateMiniPreview();
+    byId('mc-input-area').style.display = 'none';
+    byId('mc-mini-preview').style.display = 'block';
+    byId('mc-paywall').style.display = 'block';
+    generateMiniPreview();   /* fills preview content async — no longer controls visibility */
+    /* scroll paywall into view */
+    setTimeout(function(){ var pw = byId('mc-paywall'); if (pw) pw.scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
     return;
   }
 
@@ -474,10 +501,9 @@ function cpCoach(){
 
 /* ── MINI PREVIEW (free tier) ───────────────────────────────────────────── */
 async function generateMiniPreview(){
-  byId('mc-mini-preview').style.display = 'block';
-  byId('mc-input-area').style.display = 'none';
-
+  /* visibility already set by sendCoach — just fill content */
   var out = byId('mc-mini-out');
+  if (!out) return;
   out.innerHTML = '<span class="spin"></span> Analyzing your session...';
 
   var previewSystem = 'Based on this coaching conversation, create a brief honest preview of the user\'s situation. Be specific to exactly what they said — no generic advice. Output ONLY: MINI_PREVIEW: followed by valid JSON with exactly these keys: insight (1 sentence about their core situation or block, completely specific to what they actually said), first_step (one very concrete action they could take TODAY — must be specific to their situation, no filler words, no fluff), teaser (1 sentence describing what a full 3-week personalized roadmap would help them accomplish, specific to their goal). No other text. No markdown.';
@@ -520,8 +546,7 @@ async function generateMiniPreview(){
     out.innerHTML = '<p style="font-size:13px;color:#A0E8C8;line-height:1.65">Based on your session, you have a clear starting point. Unlock your full roadmap for concrete week-by-week actions tailored to exactly what you shared.</p>';
   }
 
-  /* show paywall */
-  byId('mc-paywall').style.display = 'block';
+  /* paywall already shown by sendCoach before this async call */
 }
 
 /* ── Copy mini preview ──────────────────────────────────────────────────── */
