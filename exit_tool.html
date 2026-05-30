@@ -1617,7 +1617,7 @@ function showSuccessBanner(product) {
         '<p style="font-size:12px;color:var(--text2);line-height:1.6"><strong style="color:var(--text)">'+esc(label)+'</strong> is unlocked for this session. Your download is ready in the Export tab.</p>'+
       '</div>'+
     '</div>'+
-    '<button onclick="document.getElementById('success-banner').remove()" style="background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:0;line-height:1;flex-shrink:0">&times;</button>';
+    '<button onclick="document.getElementById(\'success-banner\').remove()" style="background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:0;line-height:1;flex-shrink:0">&times;</button>';
 
   // Insert at top of .app div
   var appInner = app.querySelector('.app');
@@ -1662,10 +1662,10 @@ function renderExportUnlocked() {
             '<div class="export-item-desc">'+esc(item.desc)+'</div>'+
             '<div class="export-item-actions">'+
               (unlocked
-                ? '<button class="btn-export btn-export-premium" style="background:var(--green);border-color:var(--green);color:#061C14" onclick="downloadPDF(''+item.id+'')"><i class="ti ti-download" style="font-size:11px"></i> Download PDF</button>'
-                : '<button class="btn-export btn-export-locked" onclick="openPaywall(''+item.id+'')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'
+                ? '<button class="btn-export btn-export-premium" style="background:var(--green);border-color:var(--green);color:#061C14" onclick="downloadPDF(\''+item.id+'\')"><i class="ti ti-download" style="font-size:11px"></i> Download PDF</button>'
+                : '<button class="btn-export btn-export-locked" onclick="openPaywall(\''+item.id+'\')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'
               )+
-              (item.preview && !unlocked ? '<button class="btn-export btn-export-free" onclick="showPDFPreview(''+item.id+'')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>' : '')+
+              (item.preview && !unlocked ? '<button class="btn-export btn-export-free" onclick="showPDFPreview(\''+item.id+'\')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>' : '')+
             '</div>'+
           '</div>'+
         '</div>';
@@ -1740,8 +1740,8 @@ function downloadPDF(itemId) {
   var fullDoc = '<!DOCTYPE html><html><head><meta charset="UTF-8">'+
     '<title>'+esc(item.title)+' — receipts.</title>'+
     '<style>'+
-      '@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=DM+Mono:wght@400;500&display=swap');'+
-      'body{font-family:'DM Sans',sans-serif;color:#1a1a2e;max-width:700px;margin:0 auto;padding:2.5rem 2rem;font-size:13px;line-height:1.7}'+
+      '@import url(\'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=DM+Mono:wght@400;500&display=swap\');'+
+      'body{font-family:\'DM Sans\',sans-serif;color:#1a1a2e;max-width:700px;margin:0 auto;padding:2.5rem 2rem;font-size:13px;line-height:1.7}'+
       'h1{font-size:26px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}'+
       'h2{font-size:11px;font-weight:700;color:#4A9EFF;text-transform:uppercase;letter-spacing:.08em;margin:1.5rem 0 .625rem;border-bottom:1px solid #e8eaf0;padding-bottom:5px}'+
       '.meta{font-size:11px;color:#8a90a8;margin-bottom:1.75rem}'+
