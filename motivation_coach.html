@@ -136,17 +136,19 @@ var _mcUnlocked  = false;   /* true after Stripe return */
 var _coachTurns  = 0;       /* counts user sends in current session */
 var _miniShown   = false;   /* true after mini preview generated */
 var _roadmapDone = false;   /* true after full roadmap generated */
+var _MC_SS_KEY   = 'rcpts_mc_unlocked';
 
 window.COACH_KIND = 'motivation';
 
-/* ── URL unlock detection ───────────────────────────────────────────────────
- *  Stripe redirects back with ?unlocked=plan after payment
- * ─────────────────────────────────────────────────────────────────────────── */
+/* ── URL unlock detection + sessionStorage persistence ──────────────────────────────── */
 (function() {
   try {
     var params = new URLSearchParams(window.location.search);
-    if (params.get('unlocked') === 'plan') {
+    var fromUrl = params.get('unlocked') === 'plan';
+    var fromSS  = sessionStorage.getItem(_MC_SS_KEY) === '1';
+    if (fromUrl || fromSS) {
       _mcUnlocked = true;
+      try { sessionStorage.setItem(_MC_SS_KEY, '1'); } catch(e) {}
       try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
     }
   } catch(e) {}

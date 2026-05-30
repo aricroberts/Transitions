@@ -123,8 +123,9 @@ var STRIPE_LINK = 'https://buy.stripe.com/fZueVegaC1745HN4FR7N607';
 /* ── Unlock state ─────────────────────────────────────────────────────────── */
 var _scUnlocked = false;
 var FREE_TURNS  = 2;      // turns before paywall
+var _SC_SS_KEY  = 'rcpts_sc_unlocked';
 
-/* ── Restore turn count from localStorage (24hr expiry) ──────────────────── */
+/* ── Restore turn count from localStorage (24hr expiry) ─────────────────────── */
 var _turnCount = (function() {
   try {
     var stored = localStorage.getItem('sc_turns');
@@ -156,13 +157,16 @@ function _clearTurns() {
   } catch(e) {}
 }
 
-/* ── Check for Stripe success return ──────────────────────────────────────── */
+/* ── Check for Stripe success return + sessionStorage persistence ──────────────────── */
 (function() {
   try {
     var params = new URLSearchParams(window.location.search);
-    if (params.get('unlocked') === 'true') {
+    var fromUrl = params.get('unlocked') === 'true';
+    var fromSS  = sessionStorage.getItem(_SC_SS_KEY) === '1';
+    if (fromUrl || fromSS) {
       _scUnlocked = true;
-      _clearTurns(); // reset so a future session starts fresh
+      try { sessionStorage.setItem(_SC_SS_KEY, '1'); } catch(e) {}
+      if (fromUrl) _clearTurns(); // reset turn count on fresh Stripe return
       try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
     }
   } catch(e) {}
@@ -337,6 +341,7 @@ function showFallbackPrompt() {
 /* ── Apply unlock ────────────────────────────────────────────────────────── */
 function applyUnlock() {
   _scUnlocked = true;
+  try { sessionStorage.setItem(_SC_SS_KEY, '1'); } catch(e) {}
   var pw = byId('paywall-block');
   if (pw) pw.remove();
   var inp = byId('coach-input');
