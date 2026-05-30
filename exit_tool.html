@@ -182,6 +182,76 @@ button:hover{background:var(--surface2)}
 .score-high{background:var(--green-dim);color:var(--green);border:1px solid var(--green-b)}
 .score-mid{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-b)}
 .score-low{background:var(--red-dim);color:var(--red);border:1px solid var(--red-b)}
+
+/* ── Monetization / Paywall styles ───────────────────────────────────────── */
+.export-free{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.125rem;margin-bottom:.875rem}
+.export-premium{background:var(--purple-dim);border:1px solid var(--purple-b);border-radius:var(--radius);padding:1rem 1.125rem;margin-bottom:.875rem;position:relative;overflow:hidden}
+.export-premium::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right,rgba(155,139,248,.12),transparent 70%);pointer-events:none}
+.premium-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--purple);background:rgba(155,139,248,.15);border:1px solid var(--purple-b);border-radius:99px;padding:2px 9px;letter-spacing:.05em;text-transform:uppercase;margin-left:8px}
+.premium-badge i{font-size:10px}
+.export-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.export-item:last-child{border-bottom:none;padding-bottom:0}
+.export-item-icon{width:34px;height:34px;border-radius:var(--radius-sm);background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.export-item-icon i{font-size:16px;color:var(--text2)}
+.export-item-body{flex:1;min-width:0}
+.export-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.export-item-desc{font-size:11px;color:var(--text3);line-height:1.5}
+.export-item-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.btn-export{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;border:1px solid;font-family:inherit;transition:all .15s;text-decoration:none}
+.btn-export-free{background:var(--surface2);border-color:var(--border);color:var(--text2)}
+.btn-export-free:hover{background:var(--border);color:var(--text)}
+.btn-export-premium{background:var(--purple);border-color:var(--purple);color:#fff}
+.btn-export-premium:hover{background:#8a7ae8}
+.btn-export-locked{background:var(--surface2);border-color:var(--purple-b);color:var(--purple);cursor:pointer}
+.btn-export-locked:hover{background:var(--purple-dim)}
+
+/* Paywall modal */
+.paywall-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)}
+.paywall-modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;max-width:480px;width:100%;padding:0;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.paywall-header{background:linear-gradient(135deg,var(--purple-dim) 0%,rgba(155,139,248,.08) 100%);border-bottom:1px solid var(--border);padding:1.5rem 1.5rem 1.25rem}
+.paywall-logo{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--text3);text-transform:uppercase;margin-bottom:.75rem}
+.paywall-title{font-size:1.375rem;font-weight:700;color:var(--text);line-height:1.25;margin-bottom:.375rem}
+.paywall-sub{font-size:13px;color:var(--text2);line-height:1.6}
+.paywall-body{padding:1.25rem 1.5rem}
+.paywall-price{display:flex;align-items:baseline;gap:6px;margin-bottom:1rem}
+.paywall-price .amount{font-size:2.25rem;font-weight:800;color:var(--text);font-family:'DM Mono',monospace;letter-spacing:-.03em}
+.paywall-price .period{font-size:13px;color:var(--text2)}
+.paywall-price .orig{font-size:13px;color:var(--text3);text-decoration:line-through;margin-left:4px}
+.paywall-features{display:flex;flex-direction:column;gap:6px;margin-bottom:1.125rem}
+.paywall-feature{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2);line-height:1.45}
+.paywall-feature i{color:var(--green);font-size:14px;flex-shrink:0;margin-top:1px}
+.paywall-cta{width:100%;padding:11px;font-size:14px;font-weight:700;background:var(--purple);border:none;border-radius:var(--radius-sm);color:#fff;cursor:pointer;font-family:inherit;transition:background .15s;margin-bottom:.625rem}
+.paywall-cta:hover{background:#8a7ae8}
+.paywall-secondary{font-size:12px;color:var(--text3);text-align:center;line-height:1.5}
+.paywall-secondary a{color:var(--text2);text-decoration:underline;cursor:pointer}
+.paywall-dismiss{position:absolute;top:1rem;right:1rem;background:var(--surface2);border:1px solid var(--border);border-radius:99px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--text3)}
+.paywall-dismiss:hover{color:var(--text)}
+.paywall-plans{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.plan-tile{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.875rem;cursor:pointer;transition:all .15s;position:relative}
+.plan-tile:hover{border-color:var(--purple-b)}
+.plan-tile.selected{border-color:var(--purple);background:var(--purple-dim)}
+.plan-tile-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin-bottom:4px}
+.plan-tile-price{font-size:1.25rem;font-weight:800;color:var(--text);font-family:'DM Mono',monospace}
+.plan-tile-desc{font-size:11px;color:var(--text3);margin-top:3px;line-height:1.4}
+.plan-tile-best{position:absolute;top:-1px;right:-1px;background:var(--purple);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:0 var(--radius-sm) 0 var(--radius-sm)}
+
+/* PDF preview */
+.pdf-preview{background:#fff;border-radius:var(--radius);padding:2rem;font-family:'DM Sans',sans-serif;color:#1a1a2e;font-size:13px;line-height:1.7;max-height:420px;overflow-y:auto;box-shadow:0 4px 24px rgba(0,0,0,.3);margin-bottom:.875rem}
+.pdf-preview h1{font-size:22px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}
+.pdf-preview h2{font-size:13px;font-weight:700;color:#4A9EFF;text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem;border-bottom:1px solid #e8eaf0;padding-bottom:4px}
+.pdf-preview .pdf-meta{font-size:11px;color:#8a90a8;margin-bottom:1.5rem}
+.pdf-preview .pdf-metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1rem}
+.pdf-preview .pdf-metric{background:#f4f6fb;border-radius:6px;padding:10px 12px}
+.pdf-preview .pdf-metric-label{font-size:10px;font-weight:600;color:#8a90a8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pdf-preview .pdf-metric-val{font-size:18px;font-weight:800;color:#0f0f2e;font-family:'DM Mono',monospace}
+.pdf-preview .pdf-row{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;border-bottom:1px solid #f0f2f8}
+.pdf-preview .pdf-row:last-child{border-bottom:none}
+.pdf-preview .pdf-row strong{font-family:'DM Mono',monospace}
+.pdf-preview .pdf-signal{display:flex;gap:8px;font-size:12px;padding:6px 10px;border-radius:5px;margin-bottom:5px;align-items:flex-start}
+.pdf-preview .pdf-signal.ok{background:#e8faf3;color:#1a7a52}
+.pdf-preview .pdf-signal.warn{background:#fef9e8;color:#8a5800}
+.pdf-preview .pdf-signal.red{background:#fef0f0;color:#8a1a1a}
+.pdf-preview .pdf-disclaimer{font-size:10px;color:#aaa;margin-top:1.5rem;padding-top:.75rem;border-top:1px solid #e8eaf0;line-height:1.6}
 </style>
 </head>
 <body>
@@ -651,6 +721,241 @@ compare:{
 
 }; // end MODES
 
+// ── Export config per tool ────────────────────────────────────────────────────
+var EXPORT_CONFIG = {
+  exit: {
+    tagline: 'Turn your retirement numbers into a polished, shareable report — ready for your financial advisor, your family, or your own files.',
+    price: 49,
+    items: [
+      {id:'exit-readiness',icon:'ti-file-certificate',title:'Exit Readiness Report',desc:'Full PDF — income waterfall, gap analysis, healthcare bridge, legal checklist, drawdown scenarios for ages 65–85. Designed to hand to a financial planner.',cta:'Download PDF — $49',preview:true},
+      {id:'exit-advisor',icon:'ti-users',title:'Share with advisor brief',desc:'One-page summary formatted for a financial advisor. Includes your numbers, your questions, and a structured agenda for the conversation.',cta:'Get advisor brief — $49',preview:false},
+      {id:'exit-scenarios',icon:'ti-chart-line',title:'Scenario comparison',desc:'Compare three retirement dates side by side — income, gap, sustainability, and healthcare exposure at each date. Helps answer "what if I wait two more years?"',cta:'Run scenarios — $49',preview:false}
+    ]
+  },
+  equity: {
+    tagline: 'Package your contribution ladder, growth projections, and gap analysis into a decision-ready brief.',
+    price: 29,
+    items: [
+      {id:'equity-action',icon:'ti-chart-arcs',title:'Equity Action Brief',desc:'10-year projection PDF with employer match gap, optimized contribution ladder, and a cost-of-delay breakdown showing exactly what each year of waiting costs.',cta:'Download PDF — $29',preview:true},
+      {id:'equity-scenarios',icon:'ti-trending-up',title:'Multi-scenario comparison',desc:'Compare three contribution levels across 10, 20, and 30 years. See which lever — rate, match capture, or starting balance — moves the needle most.',cta:'Run scenarios — $29',preview:false}
+    ]
+  },
+  compare: {
+    tagline: 'Turn your side-by-side analysis into a structured document you can share with a partner, mentor, or advisor.',
+    price: 19,
+    items: [
+      {id:'compare-decision',icon:'ti-scale',title:'Decision Brief',desc:'Formatted comparison document with 5-year financial trajectory for each path, quality-of-life scoring breakdown, and a one-page summary with a clear recommendation.',cta:'Download PDF — $19',preview:true},
+      {id:'compare-partner',icon:'ti-user-heart',title:'Partner-ready summary',desc:'A plain-language version of your comparison designed to share with a partner, spouse, or trusted advisor. No jargon. Clear trade-offs.',cta:'Get summary — $19',preview:false}
+    ]
+  },
+  change: {
+    tagline: 'Package your career pivot plan into documents that help you communicate it confidently.',
+    price: 15,
+    items: [
+      {id:'change-pivot',icon:'ti-map-2',title:'Pivot Pack',desc:'Skills translation document framed for the new industry, timeline-to-income model, and a cover letter framework that explains the change without apologizing for it.',cta:'Download Pack — $15',preview:true},
+      {id:'change-coach',icon:'ti-user-star',title:'Coach-ready brief',desc:'A structured summary of your transition — current skills, target role, gap assessment, and timeline — formatted for a career coach or mentor.',cta:'Get coach brief — $15',preview:false}
+    ]
+  },
+  reentry: {
+    tagline: 'Turn your return-to-work plan into documents that open doors.',
+    price: 9,
+    items: [
+      {id:'reentry-pack',icon:'ti-door-enter',title:'Return Ready Pack',desc:'Gap narrative (3 versions: conservative, confident, bold), structured job-search runway plan, and a recruiter-ready positioning brief.',cta:'Download Pack — $9',preview:true},
+      {id:'reentry-resume',icon:'ti-id',title:'Resume language',desc:'Bullet-ready language translating your gap period into professional accomplishments. Framed for LinkedIn, resumes, and cover letters.',cta:'Get resume bullets — $9',preview:false}
+    ]
+  },
+  entry: {
+    tagline: 'Start strong — turn your first-job plan into a document you can actually use.',
+    price: 5,
+    items: [
+      {id:'entry-launchpad',icon:'ti-rocket',title:'Launchpad Pack',desc:'Formatted first-90-days brief plus a salary negotiation script for your first raise conversation. Designed to be printed, saved, or emailed to yourself.',cta:'Download Pack — $5',preview:true}
+    ]
+  }
+};
+
+// ── Paywall state ─────────────────────────────────────────────────────────────
+var _paywallItem = null;
+var _selectedPlan = 'onetime';
+
+function openPaywall(itemId) {
+  _paywallItem = itemId;
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){return i.id===itemId;})[0] || cfg.items[0];
+  var price = cfg.price;
+  var yearPrice = Math.round(price * 2.5);
+
+  var overlay = document.createElement('div');
+  overlay.className = 'paywall-overlay';
+  overlay.id = 'paywall-overlay';
+  overlay.onclick = function(e){ if(e.target===overlay) closePaywall(); };
+
+  overlay.innerHTML =
+    '<div class="paywall-modal" style="position:relative">'+
+      '<div class="paywall-dismiss" onclick="closePaywall()"><i class="ti ti-x" style="font-size:12px"></i></div>'+
+      '<div class="paywall-header">'+
+        '<div class="paywall-logo">receipts. Pro</div>'+
+        '<div class="paywall-title">'+esc(item.title)+'</div>'+
+        '<div class="paywall-sub">'+esc(item.desc)+'</div>'+
+      '</div>'+
+      '<div class="paywall-body">'+
+        '<div class="paywall-plans">'+
+          '<div class="plan-tile selected" id="plan-onetime" onclick="selectPlan(\'onetime\')">'+
+            '<div class="plan-tile-label">One-time</div>'+
+            '<div class="plan-tile-price">$'+price+'</div>'+
+            '<div class="plan-tile-desc">This report only</div>'+
+          '</div>'+
+          '<div class="plan-tile" id="plan-pro" onclick="selectPlan(\'pro\')">'+
+            '<div class="plan-tile-best">Best value</div>'+
+            '<div class="plan-tile-label">Pro — all tools</div>'+
+            '<div class="plan-tile-price">$149<span style="font-size:12px;font-weight:400;color:var(--text3)">/yr</span></div>'+
+            '<div class="plan-tile-desc">Every premium export across all 6 tools</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="paywall-features">'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Styled PDF — ready to share with advisors or save to files</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Generated entirely in your browser — nothing sent to servers</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Includes disclaimer: self-reported estimates only</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Download instantly after payment</div>'+
+        '</div>'+
+        '<button class="paywall-cta" onclick="handleCheckout()">'+
+          '<i class="ti ti-credit-card" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $'+price+
+        '</button>'+
+        '<div class="paywall-secondary">'+
+          'Payments processed by Stripe. <a onclick="closePaywall()">Cancel anytime.</a><br>'+
+          'Questions? <a href="mailto:hello@aricciviclabs.org">hello@aricciviclabs.org</a>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+
+  document.body.appendChild(overlay);
+}
+
+function closePaywall() {
+  var overlay = byId('paywall-overlay');
+  if(overlay) overlay.remove();
+  var preview = byId('pdf-preview-overlay');
+  if(preview) preview.remove();
+}
+
+function selectPlan(plan) {
+  _selectedPlan = plan;
+  var onetime = byId('plan-onetime');
+  var pro = byId('plan-pro');
+  var cta = document.querySelector('.paywall-cta');
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  if(onetime) onetime.className = 'plan-tile' + (plan==='onetime'?' selected':'');
+  if(pro) pro.className = 'plan-tile' + (plan==='pro'?' selected':'');
+  if(cta) {
+    if(plan==='pro') {
+      cta.innerHTML = '<i class="ti ti-crown" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $149/yr';
+    } else {
+      cta.innerHTML = '<i class="ti ti-credit-card" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $'+cfg.price;
+    }
+  }
+}
+
+function handleCheckout() {
+  var STRIPE_LINKS = {
+    'entry-launchpad':   'https://buy.stripe.com/6oUcN6bUm2b86LR7S37N60q',
+    'reentry-pack':      'https://buy.stripe.com/cNiaEY8Ia5nkeejgoz7N60p',
+    'reentry-resume':    'https://buy.stripe.com/cNiaEY8Ia5nkeejgoz7N60p',
+    'change-pivot':      'https://buy.stripe.com/3cI9AUaQi030gmrfkv7N60o',
+    'change-coach':      'https://buy.stripe.com/3cI9AUaQi030gmrfkv7N60o',
+    'compare-decision':  'https://buy.stripe.com/28E00kgaCcPM3zFegr7N60n',
+    'compare-partner':   'https://buy.stripe.com/28E00kgaCcPM3zFegr7N60n',
+    'equity-action':     'https://buy.stripe.com/00w4gA7E67vs9Y37S37N60m',
+    'equity-scenarios':  'https://buy.stripe.com/00w4gA7E67vs9Y37S37N60m',
+    'exit-readiness':    'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'exit-advisor':      'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'exit-scenarios':    'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'pro_yr':            'https://buy.stripe.com/28EbJ2gaC6ro3zF4FR7N60k'
+  };
+
+  var itemId = _selectedPlan === 'pro' ? 'pro_yr' : (_paywallItem || 'exit-readiness');
+  var url = STRIPE_LINKS[itemId];
+
+  if (!url) {
+    alert('Checkout link not found for this product. Please contact hello@aricciviclabs.org');
+    return;
+  }
+
+  // Append session_id placeholder so Stripe fills it in on redirect
+  // The success URL already contains ?success=1&product=... from Stripe config
+  closePaywall();
+  window.location.href = url;
+}
+
+function showPDFPreview(itemId) {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){v[f[0]]=val(f[0]);});
+  var out = mode.calc(v);
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'paywall-overlay';
+  overlay.id = 'pdf-preview-overlay';
+  overlay.onclick = function(e){ if(e.target===overlay) closePaywall(); };
+
+  var previewHtml = buildPDFPreviewHTML(mode, v, out);
+
+  overlay.innerHTML =
+    '<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;max-width:560px;width:100%;padding:0;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6);position:relative;max-height:90vh;display:flex;flex-direction:column">'+
+      '<div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0">'+
+        '<span style="font-size:13px;font-weight:600;color:var(--text)">PDF preview <span style="font-size:10px;font-weight:400;color:var(--text3);margin-left:6px">First page shown</span></span>'+
+        '<div style="display:flex;align-items:center;gap:8px">'+
+          '<button class="btn-export btn-export-premium" onclick="openPaywall(\''+itemId+'\')"><i class="ti ti-download" style="font-size:11px"></i> Get full PDF — $'+cfg.price+'</button>'+
+          '<div class="paywall-dismiss" style="position:static" onclick="closePaywall()"><i class="ti ti-x" style="font-size:12px"></i></div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="overflow-y:auto;padding:1.25rem;flex:1">'+previewHtml+'</div>'+
+    '</div>';
+
+  document.body.appendChild(overlay);
+}
+
+function buildPDFPreviewHTML(mode, v, out) {
+  var toolMode = window.TOOLKIT_MODE;
+  var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var rows = out.rows || [];
+  var signals = out.signals || [];
+  var metrics = out.metrics || [];
+  var mLabels = mode.metrics || [];
+
+  var metricsHtml = '<div class="pdf-metric-row">';
+  for(var i=0;i<Math.min(4,mLabels.length);i++){
+    metricsHtml += '<div class="pdf-metric"><div class="pdf-metric-label">'+esc(mLabels[i])+'</div><div class="pdf-metric-val '+esc(out.cls[i]||'')+'">'+esc(metrics[i]||'—')+'</div></div>';
+  }
+  metricsHtml += '</div>';
+
+  var rowsHtml = '<h2>Breakdown</h2>';
+  rows.forEach(function(r){
+    rowsHtml += '<div class="pdf-row"><span>'+esc(r[0])+'</span><strong>'+esc(r[1])+'</strong></div>';
+  });
+
+  var sigHtml = '';
+  if(signals.length) {
+    sigHtml = '<h2>Key signals</h2>';
+    signals.slice(0,3).forEach(function(s){
+      var cls = s.cls==='sig-ok'?'ok':s.cls==='sig-warn'?'warn':'red';
+      sigHtml += '<div class="pdf-signal '+cls+'">'+esc(s.text.substring(0,220)+(s.text.length>220?'…':''))+'</div>';
+    });
+  }
+
+  var narrative = out.narrative ? '<h2>Analysis</h2><p>'+esc(out.narrative.replace(/<[^>]+>/g,''))+'</p>' : '';
+
+  return '<div class="pdf-preview">'+
+    '<h1>'+esc(mode.title)+'</h1>'+
+    '<div class="pdf-meta">receipts. · Generated '+today+' · Planning estimates only · Not financial or legal advice</div>'+
+    metricsHtml+
+    rowsHtml+
+    sigHtml+
+    narrative+
+    '<div class="pdf-disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user. This document does not constitute financial, tax, legal, or investment advice. Past performance is not a guarantee of future results. Consult a qualified professional before making significant financial decisions.</div>'+
+  '</div>';
+}
+
+
 // ── Render engine ─────────────────────────────────────────────────────────────
 function render(){
   var mode=MODES[window.TOOLKIT_MODE]||MODES.entry;
@@ -779,34 +1084,48 @@ function calc(){
       }).join('')+'</div></div>';
   }
 
-  // Export tab
+  // Export tab — monetized
   var p5=byId('p5');
   if(p5){
-    p5.innerHTML=
-      '<div class="card"><p class="sl sl-ai"><i class="ti ti-file-export"></i>Copyable brief</p>'+
-      '<div id="brief-content" class="dpre">'+esc(makeBrief(mode,v,out))+'</div>'+
-      '<div class="brow"><button class="btn-primary" onclick="copyBrief()">'
-      +'<i class="ti ti-copy" style="font-size:13px;vertical-align:-1px"></i> Copy brief</button>'
-      +'<button onclick="downloadBrief()"><i class="ti ti-download" style="font-size:13px;vertical-align:-1px"></i> Download .txt</button></div></div>'+
-      '<div class="card card-ai" style="margin-top:.875rem">'+
-      '<p class="sl sl-ai"><i class="ti ti-mail"></i>Email this brief '+
-      '<span style="font-size:10px;font-weight:400;color:var(--purple);text-transform:none;'+
-      'letter-spacing:0;margin-left:6px;background:var(--purple-dim);border:1px solid var(--purple-b);'+
-      'border-radius:99px;padding:1px 7px">Premium</span></p>'+
-      '<p style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6">'+
-      'Enter your email and we will send this brief to your inbox '+
-      '&#8212; useful for saving to your files, sharing with a coach, or reading on another device.</p>'+
-      '<div class="fr" style="align-items:flex-end;gap:8px">'+
-      '<div class="fg" style="flex:1"><label>Your email address</label>'+
-      '<input id="export-email" type="email" placeholder="you@example.com" style="width:100%"/></div>'+
-      '<button onclick="emailBrief()" style="white-space:nowrap;flex-shrink:0;align-self:flex-end">'+
-      '<i class="ti ti-send" style="font-size:12px;vertical-align:-1px"></i> Send brief</button></div>'+
-      '<p id="email-status" style="font-size:12px;color:var(--text3);margin-top:6px"></p>'+
-      '<p style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">'+
-      '<i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> '+
-      'Your email is used only to deliver this brief and is not stored or shared. '+
-      'Premium feature &#8212; coming soon with receipts. Pro.</p>'+
+    var toolCfg=EXPORT_CONFIG[window.TOOLKIT_MODE]||EXPORT_CONFIG.exit;
+    var briefTxt=makeBrief(mode,v,out);
+
+    var freeSection=
+      '<div class="export-free">'+
+        '<p class="sl"><i class="ti ti-file-text"></i>Plain-text brief <span style="font-size:10px;font-weight:400;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:6px;text-transform:none;letter-spacing:0">Free</span></p>'+
+        '<p style="font-size:12px;color:var(--text2);margin-bottom:.75rem;line-height:1.6">Your complete analysis in plain text — copy it, download it, or paste it anywhere.</p>'+
+        '<div id="brief-content" class="dpre">'+esc(briefTxt)+'</div>'+
+        '<div class="brow" style="margin-top:10px">'+
+          '<button class="btn-export btn-export-free" onclick="copyBrief()"><i class="ti ti-copy" style="font-size:12px"></i> Copy</button>'+
+          '<button class="btn-export btn-export-free" onclick="downloadBrief()"><i class="ti ti-download" style="font-size:12px"></i> Download .txt</button>'+
+        '</div>'+
       '</div>';
+
+    var premiumSection=
+      '<div class="export-premium">'+
+        '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+        '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
+        toolCfg.items.map(function(item){
+          return '<div class="export-item">'+
+            '<div class="export-item-icon"><i class="ti '+item.icon+'" style="color:var(--purple)"></i></div>'+
+            '<div class="export-item-body">'+
+              '<div class="export-item-title">'+esc(item.title)+'</div>'+
+              '<div class="export-item-desc">'+esc(item.desc)+'</div>'+
+              '<div class="export-item-actions">'+
+                '<button class="btn-export btn-export-locked" onclick="openPaywall(\''+item.id+'\')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'+
+                (item.preview?'<button class="btn-export btn-export-free" onclick="showPDFPreview(\''+item.id+'\')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>':'')
+              +'</div>'+
+            '</div>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div style="font-size:11px;color:var(--text3);line-height:1.6;padding:8px 0">'+
+        '<i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> '+
+        'All exports are generated from your inputs in this browser. No data is sent to servers. '+
+        'Files contain a disclaimer that all figures are self-reported estimates.'+
+      '</div>';
+
+    p5.innerHTML=freeSection+premiumSection;
   }
 
   // Render tool-specific extras
@@ -1225,6 +1544,236 @@ function emailBrief(){
 var RESOURCE_DATA={"entry":{"orient":"Starting your career. These resources are ordered by what you need to figure out first — understand the landscape before you apply, and get your finances in place before you accept an offer.","stages":[{"title":"Understand the landscape","links":[{"name":"BLS Occupational Outlook Handbook","desc":"Pay, growth outlook, and education requirements for 900+ jobs","url":"https://www.bls.gov/ooh/","badge":"gov"},{"name":"O*NET OnLine","desc":"Skills, tasks, and work context by occupation","url":"https://www.onetonline.org/","badge":"gov"},{"name":"MyNextMove","desc":"Plain-language career exploration by interest or keyword","url":"https://www.mynextmove.org/","badge":"free"},{"name":"LinkedIn Salary","desc":"Real compensation by title, location, and experience level","url":"https://www.linkedin.com/salary/","badge":"tool"},{"name":"CareerOneStop Occupation Profile","desc":"Local wages and employment data by role","url":"https://www.careeronestop.org/toolkit/careers/explore-careers.aspx","badge":"gov"}]},{"title":"Know your rights and benefits","links":[{"name":"DOL Wage & Hour Division","desc":"Minimum wage, overtime rules, and youth labor protections","url":"https://www.dol.gov/agencies/whd","badge":"gov"},{"name":"EEOC Know Your Rights","desc":"Discrimination protections and how to file a complaint","url":"https://www.eeoc.gov/know-your-rights","badge":"gov"},{"name":"IRS W-4 Withholding Estimator","desc":"Set your first paycheck up right — avoid over- or under-withholding","url":"https://www.irs.gov/individuals/tax-withholding-estimator","badge":"gov"},{"name":"Benefits.gov","desc":"Federal benefit eligibility finder across all programs","url":"https://www.benefits.gov/","badge":"gov"},{"name":"Healthcare.gov Plan Finder","desc":"Marketplace coverage if your employer doesn't offer insurance","url":"https://www.healthcare.gov/see-plans/","badge":"gov"}]},{"title":"Build credentials","links":[{"name":"Federal Student Aid (FAFSA)","desc":"Grants, loans, and work-study eligibility","url":"https://studentaid.gov/h/apply-for-aid/fafsa","badge":"gov"},{"name":"College Scorecard","desc":"Cost, graduation rates, and earnings outcomes by school","url":"https://collegescorecard.ed.gov/","badge":"gov"},{"name":"Apprenticeship.gov","desc":"Paid earn-while-you-learn pathways into real careers","url":"https://www.apprenticeship.gov/","badge":"gov"},{"name":"Google Career Certificates","desc":"Job-ready certificates in tech fields in about 6 months","url":"https://grow.google/certificates/","badge":"free"},{"name":"Coursera / edX","desc":"Accredited certificates and degrees from top universities","url":"https://www.coursera.org/","badge":"tool"}]},{"title":"Build your job search infrastructure","links":[{"name":"USAJOBS","desc":"Every federal government job opening in one place","url":"https://www.usajobs.gov/","badge":"gov"},{"name":"Handshake","desc":"Entry-level roles and campus recruiting partnerships","url":"https://joinhandshake.com/","badge":"tool"},{"name":"Idealist","desc":"Nonprofit and mission-driven job board","url":"https://www.idealist.org/","badge":"free"},{"name":"Indeed","desc":"Largest general-purpose job board by volume","url":"https://www.indeed.com/","badge":"tool"},{"name":"CareerOneStop Job Finder","desc":"Government-curated openings with local filters","url":"https://www.careeronestop.org/toolkit/jobs/find-jobs.aspx","badge":"gov"}]},{"title":"Set up your financial foundation","links":[{"name":"CFPB Budgeting Worksheets","desc":"Free federal financial planning tools and templates","url":"https://www.consumerfinance.gov/consumer-tools/budget/","badge":"gov"},{"name":"Student Loan Simulator","desc":"Income-driven repayment planning for federal loans","url":"https://studentaid.gov/loan-simulator/","badge":"gov"},{"name":"IRS Free File","desc":"File federal taxes for free if income is under the threshold","url":"https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free","badge":"gov"},{"name":"MyMoney.gov","desc":"FDIC-backed financial literacy hub and planning guides","url":"https://www.mymoney.gov/","badge":"gov"}]}]},"reentry":{"orient":"Returning to work after a gap. Each stage reflects the real sequence — your financial runway affects which opportunities you can pursue, so understand it before you narrow your search.","stages":[{"title":"Assess where you stand","links":[{"name":"CareerOneStop Skills Matcher","desc":"Map past experience to current in-demand jobs","url":"https://www.careeronestop.org/toolkit/skills/skills-matcher.aspx","badge":"gov"},{"name":"O*NET Skills Search","desc":"Identify transferable skill sets across occupations","url":"https://www.onetonline.org/skills/","badge":"gov"},{"name":"AARP Job Search","desc":"Gap-friendly employers and 50+ focused resources","url":"https://www.aarp.org/work/job-search/","badge":"free"},{"name":"Encore.org","desc":"Second-act careers and experienced worker programs","url":"https://encore.org/","badge":"free"},{"name":"BLS Occupational Outlook Handbook","desc":"Check whether your field grew or contracted during your gap","url":"https://www.bls.gov/ooh/","badge":"gov"}]},{"title":"Bridge the gap — training and retraining","links":[{"name":"American Job Centers","desc":"Free job search help, resume coaching, training referrals","url":"https://www.careeronestop.org/localhelp/americanjobcenters/","badge":"gov"},{"name":"WIOA Retraining Funding","desc":"Federally funded career retraining for eligible workers","url":"https://www.careeronestop.org/localhelp/wioa/","badge":"gov"},{"name":"Per Scholas","desc":"Free tech training specifically for returning workers","url":"https://perscholas.org/","badge":"free"},{"name":"Goodwill Career Services","desc":"Employment programs with wraparound support nationwide","url":"https://www.goodwill.org/jobs-training/","badge":"free"},{"name":"Trade Adjustment Assistance","desc":"If your job was lost to trade, outsourcing, or automation","url":"https://www.dol.gov/agencies/eta/tradeact/","badge":"gov"}]},{"title":"Financial lifeline during re-entry","links":[{"name":"Benefits.gov","desc":"Find every assistance program you may qualify for","url":"https://www.benefits.gov/","badge":"gov"},{"name":"211.org","desc":"Local social services, food, housing, and utilities by zip code","url":"https://www.211.org/","badge":"free"},{"name":"SNAP Pre-Screener","desc":"Food assistance eligibility check before applying","url":"https://snap-screener.fns.usda.gov/snap-screener/","badge":"gov"},{"name":"Child Care Aware","desc":"Childcare subsidy finder for working parents returning to work","url":"https://www.childcareaware.org/","badge":"free"},{"name":"NCOA BenefitsCheckUp","desc":"Benefits finder for adults 55+ across 2,500+ programs","url":"https://www.benefitscheckup.org/","badge":"free"}]},{"title":"Navigate re-entry logistics","links":[{"name":"LinkedIn Career Break Feature","desc":"Officially acknowledge your gap professionally on your profile","url":"https://www.linkedin.com/help/linkedin/","badge":"tool"},{"name":"Ban the Box Employer Map","desc":"Find employers with gap-friendly hiring policies by location","url":"https://bantheboxcampaign.org/","badge":"free"},{"name":"DOL Reentry Employment Opportunities","desc":"Federally funded programs specifically for returning citizens","url":"https://www.dol.gov/agencies/eta/reentry/","badge":"gov"},{"name":"National H.I.R.E. Network","desc":"Hiring resources and employer connections for returning citizens","url":"https://www.hirenetwork.org/","badge":"free"}]},{"title":"Healthcare during the gap","links":[{"name":"Healthcare.gov Special Enrollment","desc":"Job loss triggers a special enrollment window — act within 60 days","url":"https://www.healthcare.gov/glossary/special-enrollment-period/","badge":"gov"},{"name":"Medicaid & CHIP","desc":"Healthcare coverage during income gap periods","url":"https://www.medicaid.gov/","badge":"gov"},{"name":"VA Health Benefits","desc":"Veterans returning to civilian work may still qualify","url":"https://www.va.gov/health-care/apply/","badge":"gov"}]}]},"exit":{"orient":"Retiring or leaving paid work. Work through these stages before you give notice — healthcare and income gaps are much harder to fix after the fact.","stages":[{"title":"Know your income picture","links":[{"name":"My Social Security Account","desc":"Full earnings history and personalized benefit estimates","url":"https://www.ssa.gov/myaccount/","badge":"gov"},{"name":"SSA Retirement Estimator","desc":"Explore how claiming age affects your monthly benefit","url":"https://www.ssa.gov/benefits/retirement/estimator.html","badge":"gov"},{"name":"Pension Rights Center","desc":"Understand your defined-benefit rights and protections","url":"https://www.pensionrights.org/","badge":"free"},{"name":"PBGC Pension Lookup","desc":"If your employer pension is at risk, find your coverage","url":"https://www.pbgc.gov/","badge":"gov"},{"name":"IRS Retirement Topics","desc":"RMD rules, account types, and withdrawal rules in plain language","url":"https://www.irs.gov/retirement-plans","badge":"gov"}]},{"title":"Sort out healthcare before and after Medicare","links":[{"name":"Medicare Plan Finder","desc":"Compare Part D and Medicare Advantage plans side by side","url":"https://www.medicare.gov/plan-compare/","badge":"gov"},{"name":"SHIP Medicare Counseling","desc":"Free personalized Medicare counseling available in every state","url":"https://www.shiphelp.org/","badge":"gov"},{"name":"Healthcare.gov for Early Retirees","desc":"Marketplace coverage for those who retire before age 65","url":"https://www.healthcare.gov/","badge":"gov"},{"name":"NCOA Medicare Savings Programs","desc":"Help paying premiums, deductibles, and out-of-pocket costs","url":"https://www.ncoa.org/medicare/medicare-savings-programs/","badge":"free"}]},{"title":"Plan withdrawals and investments","links":[{"name":"Investor.gov Compound Calculator","desc":"SEC-maintained growth and withdrawal modeling tool","url":"https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator","badge":"gov"},{"name":"FINRA BrokerCheck","desc":"Verify your financial advisor's credentials and complaint history","url":"https://brokercheck.finra.org/","badge":"gov"},{"name":"IRS RMD Worksheets","desc":"Required minimum distributions — rules and calculations","url":"https://www.irs.gov/publications/p590b","badge":"gov"},{"name":"Bogleheads Wiki","desc":"Evidence-based retirement planning — no products, no sales pitch","url":"https://www.bogleheads.org/wiki/Main_Page","badge":"free"}]},{"title":"Legal and estate readiness","links":[{"name":"Five Wishes Advance Directive","desc":"Plain-language living will recognized in most states","url":"https://www.agingwithdignity.org/five-wishes/","badge":"free"},{"name":"USA.gov Estate Planning","desc":"Official federal starting point for estate planning basics","url":"https://www.usa.gov/wills-and-estates","badge":"gov"},{"name":"ABA Elder Law Resources","desc":"Find elder law attorneys in your state via the Bar Association","url":"https://www.americanbar.org/groups/law_aging/","badge":"free"},{"name":"CaringInfo State Directives","desc":"Download your state's official advance directive forms","url":"https://www.nhpco.org/patients-and-caregivers/advance-care-planning/advance-directives/","badge":"free"}]},{"title":"Care, community, and daily life","links":[{"name":"Eldercare Locator","desc":"Find aging services and local support by zip code","url":"https://eldercare.acl.gov/","badge":"gov"},{"name":"Medicare Care Compare","desc":"Compare nursing homes, home health agencies, and facilities","url":"https://www.medicare.gov/care-compare/","badge":"gov"},{"name":"SCSEP Work After Retirement","desc":"Federally funded jobs program for older adults who want to keep working","url":"https://www.doleta.gov/seniors/","badge":"gov"}]}]},"equity":{"orient":"Building retirement savings over time. Start by understanding your account types, then stack the tax advantages in order before projecting growth — the sequence matters more than the total.","stages":[{"title":"Understand your account types","links":[{"name":"IRS Retirement Plan Types","desc":"401k, IRA, Roth, SEP, SIMPLE — how each works and who qualifies","url":"https://www.irs.gov/retirement-plans/plan-sponsor/types-of-retirement-plans","badge":"gov"},{"name":"IRS IRA Contribution Limits","desc":"Current year limits by account type and income level","url":"https://www.irs.gov/retirement-plans/ira-contribution-limits","badge":"gov"},{"name":"DOL 401k Fee Disclosure","desc":"How to read your plan's expense ratios and find hidden fees","url":"https://www.dol.gov/agencies/ebsa/","badge":"gov"},{"name":"FINRA Fund Analyzer","desc":"Compare investment fees across mutual funds and ETFs side by side","url":"https://tools.finra.org/fund_analyzer/","badge":"gov"}]},{"title":"Maximize employer benefits","links":[{"name":"DOL 401k Resources","desc":"Employer match rules, vesting schedules, and your plan rights","url":"https://www.dol.gov/general/topic/retirement/401ksavingsplans","badge":"gov"},{"name":"IRS HSA Rules","desc":"Triple-tax-advantaged account that bridges healthcare and retirement","url":"https://www.irs.gov/publications/p969","badge":"gov"},{"name":"PBGC My Pension Benefit","desc":"Look up defined-benefit plan status and insurance coverage","url":"https://www.pbgc.gov/workers-retirees","badge":"gov"}]},{"title":"Project your future","links":[{"name":"SSA Retirement Estimator","desc":"Includes Social Security in your full retirement projection","url":"https://www.ssa.gov/benefits/retirement/estimator.html","badge":"gov"},{"name":"Investor.gov Compound Calculator","desc":"Official SEC compound growth and withdrawal modeling tool","url":"https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator","badge":"gov"},{"name":"FIRECalc","desc":"Historical portfolio survival rate calculator for early retirement planning","url":"https://www.firecalc.com/","badge":"free"},{"name":"cFIREsim","desc":"Monte Carlo simulation for retirement portfolio sustainability","url":"https://www.cfiresim.com/","badge":"free"},{"name":"Vanguard Retirement Calculator","desc":"Income gap visualization and withdrawal sustainability modeling","url":"https://investor.vanguard.com/tools-calculators/retirement-income-calculator","badge":"tool"}]},{"title":"Tax-smart withdrawal strategies","links":[{"name":"IRS Publication 590-B","desc":"IRA distributions, RMD rules, and inherited account guidance","url":"https://www.irs.gov/publications/p590b","badge":"gov"},{"name":"IRS Roth Conversion Rules","desc":"When and how to convert — tax implications explained clearly","url":"https://www.irs.gov/retirement-plans/roth-iras","badge":"gov"},{"name":"Tax Foundation State Tax Maps","desc":"Compare retirement-friendly states by income and Social Security tax","url":"https://taxfoundation.org/data/all/state/state-income-tax-rates/","badge":"free"},{"name":"CFPB Retirement Savings Guidance","desc":"Consumer-level retirement planning guidance without jargon","url":"https://www.consumerfinance.gov/consumer-tools/retirement/","badge":"gov"}]},{"title":"Get advice you can trust","links":[{"name":"NAPFA Advisor Finder","desc":"Fee-only financial planners who don't earn product commissions","url":"https://www.napfa.org/","badge":"free"},{"name":"CFP Board Advisor Search","desc":"Verify certified financial planner credentials before you hire","url":"https://www.cfp.net/find-a-cfp-professional","badge":"free"},{"name":"FINRA BrokerCheck","desc":"Verify broker and advisor licensing and disciplinary history","url":"https://brokercheck.finra.org/","badge":"gov"}]}]},"change":{"orient":"Moving from one field to another. Research your destination before you commit to training, and build proof of your new skills before you apply — not after.","stages":[{"title":"Research the target role","links":[{"name":"O*NET Occupation Explorer","desc":"Full job profile: tasks, skills, pay, tools, and 10-year outlook","url":"https://www.onetonline.org/","badge":"gov"},{"name":"BLS Occupational Outlook Handbook","desc":"Growth projections and entry requirements by occupation","url":"https://www.bls.gov/ooh/","badge":"gov"},{"name":"LinkedIn Salary","desc":"Real compensation by role, location, and years of experience","url":"https://www.linkedin.com/salary/","badge":"tool"},{"name":"Lightcast Open Skills","desc":"Real-time job posting data — what employers actually require now","url":"https://lightcast.io/open-skills","badge":"tool"}]},{"title":"Map your transferable skills","links":[{"name":"O*NET Skills Transferability","desc":"Find occupations that match your existing skill set","url":"https://www.onetonline.org/skills/","badge":"gov"},{"name":"CareerOneStop Skills Matcher","desc":"Compare current and target role skill overlap side by side","url":"https://www.careeronestop.org/toolkit/skills/skills-matcher.aspx","badge":"gov"},{"name":"SkillScan","desc":"Structured transferable skills self-assessment and inventory","url":"https://www.skillscan.com/","badge":"tool"}]},{"title":"Fill the credential gap","links":[{"name":"CareerOneStop Training Finder","desc":"Local and online programs with cost and duration data","url":"https://www.careeronestop.org/Toolkit/Training/find-local-training.aspx","badge":"gov"},{"name":"WIOA Training Funding","desc":"Federally funded retraining — may cover full tuition costs","url":"https://www.careeronestop.org/localhelp/wioa/","badge":"gov"},{"name":"Apprenticeship.gov","desc":"Earn while you learn in your new field with pay from day one","url":"https://www.apprenticeship.gov/","badge":"gov"},{"name":"Coursera / edX","desc":"Accredited certificates from top universities, fully online","url":"https://www.coursera.org/","badge":"tool"}]},{"title":"Build proof before you apply","links":[{"name":"GitHub","desc":"Build and host a public technical portfolio for employers to review","url":"https://github.com/","badge":"free"},{"name":"Behance","desc":"Creative portfolio hosting for design, media, and visual fields","url":"https://www.behance.net/","badge":"free"},{"name":"Volunteer Match","desc":"Get real experience in your target field through meaningful volunteering","url":"https://www.volunteermatch.org/","badge":"free"}]},{"title":"Execute the job search in your new field","links":[{"name":"American Job Centers","desc":"Free resume help and interview coaching through the DOL network","url":"https://www.careeronestop.org/localhelp/americanjobcenters/","badge":"gov"},{"name":"USAJOBS","desc":"Federal roles — strong culture of welcoming career changers","url":"https://www.usajobs.gov/","badge":"gov"},{"name":"Idealist","desc":"Mission-driven and nonprofit sector roles across the country","url":"https://www.idealist.org/","badge":"free"},{"name":"LinkedIn Jobs","desc":"Professional job board with alumni and network filters built in","url":"https://www.linkedin.com/jobs/","badge":"tool"},{"name":"Indeed","desc":"Highest job volume across all industries and experience levels","url":"https://www.indeed.com/","badge":"tool"}]}]},"compare":{"orient":"Comparing multiple paths at once. Run research in parallel for each option — this order helps you move from data to decision without getting stuck in analysis.","stages":[{"title":"Research all options simultaneously","links":[{"name":"O*NET Occupation Explorer","desc":"Side-by-side skill and task profiles for any occupation","url":"https://www.onetonline.org/","badge":"gov"},{"name":"BLS Occupational Outlook Handbook","desc":"10-year outlook and entry requirements — compare occupations directly","url":"https://www.bls.gov/ooh/","badge":"gov"},{"name":"BLS Wages by Area and Occupation","desc":"Hyper-local salary data by occupation and metro area","url":"https://www.bls.gov/oes/","badge":"gov"},{"name":"LinkedIn Salary Insights","desc":"Compensation by title, metro area, and years of experience","url":"https://www.linkedin.com/salary/","badge":"tool"}]},{"title":"Understand what each path really costs","links":[{"name":"College Scorecard","desc":"Education cost and actual earnings outcomes by program and school","url":"https://collegescorecard.ed.gov/","badge":"gov"},{"name":"CareerOneStop Training Finder","desc":"Cost and duration of training programs for each path","url":"https://www.careeronestop.org/Toolkit/Training/find-local-training.aspx","badge":"gov"},{"name":"MIT Living Wage Calculator","desc":"Minimum viable wage by metro area — does the path pay enough to live on?","url":"https://livingwage.mit.edu/","badge":"free"},{"name":"Credential Engine","desc":"Compare credential market value across competing options","url":"https://credentialengine.org/","badge":"tool"}]},{"title":"Assess fit, not just pay","links":[{"name":"O*NET Interest Profiler","desc":"Map your personality type to occupational environments","url":"https://www.onetonline.org/explore/interests/","badge":"gov"},{"name":"CliftonStrengths (Gallup)","desc":"Strengths-based career fit assessment with detailed work style guidance","url":"https://www.gallup.com/cliftonstrengths/","badge":"tool"},{"name":"SkillScan","desc":"Transferable skill inventory to stress-test readiness across all paths","url":"https://www.skillscan.com/","badge":"tool"},{"name":"16Personalities","desc":"Cognitive style and work environment fit assessment","url":"https://www.16personalities.com/","badge":"free"}]},{"title":"Validate with real people","links":[{"name":"LinkedIn Alumni Tool","desc":"Find people who made similar transitions from your exact background","url":"https://www.linkedin.com/alumni/","badge":"tool"},{"name":"Meetup","desc":"Find professional communities in each field before you commit to one","url":"https://www.meetup.com/","badge":"free"},{"name":"Reddit Career Communities","desc":"r/cscareerquestions, r/nonprofit — real practitioner candor","url":"https://www.reddit.com/","badge":"free"}]},{"title":"Make the decision with a framework","links":[{"name":"Pivot Method (Jenny Blake)","desc":"Scan, pilot, launch — structured framework for making career pivots","url":"https://pivotmethod.com/","badge":"free"},{"name":"MindTools Decision Matrix","desc":"Weighted comparison framework for multi-factor decisions","url":"https://www.mindtools.com/dz5ry0s","badge":"free"}]}]}};
 
 render();
+
+// ── Stripe success detection ──────────────────────────────────────────────────
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('success') !== '1') return;
+
+  var product = params.get('product') || '';
+
+  // Store unlock in sessionStorage so it survives a refresh
+  try {
+    var unlocked = JSON.parse(sessionStorage.getItem('rcpts_unlocked') || '[]');
+    if (unlocked.indexOf(product) === -1) unlocked.push(product);
+    // Pro unlocks everything for this session
+    if (product === 'pro_yr' || product === 'pro_mo') {
+      unlocked.push('entry-launchpad','reentry-pack','reentry-resume',
+        'change-pivot','change-coach','compare-decision','compare-partner',
+        'equity-action','equity-scenarios','exit-readiness','exit-advisor','exit-scenarios');
+    }
+    sessionStorage.setItem('rcpts_unlocked', JSON.stringify(unlocked));
+  } catch(e) {}
+
+  // Clean URL so refreshing doesn't re-trigger
+  try {
+    window.history.replaceState({}, '', window.location.pathname);
+  } catch(e) {}
+
+  // Show success banner after render settles
+  setTimeout(function() {
+    showSuccessBanner(product);
+    // Switch to export tab so they see the unlocked download immediately
+    var t5 = document.getElementById('t5');
+    if (t5) t5.checked = true;
+    // Re-render export tab with unlocked state
+    renderExportUnlocked();
+  }, 300);
+})();
+
+function isUnlocked(itemId) {
+  try {
+    var unlocked = JSON.parse(sessionStorage.getItem('rcpts_unlocked') || '[]');
+    return unlocked.indexOf(itemId) !== -1;
+  } catch(e) { return false; }
+}
+
+function showSuccessBanner(product) {
+  var app = document.getElementById('app');
+  if (!app || document.getElementById('success-banner')) return;
+
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){ return i.id === product; })[0];
+  var label = item ? item.title : (product === 'pro_yr' ? 'Transitions Pro' : 'your export');
+
+  var banner = document.createElement('div');
+  banner.id = 'success-banner';
+  banner.style.cssText = [
+    'background:var(--green-dim)',
+    'border:1px solid var(--green-b)',
+    'border-radius:var(--radius)',
+    'padding:.875rem 1.125rem',
+    'margin-bottom:.875rem',
+    'display:flex',
+    'align-items:flex-start',
+    'justify-content:space-between',
+    'gap:12px',
+    'flex-wrap:wrap'
+  ].join(';');
+
+  banner.innerHTML =
+    '<div style="display:flex;align-items:flex-start;gap:10px">'+
+      '<i class="ti ti-circle-check" style="color:var(--green);font-size:20px;flex-shrink:0;margin-top:1px"></i>'+
+      '<div>'+
+        '<p style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:2px">Payment confirmed — thank you.</p>'+
+        '<p style="font-size:12px;color:var(--text2);line-height:1.6"><strong style="color:var(--text)">'+esc(label)+'</strong> is unlocked for this session. Your download is ready in the Export tab.</p>'+
+      '</div>'+
+    '</div>'+
+    '<button onclick="document.getElementById('success-banner').remove()" style="background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:0;line-height:1;flex-shrink:0">&times;</button>';
+
+  // Insert at top of .app div
+  var appInner = app.querySelector('.app');
+  if (appInner) {
+    appInner.insertBefore(banner, appInner.firstChild);
+  }
+}
+
+function renderExportUnlocked() {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){ v[f[0]] = val(f[0]); });
+  var out = mode.calc(v);
+
+  var p5 = byId('p5');
+  if (!p5) return;
+
+  var toolCfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var briefTxt = makeBrief(mode, v, out);
+
+  var freeSection =
+    '<div class="export-free">'+
+      '<p class="sl"><i class="ti ti-file-text"></i>Plain-text brief <span style="font-size:10px;font-weight:400;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:6px;text-transform:none;letter-spacing:0">Free</span></p>'+
+      '<p style="font-size:12px;color:var(--text2);margin-bottom:.75rem;line-height:1.6">Your complete analysis in plain text — copy it, download it, or paste it anywhere.</p>'+
+      '<div id="brief-content" class="dpre">'+esc(briefTxt)+'</div>'+
+      '<div class="brow" style="margin-top:10px">'+
+        '<button class="btn-export btn-export-free" onclick="copyBrief()"><i class="ti ti-copy" style="font-size:12px"></i> Copy</button>'+
+        '<button class="btn-export btn-export-free" onclick="downloadBrief()"><i class="ti ti-download" style="font-size:12px"></i> Download .txt</button>'+
+      '</div>'+
+    '</div>';
+
+  var premiumSection =
+    '<div class="export-premium">'+
+      '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+      '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
+      toolCfg.items.map(function(item) {
+        var unlocked = isUnlocked(item.id);
+        return '<div class="export-item">'+
+          '<div class="export-item-icon"><i class="ti '+item.icon+'" style="color:'+(unlocked?'var(--green)':'var(--purple)')+'"></i></div>'+
+          '<div class="export-item-body">'+
+            '<div class="export-item-title">'+esc(item.title)+(unlocked?' <span style="font-size:10px;font-weight:600;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:4px">Unlocked</span>':'')+'</div>'+
+            '<div class="export-item-desc">'+esc(item.desc)+'</div>'+
+            '<div class="export-item-actions">'+
+              (unlocked
+                ? '<button class="btn-export btn-export-premium" style="background:var(--green);border-color:var(--green);color:#061C14" onclick="downloadPDF(''+item.id+'')"><i class="ti ti-download" style="font-size:11px"></i> Download PDF</button>'
+                : '<button class="btn-export btn-export-locked" onclick="openPaywall(''+item.id+'')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'
+              )+
+              (item.preview && !unlocked ? '<button class="btn-export btn-export-free" onclick="showPDFPreview(''+item.id+'')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>' : '')+
+            '</div>'+
+          '</div>'+
+        '</div>';
+      }).join('')+
+    '</div>'+
+    '<div style="font-size:11px;color:var(--text3);line-height:1.6;padding:8px 0">'+
+      '<i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> '+
+      'All exports are generated from your inputs in this browser. No data is sent to servers. '+
+      'Files contain a disclaimer that all figures are self-reported estimates.'+
+    '</div>';
+
+  p5.innerHTML = freeSection + premiumSection;
+}
+
+function downloadPDF(itemId) {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){ v[f[0]] = val(f[0]); });
+  var out = mode.calc(v);
+
+  // Build full HTML document styled as a clean PDF-ready page
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){ return i.id === itemId; })[0] || cfg.items[0];
+  var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+
+  var mLabels = mode.metrics || [];
+  var metrics = out.metrics || [];
+  var rows = out.rows || [];
+  var signals = out.signals || [];
+  var plan = out.plan || [];
+
+  var metricsHtml = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:1.5rem">';
+  for (var i = 0; i < Math.min(4, mLabels.length); i++) {
+    var cls = out.cls[i] || '';
+    var color = cls==='pos'?'#1a7a52':cls==='neg'?'#8a1a1a':cls==='warnc'?'#8a5800':cls==='ic'?'#0a5a58':'#2a2f45';
+    metricsHtml += '<div style="background:#f4f6fb;border-radius:8px;padding:12px 14px">'+
+      '<div style="font-size:10px;font-weight:600;color:#8a90a8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">'+esc(mLabels[i])+'</div>'+
+      '<div style="font-size:22px;font-weight:800;color:'+color+';font-family:monospace;letter-spacing:-.02em">'+esc(metrics[i]||'—')+'</div>'+
+    '</div>';
+  }
+  metricsHtml += '</div>';
+
+  var rowsHtml = '<h2>Breakdown</h2>';
+  rows.forEach(function(r) {
+    rowsHtml += '<div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid #f0f2f8"><span>'+esc(r[0])+'</span><strong style="font-family:monospace">'+esc(r[1])+'</strong></div>';
+  });
+
+  var sigHtml = '';
+  if (signals.length) {
+    sigHtml = '<h2>Key signals</h2>';
+    signals.forEach(function(s) {
+      var bg = s.cls==='sig-ok'?'#e8faf3':s.cls==='sig-warn'?'#fef9e8':'#fef0f0';
+      var col = s.cls==='sig-ok'?'#1a5a3a':s.cls==='sig-warn'?'#6a4200':'#6a1a1a';
+      sigHtml += '<div style="background:'+bg+';color:'+col+';font-size:12px;padding:8px 12px;border-radius:6px;margin-bottom:6px;line-height:1.6">'+esc(s.text)+'</div>';
+    });
+  }
+
+  var planHtml = '';
+  if (plan.length) {
+    planHtml = '<h2>Action plan</h2><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">';
+    plan.forEach(function(p) {
+      planHtml += '<div style="background:#f4f6fb;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.6"><strong style="display:block;margin-bottom:3px;color:#0f0f2e">'+esc(p.label)+'</strong><span style="color:#4a5070">'+esc(p.text)+'</span></div>';
+    });
+    planHtml += '</div>';
+  }
+
+  var narrativeHtml = '';
+  if (out.narrative) {
+    narrativeHtml = '<h2>Analysis</h2><p style="font-size:13px;line-height:1.75;color:#2a2f45">'+out.narrative.replace(/<[^>]+>/g,'')+'</p>';
+  }
+
+  var fullDoc = '<!DOCTYPE html><html><head><meta charset="UTF-8">'+
+    '<title>'+esc(item.title)+' — receipts.</title>'+
+    '<style>'+
+      '@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=DM+Mono:wght@400;500&display=swap');'+
+      'body{font-family:'DM Sans',sans-serif;color:#1a1a2e;max-width:700px;margin:0 auto;padding:2.5rem 2rem;font-size:13px;line-height:1.7}'+
+      'h1{font-size:26px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}'+
+      'h2{font-size:11px;font-weight:700;color:#4A9EFF;text-transform:uppercase;letter-spacing:.08em;margin:1.5rem 0 .625rem;border-bottom:1px solid #e8eaf0;padding-bottom:5px}'+
+      '.meta{font-size:11px;color:#8a90a8;margin-bottom:1.75rem}'+
+      '.disclaimer{font-size:10px;color:#aaa;margin-top:2rem;padding-top:.875rem;border-top:1px solid #e8eaf0;line-height:1.6}'+
+      '@media print{body{padding:1.5rem}}'+
+    '</style>'+
+    '</head><body>'+
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem">'+
+      '<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A9EFF">receipts.</div>'+
+      '<div style="font-size:11px;color:#c0c4d8">·</div>'+
+      '<div style="font-size:11px;color:#8a90a8">Transitions</div>'+
+    '</div>'+
+    '<h1>'+esc(item.title)+'</h1>'+
+    '<div class="meta">Generated '+today+' · Planning estimates only · Not financial, tax, legal, or investment advice</div>'+
+    metricsHtml+
+    rowsHtml+
+    sigHtml+
+    narrativeHtml+
+    planHtml+
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. receipts. is a product of ARIC Civic Labs.</div>'+
+    '</body></html>';
+
+  var blob = new Blob([fullDoc], {type:'text/html'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'receipts-'+esc(itemId)+'-'+new Date().toISOString().slice(0,10)+'.html';
+  a.click();
+  URL.revokeObjectURL(url);
+}
 
 
 /* -- Browser session persistence -- */

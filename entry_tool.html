@@ -182,6 +182,70 @@ button:hover{background:var(--surface2)}
 .score-high{background:var(--green-dim);color:var(--green);border:1px solid var(--green-b)}
 .score-mid{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-b)}
 .score-low{background:var(--red-dim);color:var(--red);border:1px solid var(--red-b)}
+/* ── Monetization / Paywall styles ───────────────────────────────────────── */
+.export-free{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.125rem;margin-bottom:.875rem}
+.export-premium{background:var(--purple-dim);border:1px solid var(--purple-b);border-radius:var(--radius);padding:1rem 1.125rem;margin-bottom:.875rem;position:relative;overflow:hidden}
+.export-premium::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right,rgba(155,139,248,.12),transparent 70%);pointer-events:none}
+.premium-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--purple);background:rgba(155,139,248,.15);border:1px solid var(--purple-b);border-radius:99px;padding:2px 9px;letter-spacing:.05em;text-transform:uppercase;margin-left:8px}
+.premium-badge i{font-size:10px}
+.export-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.export-item:last-child{border-bottom:none;padding-bottom:0}
+.export-item-icon{width:34px;height:34px;border-radius:var(--radius-sm);background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.export-item-icon i{font-size:16px;color:var(--text2)}
+.export-item-body{flex:1;min-width:0}
+.export-item-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.export-item-desc{font-size:11px;color:var(--text3);line-height:1.5}
+.export-item-actions{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.btn-export{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;border:1px solid;font-family:inherit;transition:all .15s;text-decoration:none}
+.btn-export-free{background:var(--surface2);border-color:var(--border);color:var(--text2)}
+.btn-export-free:hover{background:var(--border);color:var(--text)}
+.btn-export-premium{background:var(--purple);border-color:var(--purple);color:#fff}
+.btn-export-premium:hover{background:#8a7ae8}
+.btn-export-locked{background:var(--surface2);border-color:var(--purple-b);color:var(--purple);cursor:pointer}
+.btn-export-locked:hover{background:var(--purple-dim)}
+.paywall-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)}
+.paywall-modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;max-width:480px;width:100%;padding:0;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6)}
+.paywall-header{background:linear-gradient(135deg,var(--purple-dim) 0%,rgba(155,139,248,.08) 100%);border-bottom:1px solid var(--border);padding:1.5rem 1.5rem 1.25rem}
+.paywall-logo{font-size:11px;font-weight:600;letter-spacing:.05em;color:var(--text3);text-transform:uppercase;margin-bottom:.75rem}
+.paywall-title{font-size:1.375rem;font-weight:700;color:var(--text);line-height:1.25;margin-bottom:.375rem}
+.paywall-sub{font-size:13px;color:var(--text2);line-height:1.6}
+.paywall-body{padding:1.25rem 1.5rem}
+.paywall-price{display:flex;align-items:baseline;gap:6px;margin-bottom:1rem}
+.paywall-price .amount{font-size:2.25rem;font-weight:800;color:var(--text);font-family:'DM Mono',monospace;letter-spacing:-.03em}
+.paywall-price .period{font-size:13px;color:var(--text2)}
+.paywall-features{display:flex;flex-direction:column;gap:6px;margin-bottom:1.125rem}
+.paywall-feature{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text2);line-height:1.45}
+.paywall-feature i{color:var(--green);font-size:14px;flex-shrink:0;margin-top:1px}
+.paywall-cta{width:100%;padding:11px;font-size:14px;font-weight:700;background:var(--purple);border:none;border-radius:var(--radius-sm);color:#fff;cursor:pointer;font-family:inherit;transition:background .15s;margin-bottom:.625rem}
+.paywall-cta:hover{background:#8a7ae8}
+.paywall-secondary{font-size:12px;color:var(--text3);text-align:center;line-height:1.5}
+.paywall-secondary a{color:var(--text2);text-decoration:underline;cursor:pointer}
+.paywall-dismiss{position:absolute;top:1rem;right:1rem;background:var(--surface2);border:1px solid var(--border);border-radius:99px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--text3)}
+.paywall-dismiss:hover{color:var(--text)}
+.paywall-plans{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem}
+.plan-tile{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.875rem;cursor:pointer;transition:all .15s;position:relative}
+.plan-tile:hover{border-color:var(--purple-b)}
+.plan-tile.selected{border-color:var(--purple);background:var(--purple-dim)}
+.plan-tile-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin-bottom:4px}
+.plan-tile-price{font-size:1.25rem;font-weight:800;color:var(--text);font-family:'DM Mono',monospace}
+.plan-tile-desc{font-size:11px;color:var(--text3);margin-top:3px;line-height:1.4}
+.plan-tile-best{position:absolute;top:-1px;right:-1px;background:var(--purple);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:0 var(--radius-sm) 0 var(--radius-sm)}
+.pdf-preview{background:#fff;border-radius:var(--radius);padding:2rem;font-family:'DM Sans',sans-serif;color:#1a1a2e;font-size:13px;line-height:1.7;max-height:420px;overflow-y:auto;box-shadow:0 4px 24px rgba(0,0,0,.3);margin-bottom:.875rem}
+.pdf-preview h1{font-size:22px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}
+.pdf-preview h2{font-size:13px;font-weight:700;color:#4A9EFF;text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem;border-bottom:1px solid #e8eaf0;padding-bottom:4px}
+.pdf-preview .pdf-meta{font-size:11px;color:#8a90a8;margin-bottom:1.5rem}
+.pdf-preview .pdf-metric-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1rem}
+.pdf-preview .pdf-metric{background:#f4f6fb;border-radius:6px;padding:10px 12px}
+.pdf-preview .pdf-metric-label{font-size:10px;font-weight:600;color:#8a90a8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.pdf-preview .pdf-metric-val{font-size:18px;font-weight:800;color:#0f0f2e;font-family:'DM Mono',monospace}
+.pdf-preview .pdf-row{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;border-bottom:1px solid #f0f2f8}
+.pdf-preview .pdf-row:last-child{border-bottom:none}
+.pdf-preview .pdf-row strong{font-family:'DM Mono',monospace}
+.pdf-preview .pdf-signal{display:flex;gap:8px;font-size:12px;padding:6px 10px;border-radius:5px;margin-bottom:5px;align-items:flex-start}
+.pdf-preview .pdf-signal.ok{background:#e8faf3;color:#1a7a52}
+.pdf-preview .pdf-signal.warn{background:#fef9e8;color:#8a5800}
+.pdf-preview .pdf-signal.red{background:#fef0f0;color:#8a1a1a}
+.pdf-preview .pdf-disclaimer{font-size:10px;color:#aaa;margin-top:1.5rem;padding-top:.75rem;border-top:1px solid #e8eaf0;line-height:1.6}
 </style>
 </head>
 <body>
@@ -708,6 +772,413 @@ compare:{
 
 }; // end MODES
 
+// ── Export config per tool ────────────────────────────────────────────────────
+var EXPORT_CONFIG = {
+  exit: {
+    tagline: 'Turn your retirement numbers into a polished, shareable report — ready for your financial advisor, your family, or your own files.',
+    price: 49,
+    items: [
+      {id:'exit-readiness',icon:'ti-file-certificate',title:'Exit Readiness Report',desc:'Full PDF — income waterfall, gap analysis, healthcare bridge, legal checklist, drawdown scenarios for ages 65–85. Designed to hand to a financial planner.',cta:'Download PDF — $49',preview:true},
+      {id:'exit-advisor',icon:'ti-users',title:'Share with advisor brief',desc:'One-page summary formatted for a financial advisor. Includes your numbers, your questions, and a structured agenda for the conversation.',cta:'Get advisor brief — $49',preview:false},
+      {id:'exit-scenarios',icon:'ti-chart-line',title:'Scenario comparison',desc:'Compare three retirement dates side by side — income, gap, sustainability, and healthcare exposure at each date.',cta:'Run scenarios — $49',preview:false}
+    ]
+  },
+  equity: {
+    tagline: 'Package your contribution ladder, growth projections, and gap analysis into a decision-ready brief.',
+    price: 29,
+    items: [
+      {id:'equity-action',icon:'ti-chart-arcs',title:'Equity Action Brief',desc:'10-year projection PDF with employer match gap, optimized contribution ladder, and a cost-of-delay breakdown showing exactly what each year of waiting costs.',cta:'Download PDF — $29',preview:true},
+      {id:'equity-scenarios',icon:'ti-trending-up',title:'Multi-scenario comparison',desc:'Compare three contribution levels across 10, 20, and 30 years. See which lever moves the needle most.',cta:'Run scenarios — $29',preview:false}
+    ]
+  },
+  compare: {
+    tagline: 'Turn your side-by-side analysis into a structured document you can share with a partner, mentor, or advisor.',
+    price: 19,
+    items: [
+      {id:'compare-decision',icon:'ti-scale',title:'Decision Brief',desc:'Formatted comparison document with 5-year financial trajectory for each path, quality-of-life scoring breakdown, and a clear recommendation.',cta:'Download PDF — $19',preview:true},
+      {id:'compare-partner',icon:'ti-user-heart',title:'Partner-ready summary',desc:'A plain-language version of your comparison designed to share with a partner, spouse, or trusted advisor. No jargon. Clear trade-offs.',cta:'Get summary — $19',preview:false}
+    ]
+  },
+  change: {
+    tagline: 'Package your career pivot plan into documents that help you communicate it confidently.',
+    price: 15,
+    items: [
+      {id:'change-pivot',icon:'ti-map-2',title:'Pivot Pack',desc:'Skills translation document framed for the new industry, timeline-to-income model, and a cover letter framework that explains the change without apologizing for it.',cta:'Download Pack — $15',preview:true},
+      {id:'change-coach',icon:'ti-user-star',title:'Coach-ready brief',desc:'A structured summary of your transition — current skills, target role, gap assessment, and timeline — formatted for a career coach or mentor.',cta:'Get coach brief — $15',preview:false}
+    ]
+  },
+  reentry: {
+    tagline: 'Turn your return-to-work plan into documents that open doors.',
+    price: 9,
+    items: [
+      {id:'reentry-pack',icon:'ti-door-enter',title:'Return Ready Pack',desc:'Gap narrative (3 versions: conservative, confident, bold), structured job-search runway plan, and a recruiter-ready positioning brief.',cta:'Download Pack — $9',preview:true},
+      {id:'reentry-resume',icon:'ti-id',title:'Resume language',desc:'Bullet-ready language translating your gap period into professional accomplishments. Framed for LinkedIn, resumes, and cover letters.',cta:'Get resume bullets — $9',preview:false}
+    ]
+  },
+  entry: {
+    tagline: 'Start strong — turn your first-job plan into a document you can actually use.',
+    price: 5,
+    items: [
+      {id:'entry-launchpad',icon:'ti-rocket',title:'Launchpad Pack',desc:'Formatted first-90-days brief plus a salary negotiation script for your first raise conversation. Designed to be printed, saved, or emailed to yourself.',cta:'Download Pack — $5',preview:true}
+    ]
+  }
+};
+
+// ── Paywall state ─────────────────────────────────────────────────────────────
+var _paywallItem = null;
+var _selectedPlan = 'onetime';
+
+function openPaywall(itemId) {
+  _paywallItem = itemId;
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){return i.id===itemId;})[0] || cfg.items[0];
+  var price = cfg.price;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'paywall-overlay';
+  overlay.id = 'paywall-overlay';
+  overlay.onclick = function(e){ if(e.target===overlay) closePaywall(); };
+
+  overlay.innerHTML =
+    '<div class="paywall-modal" style="position:relative">'+
+      '<div class="paywall-dismiss" onclick="closePaywall()"><i class="ti ti-x" style="font-size:12px"></i></div>'+
+      '<div class="paywall-header">'+
+        '<div class="paywall-logo">receipts. Pro</div>'+
+        '<div class="paywall-title">'+esc(item.title)+'</div>'+
+        '<div class="paywall-sub">'+esc(item.desc)+'</div>'+
+      '</div>'+
+      '<div class="paywall-body">'+
+        '<div class="paywall-plans">'+
+          '<div class="plan-tile selected" id="plan-onetime" onclick="selectPlan(\'onetime\')">'+
+            '<div class="plan-tile-label">One-time</div>'+
+            '<div class="plan-tile-price">$'+price+'</div>'+
+            '<div class="plan-tile-desc">This report only</div>'+
+          '</div>'+
+          '<div class="plan-tile" id="plan-pro" onclick="selectPlan(\'pro\')">'+
+            '<div class="plan-tile-best">Best value</div>'+
+            '<div class="plan-tile-label">Pro — all tools</div>'+
+            '<div class="plan-tile-price">$149<span style="font-size:12px;font-weight:400;color:var(--text3)">/yr</span></div>'+
+            '<div class="plan-tile-desc">Every premium export across all 6 tools</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="paywall-features">'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Styled PDF — ready to share with advisors or save to files</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Generated entirely in your browser — nothing sent to servers</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Includes disclaimer: self-reported estimates only</div>'+
+          '<div class="paywall-feature"><i class="ti ti-circle-check"></i>Download instantly after payment</div>'+
+        '</div>'+
+        '<button class="paywall-cta" onclick="handleCheckout()">'+
+          '<i class="ti ti-credit-card" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $'+price+
+        '</button>'+
+        '<div class="paywall-secondary">'+
+          'Payments processed by Stripe. <a onclick="closePaywall()">Cancel anytime.</a><br>'+
+          'Questions? <a href="mailto:hello@aricciviclabs.org">hello@aricciviclabs.org</a>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+
+  document.body.appendChild(overlay);
+}
+
+function closePaywall() {
+  var overlay = byId('paywall-overlay');
+  if(overlay) overlay.remove();
+  var preview = byId('pdf-preview-overlay');
+  if(preview) preview.remove();
+}
+
+function selectPlan(plan) {
+  _selectedPlan = plan;
+  var onetime = byId('plan-onetime');
+  var pro = byId('plan-pro');
+  var cta = document.querySelector('.paywall-cta');
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  if(onetime) onetime.className = 'plan-tile' + (plan==='onetime'?' selected':'');
+  if(pro) pro.className = 'plan-tile' + (plan==='pro'?' selected':'');
+  if(cta) {
+    if(plan==='pro') {
+      cta.innerHTML = '<i class="ti ti-crown" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $149/yr';
+    } else {
+      cta.innerHTML = '<i class="ti ti-credit-card" style="font-size:14px;vertical-align:-2px"></i> Continue to checkout — $'+cfg.price;
+    }
+  }
+}
+
+function handleCheckout() {
+  var STRIPE_LINKS = {
+    'entry-launchpad':   'https://buy.stripe.com/6oUcN6bUm2b86LR7S37N60q',
+    'reentry-pack':      'https://buy.stripe.com/cNiaEY8Ia5nkeejgoz7N60p',
+    'reentry-resume':    'https://buy.stripe.com/cNiaEY8Ia5nkeejgoz7N60p',
+    'change-pivot':      'https://buy.stripe.com/3cI9AUaQi030gmrfkv7N60o',
+    'change-coach':      'https://buy.stripe.com/3cI9AUaQi030gmrfkv7N60o',
+    'compare-decision':  'https://buy.stripe.com/28E00kgaCcPM3zFegr7N60n',
+    'compare-partner':   'https://buy.stripe.com/28E00kgaCcPM3zFegr7N60n',
+    'equity-action':     'https://buy.stripe.com/00w4gA7E67vs9Y37S37N60m',
+    'equity-scenarios':  'https://buy.stripe.com/00w4gA7E67vs9Y37S37N60m',
+    'exit-readiness':    'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'exit-advisor':      'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'exit-scenarios':    'https://buy.stripe.com/00wdRaf6ydTQfina0b7N60l',
+    'pro_yr':            'https://buy.stripe.com/28EbJ2gaC6ro3zF4FR7N60k'
+  };
+  var itemId = _selectedPlan === 'pro' ? 'pro_yr' : (_paywallItem || 'exit-readiness');
+  var url = STRIPE_LINKS[itemId];
+  if (!url) { alert('Checkout link not found. Please contact hello@aricciviclabs.org'); return; }
+  closePaywall();
+  window.location.href = url;
+}
+
+function showPDFPreview(itemId) {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){v[f[0]]=val(f[0]);});
+  var out = mode.calc(v);
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'paywall-overlay';
+  overlay.id = 'pdf-preview-overlay';
+  overlay.onclick = function(e){ if(e.target===overlay) closePaywall(); };
+
+  var previewHtml = buildPDFPreviewHTML(mode, v, out);
+
+  overlay.innerHTML =
+    '<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;max-width:560px;width:100%;padding:0;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6);position:relative;max-height:90vh;display:flex;flex-direction:column">'+
+      '<div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0">'+
+        '<span style="font-size:13px;font-weight:600;color:var(--text)">PDF preview <span style="font-size:10px;font-weight:400;color:var(--text3);margin-left:6px">First page shown</span></span>'+
+        '<div style="display:flex;align-items:center;gap:8px">'+
+          '<button class="btn-export btn-export-premium" onclick="openPaywall(\''+itemId+'\')"><i class="ti ti-download" style="font-size:11px"></i> Get full PDF — $'+cfg.price+'</button>'+
+          '<div class="paywall-dismiss" style="position:static" onclick="closePaywall()"><i class="ti ti-x" style="font-size:12px"></i></div>'+
+        '</div>'+
+      '</div>'+
+      '<div style="overflow-y:auto;padding:1.25rem;flex:1">'+previewHtml+'</div>'+
+    '</div>';
+
+  document.body.appendChild(overlay);
+}
+
+function buildPDFPreviewHTML(mode, v, out) {
+  var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var rows = out.rows || [];
+  var signals = out.signals || [];
+  var metrics = out.metrics || [];
+  var mLabels = mode.metrics || [];
+
+  var metricsHtml = '<div class="pdf-metric-row">';
+  for(var i=0;i<Math.min(4,mLabels.length);i++){
+    metricsHtml += '<div class="pdf-metric"><div class="pdf-metric-label">'+esc(mLabels[i])+'</div><div class="pdf-metric-val">'+esc(metrics[i]||'—')+'</div></div>';
+  }
+  metricsHtml += '</div>';
+
+  var rowsHtml = '<h2>Breakdown</h2>';
+  rows.forEach(function(r){
+    rowsHtml += '<div class="pdf-row"><span>'+esc(r[0])+'</span><strong>'+esc(r[1])+'</strong></div>';
+  });
+
+  var sigHtml = '';
+  if(signals.length){
+    sigHtml = '<h2>Key signals</h2>';
+    signals.slice(0,3).forEach(function(s){
+      var cls = s.cls==='sig-ok'?'ok':s.cls==='sig-warn'?'warn':'red';
+      sigHtml += '<div class="pdf-signal '+cls+'">'+esc(s.text.substring(0,200)+(s.text.length>200?'…':''))+'</div>';
+    });
+  }
+
+  var narrative = out.narrative ? '<h2>Analysis</h2><p>'+esc(out.narrative.replace(/<[^>]+>/g,''))+'</p>' : '';
+
+  return '<div class="pdf-preview">'+
+    '<h1>'+esc(mode.title)+'</h1>'+
+    '<div class="pdf-meta">receipts. · Generated '+today+' · Planning estimates only · Not financial, legal, or investment advice</div>'+
+    metricsHtml+rowsHtml+sigHtml+narrative+
+    '<div class="pdf-disclaimer">DISCLAIMER: All figures are self-reported estimates. Not financial, tax, legal, or investment advice.</div>'+
+  '</div>';
+}
+
+// ── Stripe success detection ──────────────────────────────────────────────────
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('success') !== '1') return;
+  var product = params.get('product') || '';
+  try {
+    var unlocked = JSON.parse(sessionStorage.getItem('rcpts_unlocked') || '[]');
+    if (unlocked.indexOf(product) === -1) unlocked.push(product);
+    if (product === 'pro_yr' || product === 'pro_mo') {
+      unlocked.push('entry-launchpad','reentry-pack','reentry-resume',
+        'change-pivot','change-coach','compare-decision','compare-partner',
+        'equity-action','equity-scenarios','exit-readiness','exit-advisor','exit-scenarios');
+    }
+    sessionStorage.setItem('rcpts_unlocked', JSON.stringify(unlocked));
+  } catch(e) {}
+  try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
+  setTimeout(function() {
+    showSuccessBanner(product);
+    var t5 = document.getElementById('t5');
+    if (t5) t5.checked = true;
+    renderExportUnlocked();
+  }, 300);
+})();
+
+function isUnlocked(itemId) {
+  try {
+    var unlocked = JSON.parse(sessionStorage.getItem('rcpts_unlocked') || '[]');
+    return unlocked.indexOf(itemId) !== -1;
+  } catch(e) { return false; }
+}
+
+function showSuccessBanner(product) {
+  var app = document.getElementById('app');
+  if (!app || document.getElementById('success-banner')) return;
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){ return i.id === product; })[0];
+  var label = item ? item.title : (product === 'pro_yr' ? 'Transitions Pro' : 'your export');
+  var banner = document.createElement('div');
+  banner.id = 'success-banner';
+  banner.style.cssText = 'background:var(--green-dim);border:1px solid var(--green-b);border-radius:var(--radius);padding:.875rem 1.125rem;margin-bottom:.875rem;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap';
+  banner.innerHTML =
+    '<div style="display:flex;align-items:flex-start;gap:10px">'+
+      '<i class="ti ti-circle-check" style="color:var(--green);font-size:20px;flex-shrink:0;margin-top:1px"></i>'+
+      '<div>'+
+        '<p style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:2px">Payment confirmed — thank you.</p>'+
+        '<p style="font-size:12px;color:var(--text2);line-height:1.6"><strong style="color:var(--text)">'+esc(label)+'</strong> is unlocked for this session. Your download is ready in the Export tab.</p>'+
+      '</div>'+
+    '</div>'+
+    '<button onclick="document.getElementById(\'success-banner\').remove()" style="background:none;border:none;color:var(--text3);font-size:18px;cursor:pointer;padding:0;line-height:1;flex-shrink:0">&times;</button>';
+  var appInner = app.querySelector('.app');
+  if (appInner) appInner.insertBefore(banner, appInner.firstChild);
+}
+
+function renderExportUnlocked() {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){ v[f[0]] = val(f[0]); });
+  var out = mode.calc(v);
+  var p5 = byId('p5');
+  if (!p5) return;
+  var toolCfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var briefTxt = makeBrief(mode, v, out);
+
+  var freeSection =
+    '<div class="export-free">'+
+      '<p class="sl"><i class="ti ti-file-text"></i>Plain-text brief <span style="font-size:10px;font-weight:400;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:6px;text-transform:none;letter-spacing:0">Free</span></p>'+
+      '<p style="font-size:12px;color:var(--text2);margin-bottom:.75rem;line-height:1.6">Your complete analysis in plain text — copy it, download it, or paste it anywhere.</p>'+
+      '<div id="brief-content" class="dpre">'+esc(briefTxt)+'</div>'+
+      '<div class="brow" style="margin-top:10px">'+
+        '<button class="btn-export btn-export-free" onclick="copyBrief()"><i class="ti ti-copy" style="font-size:12px"></i> Copy</button>'+
+        '<button class="btn-export btn-export-free" onclick="downloadBrief()"><i class="ti ti-download" style="font-size:12px"></i> Download .txt</button>'+
+      '</div>'+
+    '</div>';
+
+  var premiumSection =
+    '<div class="export-premium">'+
+      '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+      '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
+      toolCfg.items.map(function(item) {
+        var unlocked = isUnlocked(item.id);
+        return '<div class="export-item">'+
+          '<div class="export-item-icon"><i class="ti '+item.icon+'" style="color:'+(unlocked?'var(--green)':'var(--purple)')+'"></i></div>'+
+          '<div class="export-item-body">'+
+            '<div class="export-item-title">'+esc(item.title)+(unlocked?' <span style="font-size:10px;font-weight:600;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:4px">Unlocked</span>':'')+'</div>'+
+            '<div class="export-item-desc">'+esc(item.desc)+'</div>'+
+            '<div class="export-item-actions">'+
+              (unlocked
+                ? '<button class="btn-export btn-export-premium" style="background:var(--green);border-color:var(--green);color:#061C14" onclick="downloadPDF(\''+item.id+'\')"><i class="ti ti-download" style="font-size:11px"></i> Download PDF</button>'
+                : '<button class="btn-export btn-export-locked" onclick="openPaywall(\''+item.id+'\')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'
+              )+
+              (item.preview && !unlocked ? '<button class="btn-export btn-export-free" onclick="showPDFPreview(\''+item.id+'\')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>' : '')+
+            '</div>'+
+          '</div>'+
+        '</div>';
+      }).join('')+
+    '</div>'+
+    '<div style="font-size:11px;color:var(--text3);line-height:1.6;padding:8px 0">'+
+      '<i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> '+
+      'All exports are generated from your inputs in this browser. No data is sent to servers. '+
+      'Files contain a disclaimer that all figures are self-reported estimates.'+
+    '</div>';
+
+  p5.innerHTML = freeSection + premiumSection;
+}
+
+function downloadPDF(itemId) {
+  var mode = MODES[window.TOOLKIT_MODE] || MODES.exit;
+  var v = {};
+  mode.fields.forEach(function(f){ v[f[0]] = val(f[0]); });
+  var out = mode.calc(v);
+  var cfg = EXPORT_CONFIG[window.TOOLKIT_MODE] || EXPORT_CONFIG.exit;
+  var item = cfg.items.filter(function(i){ return i.id === itemId; })[0] || cfg.items[0];
+  var today = new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  var mLabels = mode.metrics || [];
+  var metrics = out.metrics || [];
+  var rows = out.rows || [];
+  var signals = out.signals || [];
+  var plan = out.plan || [];
+
+  var metricsHtml = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:1.5rem">';
+  for (var i = 0; i < Math.min(4, mLabels.length); i++) {
+    var cls = out.cls[i] || '';
+    var color = cls==='pos'?'#1a7a52':cls==='neg'?'#8a1a1a':cls==='warnc'?'#8a5800':cls==='ic'?'#0a5a58':'#2a2f45';
+    metricsHtml += '<div style="background:#f4f6fb;border-radius:8px;padding:12px 14px">'+
+      '<div style="font-size:10px;font-weight:600;color:#8a90a8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">'+esc(mLabels[i])+'</div>'+
+      '<div style="font-size:22px;font-weight:800;color:'+color+';font-family:monospace;letter-spacing:-.02em">'+esc(metrics[i]||'—')+'</div></div>';
+  }
+  metricsHtml += '</div>';
+
+  var rowsHtml = '<h2>Breakdown</h2>';
+  rows.forEach(function(r){
+    rowsHtml += '<div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid #f0f2f8"><span>'+esc(r[0])+'</span><strong style="font-family:monospace">'+esc(r[1])+'</strong></div>';
+  });
+
+  var sigHtml = '';
+  if(signals.length){
+    sigHtml = '<h2>Key signals</h2>';
+    signals.forEach(function(s){
+      var bg = s.cls==='sig-ok'?'#e8faf3':s.cls==='sig-warn'?'#fef9e8':'#fef0f0';
+      var col = s.cls==='sig-ok'?'#1a5a3a':s.cls==='sig-warn'?'#6a4200':'#6a1a1a';
+      sigHtml += '<div style="background:'+bg+';color:'+col+';font-size:12px;padding:8px 12px;border-radius:6px;margin-bottom:6px;line-height:1.6">'+esc(s.text)+'</div>';
+    });
+  }
+
+  var planHtml = '';
+  if(plan.length){
+    planHtml = '<h2>Action plan</h2><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">';
+    plan.forEach(function(p){
+      planHtml += '<div style="background:#f4f6fb;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.6"><strong style="display:block;margin-bottom:3px;color:#0f0f2e">'+esc(p.label)+'</strong><span style="color:#4a5070">'+esc(p.text)+'</span></div>';
+    });
+    planHtml += '</div>';
+  }
+
+  var narrativeHtml = out.narrative ? '<h2>Analysis</h2><p style="font-size:13px;line-height:1.75;color:#2a2f45">'+out.narrative.replace(/<[^>]+>/g,'')+'</p>' : '';
+
+  var fullDoc = '<!DOCTYPE html><html><head><meta charset="UTF-8">'+
+    '<title>'+esc(item.title)+' — receipts.</title>'+
+    '<style>@import url(\'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=DM+Mono:wght@400;500&display=swap\');'+
+    'body{font-family:\'DM Sans\',sans-serif;color:#1a1a2e;max-width:700px;margin:0 auto;padding:2.5rem 2rem;font-size:13px;line-height:1.7}'+
+    'h1{font-size:26px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}'+
+    'h2{font-size:11px;font-weight:700;color:#4A9EFF;text-transform:uppercase;letter-spacing:.08em;margin:1.5rem 0 .625rem;border-bottom:1px solid #e8eaf0;padding-bottom:5px}'+
+    '.meta{font-size:11px;color:#8a90a8;margin-bottom:1.75rem}'+
+    '.disclaimer{font-size:10px;color:#aaa;margin-top:2rem;padding-top:.875rem;border-top:1px solid #e8eaf0;line-height:1.6}'+
+    '@media print{body{padding:1.5rem}}</style>'+
+    '</head><body>'+
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem">'+
+      '<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A9EFF">receipts.</div>'+
+      '<div style="font-size:11px;color:#c0c4d8">·</div>'+
+      '<div style="font-size:11px;color:#8a90a8">Transitions</div>'+
+    '</div>'+
+    '<h1>'+esc(item.title)+'</h1>'+
+    '<div class="meta">Generated '+today+' · Planning estimates only · Not financial, tax, legal, or investment advice</div>'+
+    metricsHtml+rowsHtml+sigHtml+narrativeHtml+planHtml+
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. receipts. is a product of ARIC Civic Labs.</div>'+
+    '</body></html>';
+
+  var blob = new Blob([fullDoc], {type:'text/html'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'receipts-'+itemId+'-'+new Date().toISOString().slice(0,10)+'.html';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+
 // ── Render engine ─────────────────────────────────────────────────────────────
 function render(){
   var mode=MODES[window.TOOLKIT_MODE]||MODES.entry;
@@ -840,19 +1311,52 @@ function calc(){
       }).join('')+'</div></div>';
   }
 
-  // Export tab
+  // Export tab — monetized
   var p5=byId('p5');
   if(p5){
-    p5.innerHTML=
-      '<div class="card"><p class="sl sl-ai"><i class="ti ti-file-export"></i>Copyable brief</p>'+
-      '<div id="brief-content" class="dpre">'+esc(makeBrief(mode,v,out))+'</div>'+
-      '<div class="brow"><button class="btn-primary" onclick="copyBrief()"><i class="ti ti-copy" style="font-size:13px;vertical-align:-1px"></i> Copy brief</button><button onclick="downloadBrief()"><i class="ti ti-download" style="font-size:13px;vertical-align:-1px"></i> Download .txt</button></div></div>'+
-      '<div class="card card-ai" style="margin-top:.875rem"><p class="sl sl-ai"><i class="ti ti-mail"></i>Email this brief <span style="font-size:10px;font-weight:400;color:var(--purple);text-transform:none;letter-spacing:0;margin-left:6px;background:var(--purple-dim);border:1px solid var(--purple-b);border-radius:99px;padding:1px 7px">Premium</span></p>'+
-      '<p style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6">Enter your email address and we\'ll send this brief directly to your inbox — useful for saving to your files, sharing with a coach, or reading on another device.</p>'+
-      '<div class="fr" style="align-items:flex-end;gap:8px"><div class="fg" style="flex:1"><label>Your email address</label><input id="export-email" type="email" placeholder="you@example.com" style="width:100%"/></div><button onclick="emailBrief()" style="white-space:nowrap;flex-shrink:0;align-self:flex-end"><i class="ti ti-send" style="font-size:12px;vertical-align:-1px"></i> Send brief</button></div>'+
-      '<p id="email-status" style="font-size:12px;color:var(--text3);margin-top:6px"></p>'+
-      '<p style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6"><i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> Your email is used only to deliver this brief and is not stored or shared. This is a premium feature — coming soon with receipts. Pro.</p>'+
+    var toolCfg=EXPORT_CONFIG[window.TOOLKIT_MODE]||EXPORT_CONFIG.exit;
+    var briefTxt=makeBrief(mode,v,out);
+
+    var freeSection=
+      '<div class="export-free">'+
+        '<p class="sl"><i class="ti ti-file-text"></i>Plain-text brief <span style="font-size:10px;font-weight:400;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:6px;text-transform:none;letter-spacing:0">Free</span></p>'+
+        '<p style="font-size:12px;color:var(--text2);margin-bottom:.75rem;line-height:1.6">Your complete analysis in plain text — copy it, download it, or paste it anywhere.</p>'+
+        '<div id="brief-content" class="dpre">'+esc(briefTxt)+'</div>'+
+        '<div class="brow" style="margin-top:10px">'+
+          '<button class="btn-export btn-export-free" onclick="copyBrief()"><i class="ti ti-copy" style="font-size:12px"></i> Copy</button>'+
+          '<button class="btn-export btn-export-free" onclick="downloadBrief()"><i class="ti ti-download" style="font-size:12px"></i> Download .txt</button>'+
+        '</div>'+
       '</div>';
+
+    var premiumSection=
+      '<div class="export-premium">'+
+        '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+        '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
+        toolCfg.items.map(function(item){
+          var unlocked=isUnlocked(item.id);
+          return '<div class="export-item">'+
+            '<div class="export-item-icon"><i class="ti '+item.icon+'" style="color:'+(unlocked?'var(--green)':'var(--purple)')+'"></i></div>'+
+            '<div class="export-item-body">'+
+              '<div class="export-item-title">'+esc(item.title)+(unlocked?' <span style="font-size:10px;font-weight:600;color:var(--green);background:var(--green-dim);border:1px solid var(--green-b);border-radius:99px;padding:1px 7px;margin-left:4px">Unlocked</span>':'')+'</div>'+
+              '<div class="export-item-desc">'+esc(item.desc)+'</div>'+
+              '<div class="export-item-actions">'+
+                (unlocked
+                  ?'<button class="btn-export btn-export-premium" style="background:var(--green);border-color:var(--green);color:#061C14" onclick="downloadPDF(\''+item.id+'\')"><i class="ti ti-download" style="font-size:11px"></i> Download PDF</button>'
+                  :'<button class="btn-export btn-export-locked" onclick="openPaywall(\''+item.id+'\')"><i class="ti ti-lock" style="font-size:11px"></i> '+esc(item.cta)+'</button>'
+                )+
+                (item.preview&&!unlocked?'<button class="btn-export btn-export-free" onclick="showPDFPreview(\''+item.id+'\')"><i class="ti ti-eye" style="font-size:11px"></i> Preview</button>':'')+
+              '</div>'+
+            '</div>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div style="font-size:11px;color:var(--text3);line-height:1.6;padding:8px 0">'+
+        '<i class="ti ti-shield-lock" style="font-size:11px;vertical-align:-1px"></i> '+
+        'All exports are generated from your inputs in this browser. No data is sent to servers. '+
+        'Files contain a disclaimer that all figures are self-reported estimates.'+
+      '</div>';
+
+    p5.innerHTML=freeSection+premiumSection;
   }
 
   // Render tool-specific extras
