@@ -56,6 +56,7 @@ body::before{
 .hero-brand-lockup{
   display:flex;flex-direction:column;align-items:center;gap:16px;
   margin-bottom:2.5rem;
+  padding-top:2rem;
 }
 .hero-icon{
   width:96px;height:96px;
@@ -66,8 +67,6 @@ body::before{
 }
 .hero-wordmark{
   height:44px;width:auto;
-  /* logo has black bg — blend it into the dark page */
-  mix-blend-mode:screen;
   opacity:.95;
 }
 
@@ -85,17 +84,17 @@ nav{
   display:flex;align-items:center;gap:12px;
   text-decoration:none;
 }
-.nav-brand img.wordmark{height:96px;width:auto;display:block}
+.nav-brand img.wordmark{height:64px;width:auto;display:block}
 .nav-lab{
-  font-size:20px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+  font-size:13px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;
   color:var(--text3);border-left:1px solid var(--border2);padding-left:10px;margin-left:2px;
   font-family:'Syne',sans-serif;
 }
 .nav-links{display:flex;align-items:center;gap:1.5rem}
-.nav-links a{font-size:26px;font-weight:500;color:var(--text2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
+.nav-links a{font-size:17px;font-weight:500;color:var(--text2);text-decoration:none;letter-spacing:.01em;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{
-  font-size:26px;font-weight:600;padding:7px 16px;
+  font-size:17px;font-weight:600;padding:7px 16px;
   background:var(--teal);color:#080C14;
   border-radius:6px;text-decoration:none;letter-spacing:.01em;
   transition:background .2s,transform .15s;
