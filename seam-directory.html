@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WFM/ECP Directory | MeshForce · Aric Civic Labs</title>
+<meta name="description" content="The full WFM and ECP platform directory — 120+ curated listings across AI agents, workforce management platforms, capacity planning tools, research sources, professional associations, and training resources.">
+<meta name="keywords" content="WFM platform directory, workforce management tools, AI agents workforce, NICE WFM, Verint, Assembled, injixo, Anaplan, SWPP, ICMI, workforce planning associations">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aricciviclabs.org/meshforce/seam-directory">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--navy-mid:#112240;--navy-light:#1d3461;--slate:#8892b0;--slate-light:#a8b2d8;--amber:#f4a500;--amber-dim:#c47f00;--green:#6ee7b7;--cream:#f0ede6;--white:#e8e6e1;--rule:rgba(244,165,0,0.25);--card-bg:rgba(17,34,64,0.7);--card-border:rgba(168,178,216,0.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 10%,rgba(244,165,0,0.06) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 80% 80%,rgba(29,52,97,0.4) 0%,transparent 60%);pointer-events:none;z-index:0}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--amber);text-decoration:none}
+.nav-logo span{color:var(--slate-light);font-size:0.75rem;font-family:'DM Sans',sans-serif;font-weight:400;margin-left:0.5rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--slate-light);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber)}
+.nav-ecosystem{display:flex;gap:0.5rem;align-items:center}
+.nav-eco-link{color:var(--slate-light);text-decoration:none;font-size:0.8rem;font-weight:500;padding:0.3rem 0.7rem;border:1px solid var(--card-border);border-radius:4px;transition:all 0.2s;white-space:nowrap}
+.nav-eco-link:hover{color:var(--amber);border-color:rgba(244,165,0,0.4)}
+
+/* PAGE HEADER */
+.page-header{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:4rem 2rem 1.5rem}
+.page-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--amber);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem}
+.page-header h1{font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:0.75rem}
+.page-header p{color:var(--slate-light);font-size:1rem;max-width:640px;line-height:1.65}
+
+/* SUBMIT JUMP BANNER — top of page */
+.submit-jump-banner{position:relative;z-index:1;max-width:1200px;margin:0 auto 0.5rem;padding:0 2rem}
+.submit-jump-inner{background:rgba(244,165,0,0.07);border:1px solid rgba(244,165,0,0.2);border-radius:8px;padding:0.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap}
+.submit-jump-text{font-size:0.875rem;color:var(--slate-light)}
+.submit-jump-text strong{color:var(--white)}
+.submit-jump-link{background:var(--amber);color:var(--navy);padding:0.4rem 1.1rem;border-radius:5px;font-size:0.8125rem;font-weight:700;text-decoration:none;transition:all 0.2s;white-space:nowrap}
+.submit-jump-link:hover{background:#ffc030}
+
+/* SECTION NAV */
+.section-nav{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:1rem 2rem 2rem;display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
+.section-nav-label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-right:0.25rem}
+.sec-pill{background:transparent;border:1px solid var(--card-border);color:var(--slate-light);padding:0.35rem 0.9rem;border-radius:20px;font-size:0.8rem;cursor:pointer;text-decoration:none;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.sec-pill:hover{border-color:rgba(244,165,0,0.4);color:var(--amber)}
+.sec-pill.submit-pill{border-color:rgba(244,165,0,0.35);color:var(--amber)}
+.sec-pill.submit-pill:hover{background:rgba(244,165,0,0.1)}
+
+
+
+/* DIRECTORY SECTIONS */
+.dir-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:2rem 2rem}
+.dir-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--rule)}
+.dir-head h2{font-family:'DM Serif Display',serif;font-size:1.5rem}
+.dir-head .count{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--slate)}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.dir-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:0.4rem;transition:border-color 0.2s}
+.dir-card:hover{border-color:rgba(244,165,0,0.3)}
+.dir-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem}
+.dir-card-name{font-weight:600;font-size:0.9375rem;color:var(--white)}
+.badge{font-size:0.65rem;font-family:'JetBrains Mono',monospace;padding:0.2rem 0.5rem;border-radius:3px;flex-shrink:0;font-weight:500;letter-spacing:0.04em}
+.badge-free{background:rgba(52,211,153,0.15);color:#6ee7b7;border:1px solid rgba(52,211,153,0.25)}
+.badge-freemium{background:rgba(244,165,0,0.12);color:var(--amber);border:1px solid rgba(244,165,0,0.25)}
+.badge-paid{background:rgba(168,178,216,0.1);color:var(--slate-light);border:1px solid rgba(168,178,216,0.2)}
+.badge-free-access{background:rgba(52,211,153,0.1);color:#6ee7b7;border:1px solid rgba(52,211,153,0.2)}
+.dir-card-sub{font-size:0.75rem;color:var(--amber);font-family:'JetBrains Mono',monospace}
+.dir-card-desc{font-size:0.8125rem;color:var(--slate);line-height:1.55;flex:1}
+.dir-card-link{font-size:0.75rem;color:var(--amber);text-decoration:none;font-family:'JetBrains Mono',monospace;margin-top:0.2rem;opacity:0.8;transition:opacity 0.2s}
+.dir-card-link:hover{opacity:1}
+
+.section-divider{border:none;border-top:1px solid var(--rule);max-width:1200px;margin:0 auto}
+
+/* SUBMIT LISTING SECTION */
+.submit-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:3rem 2rem 2rem}
+.submit-section-header{margin-bottom:1.75rem}
+.submit-section-header h2{font-family:'DM Serif Display',serif;font-size:1.75rem;margin-bottom:0.5rem}
+.submit-section-header p{color:var(--slate-light);font-size:0.9rem;max-width:580px;line-height:1.6}
+.form-wrap{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:2rem;max-width:720px}
+.form-row{margin-bottom:1.25rem}
+.form-row label{display:block;font-size:0.8125rem;font-weight:600;color:var(--slate-light);margin-bottom:0.4rem;letter-spacing:0.01em}
+.form-row input,.form-row select,.form-row textarea{width:100%;background:rgba(10,22,40,0.8);border:1px solid rgba(168,178,216,0.18);border-radius:6px;padding:0.65rem 0.9rem;color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:border-color 0.2s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:rgba(244,165,0,0.45);box-shadow:0 0 0 3px rgba(244,165,0,0.06)}
+.form-row input::placeholder,.form-row textarea::placeholder{color:var(--slate)}
+.form-row select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892b0' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.9rem center}
+.form-row select option{background:#112240;color:var(--white)}
+.form-row textarea{min-height:90px;resize:vertical;line-height:1.55}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.form-submit{background:var(--amber);color:var(--navy);border:none;padding:0.75rem 2rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9375rem;cursor:pointer;transition:all 0.2s;margin-top:0.5rem}
+.form-submit:hover{background:#ffc030;transform:translateY(-1px)}
+.form-note{font-size:0.75rem;color:var(--slate);margin-top:1rem;line-height:1.55}
+
+footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5rem 2rem;margin-top:2rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--amber);text-decoration:none}
+.footer-copy{font-size:0.8rem;color:var(--slate);margin-top:0.4rem}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:var(--slate);text-decoration:none;font-size:0.8125rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+
+@media(max-width:768px){
+  .nav-ecosystem{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .submit-jump-inner{flex-direction:column;align-items:flex-start}
+
+}
+
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand-mark{display:flex;align-items:center}
+.nav-brand-sep{font-size:0.7rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);border-left:1px solid rgba(168,178,216,0.2);padding-left:10px;margin-left:4px;font-family:'DM Sans',sans-serif}
+.page-hero-lockup{display:flex;align-items:center;gap:16px;margin-bottom:1.5rem}
+.page-hero-icon-glow{filter:drop-shadow(0 0 20px rgba(34,212,200,0.3)) drop-shadow(0 0 40px rgba(155,139,248,0.15))}
+.footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:0.4rem}
+
+/* ── Privacy notice bar ── */
+#rcp-notice{position:sticky;top:0;z-index:9999;background:#0d1c36;border-bottom:1px solid rgba(244,165,0,0.2);padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--slate);line-height:1.4}
+#rcp-notice a{color:var(--amber);text-decoration:none}
+#rcp-notice a:hover{text-decoration:underline}
+#rcp-notice-close{background:none;border:none;color:rgba(244,165,0,0.3);cursor:pointer;font-size:16px;line-height:1;padding:0 0 0 .5rem;flex-shrink:0}
+#rcp-notice-close:hover{color:var(--slate-light)}
+/* ── /Privacy notice bar ── */
+
+/* ── Contact modal ── */
+#contact-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9000;align-items:center;justify-content:center}
+#contact-modal-overlay.open{display:flex}
+#contact-modal{background:#112240;border:1px solid rgba(244,165,0,.3);border-radius:8px;padding:2rem;width:100%;max-width:420px;margin:1rem;position:relative}
+#contact-modal h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:#e8e6e1;margin-bottom:1.25rem}
+.cm-row{margin-bottom:1rem}
+.cm-row label{display:block;font-size:.8rem;color:#a8b2d8;margin-bottom:.35rem}
+.cm-row input,.cm-row textarea{width:100%;background:rgba(10,22,40,.8);border:1px solid rgba(168,178,216,.15);border-radius:4px;padding:.6rem .85rem;color:#e8e6e1;font-family:'DM Sans',sans-serif;font-size:.875rem;transition:border-color .2s}
+.cm-row input:focus,.cm-row textarea:focus{outline:none;border-color:rgba(244,165,0,.5)}
+.cm-row textarea{resize:vertical;min-height:90px}
+#cm-submit{background:#f4a500;color:#0a1628;border:none;padding:.65rem 1.75rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s;width:100%}
+#cm-submit:hover{background:#c47f00}
+#cm-submit:disabled{opacity:.6;cursor:not-allowed}
+#cm-status{margin-top:.75rem;font-size:.8125rem;text-align:center;min-height:1.2em}
+#cm-close{position:absolute;top:.75rem;right:.9rem;background:none;border:none;color:#8892b0;font-size:1.25rem;cursor:pointer;line-height:1}
+#cm-close:hover{color:#e8e6e1}
+/* ── /Contact modal ── */
+</style>
+</head>
+<body>
+<!-- ── Privacy notice bar ── -->
+<div id="rcp-notice">
+  <span>By using this tool you agree to our <a href="legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are self-reported estimates only &mdash; not professional, legal, or financial advice.</span>
+  <button id="rcp-notice-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('rcpNotice','1')}catch(e){}">&#x2715;</button>
+</div>
+<script>try{if(sessionStorage.getItem('rcpNotice')==='1'){var n=document.getElementById('rcp-notice');if(n)n.style.display='none';}}catch(e){}</script>
+<!-- ── /Privacy notice bar ── -->
+
+<nav>
+  <div class="nav-inner">
+    <a href="meshforce-index.html" class="nav-brand">
+      <span class="nav-brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="196" height="38" viewBox="0 0 196 38" role="img" aria-label="MeshForce"><g transform="translate(0,1)"><line x1="0" y1="0" x2="0" y2="34" stroke="#F4A500" stroke-width="1.2"/><line x1="12" y1="0" x2="12" y2="34" stroke="#F4A500" stroke-width="1.2"/><line x1="24" y1="0" x2="24" y2="34" stroke="#9B8BF8" stroke-width="1.2"/><line x1="36" y1="0" x2="36" y2="34" stroke="#22D4C8" stroke-width="1.2"/><line x1="0" y1="0" x2="36" y2="0" stroke="#F4A500" stroke-width="1.2"/><line x1="0" y1="12" x2="36" y2="12" stroke="#F4A500" stroke-width="1.2"/><line x1="0" y1="23" x2="36" y2="23" stroke="#9B8BF8" stroke-width="1.2"/><line x1="0" y1="34" x2="36" y2="34" stroke="#22D4C8" stroke-width="1.2"/><circle cx="0" cy="0" r="2.5" fill="#F4A500"/><circle cx="12" cy="0" r="2.5" fill="#F4A500"/><circle cx="24" cy="0" r="2" fill="#C8B4FA"/><circle cx="36" cy="0" r="2" fill="#22D4C8"/><circle cx="0" cy="12" r="2.5" fill="#F4A500"/><circle cx="12" cy="12" r="2.5" fill="#F4A500"/><circle cx="24" cy="12" r="2" fill="#C8B4FA"/><circle cx="36" cy="12" r="2" fill="#22D4C8"/><circle cx="0" cy="23" r="2" fill="#C8B4FA"/><circle cx="12" cy="23" r="2" fill="#C8B4FA"/><circle cx="24" cy="23" r="3.5" fill="#ffffff" opacity="0.92"/><circle cx="36" cy="23" r="2" fill="#22D4C8"/><circle cx="0" cy="34" r="2" fill="#22D4C8"/><circle cx="12" cy="34" r="2" fill="#22D4C8"/><circle cx="24" cy="34" r="2" fill="#22D4C8"/><circle cx="36" cy="34" r="2" fill="#22D4C8"/></g><text x="46" y="27" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="25" fill="#e8e6e1">MeshForce</text></svg></span>
+      <span class="nav-brand-sep">by Aric Civic Labs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="seam-directory.html" class="active">WFM/ECP Directory</a></li>
+    </ul>
+    <div class="nav-ecosystem">
+      <a href="index.html" class="nav-eco-link">MeshForce</a>
+      <a href="../index.html" class="nav-eco-link">receipts.</a>
+      <a href="../transitions_index.html" class="nav-eco-link">Transitions</a>
+      <a href="../aricciviclabs.html" class="nav-eco-link">Aric Civic Labs</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-hero-lockup" style="margin-bottom:1.5rem">
+    <span class="page-hero-icon-glow"><svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 72 72" role="img" aria-label="MeshForce icon"><rect width="72" height="72" rx="15" fill="#0a1628"/><line x1="12" y1="12" x2="12" y2="60" stroke="#F4A500" stroke-width="1.4"/><line x1="26" y1="12" x2="26" y2="60" stroke="#F4A500" stroke-width="1.4"/><line x1="40" y1="12" x2="40" y2="60" stroke="#9B8BF8" stroke-width="1.4"/><line x1="54" y1="12" x2="54" y2="60" stroke="#22D4C8" stroke-width="1.4"/><line x1="12" y1="12" x2="60" y2="12" stroke="#F4A500" stroke-width="1.4"/><line x1="12" y1="26" x2="60" y2="26" stroke="#F4A500" stroke-width="1.4"/><line x1="12" y1="40" x2="60" y2="40" stroke="#9B8BF8" stroke-width="1.4"/><line x1="12" y1="54" x2="60" y2="54" stroke="#22D4C8" stroke-width="1.4"/><circle cx="12" cy="12" r="3" fill="#F4A500"/><circle cx="26" cy="12" r="3" fill="#F4A500"/><circle cx="40" cy="12" r="2.5" fill="#C8B4FA"/><circle cx="54" cy="12" r="2.5" fill="#22D4C8"/><circle cx="12" cy="26" r="3" fill="#F4A500"/><circle cx="26" cy="26" r="3" fill="#F4A500"/><circle cx="40" cy="26" r="2.5" fill="#C8B4FA"/><circle cx="54" cy="26" r="2.5" fill="#22D4C8"/><circle cx="12" cy="40" r="2.5" fill="#C8B4FA"/><circle cx="26" cy="40" r="2.5" fill="#C8B4FA"/><circle cx="40" cy="40" r="4.5" fill="#ffffff" opacity="0.93"/><circle cx="54" cy="40" r="2.5" fill="#22D4C8"/><circle cx="12" cy="54" r="2.5" fill="#22D4C8"/><circle cx="26" cy="54" r="2.5" fill="#22D4C8"/><circle cx="40" cy="54" r="2.5" fill="#22D4C8"/><circle cx="54" cy="54" r="2.5" fill="#22D4C8"/></svg></span>
+  </div>
+  <div class="page-eyebrow">WFM & ECP Platform Directory</div>
+  <h1>WFM/ECP Directory</h1>
+  <p>120+ curated listings across AI agents, workforce management platforms, enterprise capacity planning tools, research publications, professional associations, and training resources.</p>
+</div>
+
+<!-- Submit a Listing — jump link at top -->
+<div class="submit-jump-banner">
+  <div class="submit-jump-inner">
+    <span class="submit-jump-text"><strong>Vendor or platform team?</strong> Submit your product for inclusion in the directory.</span>
+    <a href="#submit-listing" class="submit-jump-link">Submit a Listing ↓</a>
+  </div>
+</div>
+
+<!-- Section navigation -->
+<div class="section-nav">
+  <span class="section-nav-label">Jump to:</span>
+  <a href="#ai-agents" class="sec-pill">AI Agents</a>
+  <a href="#wfm-platforms" class="sec-pill">WFM Platforms</a>
+  <a href="#capacity-planning" class="sec-pill">Capacity Planning</a>
+  <a href="#research" class="sec-pill">Research</a>
+  <a href="#associations" class="sec-pill">Associations</a>
+  <a href="#training" class="sec-pill">Training</a>
+  <a href="#submit-listing" class="sec-pill submit-pill">Submit a Listing ↓</a>
+</div>
+
+
+<!-- ===== AI AGENTS ===== -->
+<section class="dir-section" id="ai-agents">
+  <div class="dir-head"><h2>AI Agents for Workforce Operations</h2><span class="count">12 platforms</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Assembled AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">WFM · AI-Native Platform</span>
+      <p class="dir-card-desc">AI-native WFM platform with automated forecasting, scheduling, and intraday adjustment agents. Connects to CX stacks including Zendesk, Salesforce, and Intercom.</p>
+      <a href="https://www.assembled.com" target="_blank" rel="noopener" class="dir-card-link">assembled.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Microsoft Copilot for HR</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Microsoft 365</span>
+      <p class="dir-card-desc">AI agents embedded in Microsoft 365 for workforce insights, scheduling assistance, and HR task automation. Integrates with Teams, SharePoint, and Dynamics HR.</p>
+      <a href="https://www.microsoft.com/en-us/microsoft-365/copilot" target="_blank" rel="noopener" class="dir-card-link">microsoft.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Workday AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · HCM Platform</span>
+      <p class="dir-card-desc">Embedded AI across Workday HCM for workforce planning, skills mapping, and capacity recommendations. Strong for enterprise HR-WFM integration.</p>
+      <a href="https://www.workday.com/en-us/artificial-intelligence.html" target="_blank" rel="noopener" class="dir-card-link">workday.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">ServiceNow Workforce AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · ITSM/WFM</span>
+      <p class="dir-card-desc">AI-powered workforce and field service management with intelligent scheduling, capacity optimization, and predictive resource allocation agents.</p>
+      <a href="https://www.servicenow.com/solutions/artificial-intelligence.html" target="_blank" rel="noopener" class="dir-card-link">servicenow.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Verint Intelligent WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Contact Center</span>
+      <p class="dir-card-desc">AI bots embedded in Verint's WFM suite for automated scheduling, intraday management, and agent performance coaching. Deep contact center focus.</p>
+      <a href="https://www.verint.com/workforce-management/" target="_blank" rel="noopener" class="dir-card-link">verint.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">NICE CXone AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Contact Center</span>
+      <p class="dir-card-desc">NICE's AI-first CXone platform with Enlighten AI powering forecasting, schedule adherence, and virtual agent workforce management.</p>
+      <a href="https://www.nice.com/cxone" target="_blank" rel="noopener" class="dir-card-link">nice.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Quinyx AI Workforce</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Scheduling</span>
+      <p class="dir-card-desc">Predictive AI for frontline workforce scheduling, absence prediction, and demand-based staffing automation. Strong in retail and healthcare verticals.</p>
+      <a href="https://www.quinyx.com/platform/ai-workforce-management" target="_blank" rel="noopener" class="dir-card-link">quinyx.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Eightfold AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Talent Intelligence</span>
+      <p class="dir-card-desc">AI talent intelligence platform for workforce capacity and skills planning. Maps workforce skills to business capacity needs with predictive gap analysis.</p>
+      <a href="https://eightfold.ai" target="_blank" rel="noopener" class="dir-card-link">eightfold.ai ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Leena AI WorkLM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · HR Automation</span>
+      <p class="dir-card-desc">Large language model–powered HR agent handling workforce queries, scheduling requests, policy questions, and HR task automation across enterprise systems.</p>
+      <a href="https://leena.ai" target="_blank" rel="noopener" class="dir-card-link">leena.ai ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Phenom Workforce AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · Talent Operations</span>
+      <p class="dir-card-desc">AI platform connecting talent acquisition, internal mobility, and workforce planning. Identifies capacity gaps and surfaces internal candidates for open roles.</p>
+      <a href="https://www.phenom.com" target="_blank" rel="noopener" class="dir-card-link">phenom.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Observe.AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · QA / Coaching</span>
+      <p class="dir-card-desc">Conversation intelligence and AI coaching for contact center agents. Automates QA, real-time coaching prompts, and performance-linked capacity insights.</p>
+      <a href="https://www.observe.ai" target="_blank" rel="noopener" class="dir-card-link">observe.ai ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Genesys Cloud AI</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI Agent · CCaaS + WFM</span>
+      <p class="dir-card-desc">AI-powered CCaaS with integrated WFM, predictive engagement, virtual agents, and workforce performance analytics in a unified cloud platform.</p>
+      <a href="https://www.genesys.com/genesys-cloud/workforce-management" target="_blank" rel="noopener" class="dir-card-link">genesys.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== WFM PLATFORMS ===== -->
+<section class="dir-section" id="wfm-platforms">
+  <div class="dir-head"><h2>Workforce Management Platforms</h2><span class="count">14 platforms</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">NICE Workforce Management</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Enterprise WFM</span>
+      <p class="dir-card-desc">Industry-leading enterprise WFM for contact centers. Real-time adherence, AI forecasting, and multi-skill scheduling. Global market leader by installed base.</p>
+      <a href="https://www.nice.com/workforce-management" target="_blank" rel="noopener" class="dir-card-link">nice.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Verint Workforce Management</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Enterprise WFM</span>
+      <p class="dir-card-desc">Verint WFM with AI-powered forecasting, automated scheduling, and real-time adherence. Tight integration with Verint's QM and analytics suite.</p>
+      <a href="https://www.verint.com/workforce-management/" target="_blank" rel="noopener" class="dir-card-link">verint.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Aspect Workforce</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Contact Center WFM</span>
+      <p class="dir-card-desc">Established WFM platform with deep contact center functionality. Strong for omni-channel workforce management and complex multi-site scheduling.</p>
+      <a href="https://www.aspect.com/products/workforce-management" target="_blank" rel="noopener" class="dir-card-link">aspect.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Calabrio ONE</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">WFM · Analytics Suite</span>
+      <p class="dir-card-desc">WFO suite combining WFM, call recording, QM, and analytics. Strong AI-assisted coaching and performance management alongside scheduling tools.</p>
+      <a href="https://www.calabrio.com" target="_blank" rel="noopener" class="dir-card-link">calabrio.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">injixo</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Cloud WFM</span>
+      <p class="dir-card-desc">Modern cloud WFM with AI-driven schedule optimization. Excellent UI/UX, strong Erlang integration, and proven at mid-market to enterprise scale.</p>
+      <a href="https://www.injixo.com" target="_blank" rel="noopener" class="dir-card-link">injixo.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Assembled</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">AI-Native WFM</span>
+      <p class="dir-card-desc">Modern WFM built for CX teams. ML-powered forecasting connected to Zendesk, Salesforce, Intercom, and Gorgias. Growing fast in digital-first CX orgs.</p>
+      <a href="https://www.assembled.com" target="_blank" rel="noopener" class="dir-card-link">assembled.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Alvaria WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Enterprise WFM</span>
+      <p class="dir-card-desc">Spun out from Avaya's WFO portfolio. Enterprise-grade WFM with strong back-office and blended workforce capabilities. Long track record in large contact centers.</p>
+      <a href="https://www.alvaria.com/workforce-management" target="_blank" rel="noopener" class="dir-card-link">alvaria.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Five9 WFO</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">CCaaS + WFM</span>
+      <p class="dir-card-desc">Cloud contact center with integrated WFM module. Good option for organizations already on Five9 CCaaS wanting unified forecasting and scheduling.</p>
+      <a href="https://www.five9.com/solutions/workforce-optimization" target="_blank" rel="noopener" class="dir-card-link">five9.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Talkdesk WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">CCaaS + WFM</span>
+      <p class="dir-card-desc">AI-powered WFM embedded in Talkdesk's cloud contact center. Automatic schedule generation, intraday real-time management, and mobile self-service for agents.</p>
+      <a href="https://www.talkdesk.com/products/workforce-management/" target="_blank" rel="noopener" class="dir-card-link">talkdesk.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">8x8 WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">UCaaS + WFM</span>
+      <p class="dir-card-desc">Workforce management within the 8x8 XCaaS platform. Suitable for SMB to mid-market contact centers wanting integrated UC and WFM in a single vendor.</p>
+      <a href="https://www.8x8.com/workforce-management" target="_blank" rel="noopener" class="dir-card-link">8x8.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">SAP SuccessFactors WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">HCM + WFM</span>
+      <p class="dir-card-desc">Workforce management within SAP's HCM suite. Strong integration with SAP ERP for labor cost management, compliance, and time & attendance tracking.</p>
+      <a href="https://www.sap.com/products/hcm/workforce-management.html" target="_blank" rel="noopener" class="dir-card-link">sap.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">UKG Pro WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">HCM + WFM</span>
+      <p class="dir-card-desc">Comprehensive HCM and WFM platform (formerly Kronos). Industry-leading for healthcare, retail, and manufacturing workforce scheduling and compliance.</p>
+      <a href="https://www.ukg.com/solutions/workforce-management" target="_blank" rel="noopener" class="dir-card-link">ukg.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">ADP Workforce Now</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">HCM + WFM</span>
+      <p class="dir-card-desc">ADP's integrated HCM platform with workforce scheduling, time tracking, and labor analytics. Strong mid-market positioning with comprehensive HR integration.</p>
+      <a href="https://www.adp.com/what-we-offer/products/adp-workforce-now.aspx" target="_blank" rel="noopener" class="dir-card-link">adp.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Open Source WFM Tools</span><span class="badge badge-free">FREE / OSS</span></div>
+      <span class="dir-card-sub">Open Source WFM</span>
+      <p class="dir-card-desc">Community-built open source workforce management tools and calculators. Good for practitioners building custom WFM solutions or extending existing platforms.</p>
+      <a href="https://github.com/topics/workforce-management" target="_blank" rel="noopener" class="dir-card-link">github.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== CAPACITY PLANNING ===== -->
+<section class="dir-section" id="capacity-planning">
+  <div class="dir-head"><h2>Enterprise Capacity Planning Platforms</h2><span class="count">10 platforms</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Anaplan</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Enterprise Scenario Modeling</span>
+      <p class="dir-card-desc">Gold standard for enterprise workforce planning. Connected planning across finance, HR, and operations with AI-assisted scenario modeling and multi-year capacity plans.</p>
+      <a href="https://www.anaplan.com/solutions/workforce-planning/" target="_blank" rel="noopener" class="dir-card-link">anaplan.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Planful</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Continuous Planning</span>
+      <p class="dir-card-desc">Continuous planning platform connecting workforce headcount to financial plans. Strong for mid-market finance and HR teams running integrated capacity models.</p>
+      <a href="https://planful.com/solutions/workforce-planning/" target="_blank" rel="noopener" class="dir-card-link">planful.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Workday Adaptive Planning</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · HCM Integration</span>
+      <p class="dir-card-desc">Workforce planning module within Workday's FP&A platform. Natively connected to Workday HCM for real-time headcount and capacity data integration.</p>
+      <a href="https://www.workday.com/en-us/products/adaptive-planning/workforce-planning.html" target="_blank" rel="noopener" class="dir-card-link">workday.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Pigment</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Modern FP&A</span>
+      <p class="dir-card-desc">Next-generation business planning platform with strong workforce capacity modeling. Modern UI, fast model building, and scenario comparison used by high-growth companies.</p>
+      <a href="https://www.pigment.com" target="_blank" rel="noopener" class="dir-card-link">pigment.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">OneStream</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Unified Platform</span>
+      <p class="dir-card-desc">Unified CPM platform with workforce planning and financial consolidation. Strong for enterprises needing one platform for planning, reporting, and capacity management.</p>
+      <a href="https://www.onestream.com" target="_blank" rel="noopener" class="dir-card-link">onestream.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Mosaic</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Strategic Finance</span>
+      <p class="dir-card-desc">Strategic finance platform with headcount planning and capacity modeling built for high-growth companies. Strong real-time HRIS sync and scenario planning.</p>
+      <a href="https://www.mosaic.tech" target="_blank" rel="noopener" class="dir-card-link">mosaic.tech ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Vena Solutions</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Excel-Based Planning</span>
+      <p class="dir-card-desc">Excel-native workforce planning with cloud collaboration. Popular with finance teams who prefer spreadsheet modeling with enterprise-grade version control.</p>
+      <a href="https://www.venasolutions.com" target="_blank" rel="noopener" class="dir-card-link">venasolutions.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Oracle Workforce Management</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · ERP Integration</span>
+      <p class="dir-card-desc">Enterprise workforce planning within Oracle Cloud HCM. Deep ERP integration for organizations running Oracle Fusion for finance, HR, and supply chain capacity modeling.</p>
+      <a href="https://www.oracle.com/human-capital-management/workforce-management/" target="_blank" rel="noopener" class="dir-card-link">oracle.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">IBM Planning Analytics</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · AI-Driven Planning</span>
+      <p class="dir-card-desc">AI-powered planning platform (TM1-based) for workforce capacity. Strong at complex multi-dimensional modeling for large enterprise workforce scenarios.</p>
+      <a href="https://www.ibm.com/planning-analytics" target="_blank" rel="noopener" class="dir-card-link">ibm.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Cube Software</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">ECP · Mid-Market FP&A</span>
+      <p class="dir-card-desc">FP&A platform for mid-market workforce planning. Embeds into Excel and Google Sheets for headcount modeling with centralized data management and version control.</p>
+      <a href="https://www.cubesoftware.com" target="_blank" rel="noopener" class="dir-card-link">cubesoftware.com ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== RESEARCH ===== -->
+<section class="dir-section" id="research">
+  <div class="dir-head"><h2>Research, Publications & Industry Media</h2><span class="count">12 sources</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Call Centre Helper</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Industry Publication</span>
+      <p class="dir-card-desc">The largest independent contact center resource in the UK. Practical articles, downloadable templates, calculators, and a highly active community forum.</p>
+      <a href="https://www.callcentrehelper.com" target="_blank" rel="noopener" class="dir-card-link">callcentrehelper.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Gartner HR Research</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Analyst Research</span>
+      <p class="dir-card-desc">Gartner's HR and workforce management research, Magic Quadrants for WFM vendors, and strategic planning frameworks. Subscription required for full access.</p>
+      <a href="https://www.gartner.com/en/human-resources/topics/workforce-management" target="_blank" rel="noopener" class="dir-card-link">gartner.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Forrester Workforce Research</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Analyst Research</span>
+      <p class="dir-card-desc">Forrester Wave reports for WFM and CCaaS vendors, future of work research, and AI workforce transformation frameworks. Paid reports and subscription tiers.</p>
+      <a href="https://www.forrester.com/bold" target="_blank" rel="noopener" class="dir-card-link">forrester.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">McKinsey Future of Work</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Strategic Research</span>
+      <p class="dir-card-desc">McKinsey's research practice on AI, automation, and the future of work. Covers workforce transition, AI skill gaps, and capacity planning for the AI era.</p>
+      <a href="https://www.mckinsey.com/featured-insights/future-of-work" target="_blank" rel="noopener" class="dir-card-link">mckinsey.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">MIT Sloan Work of the Future</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Academic Research</span>
+      <p class="dir-card-desc">MIT's task force research on technology and the future of work. Peer-reviewed studies on AI impact on workforce capacity, skills, and organizational design.</p>
+      <a href="https://workofthefuture.mit.edu" target="_blank" rel="noopener" class="dir-card-link">workofthefuture.mit.edu ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Contact Center Pipeline</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Industry Publication</span>
+      <p class="dir-card-desc">Monthly magazine and digital publication covering WFM trends, technology, and management best practices for contact center professionals.</p>
+      <a href="https://www.contactcenterpipeline.com" target="_blank" rel="noopener" class="dir-card-link">contactcenterpipeline.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Customer Think</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Industry Community</span>
+      <p class="dir-card-desc">Global community for CX and contact center professionals. Practitioner articles, WFM case studies, and AI workforce discussions with large active community.</p>
+      <a href="https://customerthink.com" target="_blank" rel="noopener" class="dir-card-link">customerthink.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">No Jitter</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Technology Media</span>
+      <p class="dir-card-desc">Enterprise communications and contact center technology media. Covers CCaaS, WFM platform developments, and AI workforce automation news.</p>
+      <a href="https://www.nojitter.com" target="_blank" rel="noopener" class="dir-card-link">nojitter.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">WorkforceAnalyst.com</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Practitioner Resource Hub</span>
+      <p class="dir-card-desc">Independent practitioner-built resource hub with calculators, articles, and downloadable tools. The only purely independent WFM resource site with practitioner-written content.</p>
+      <a href="https://www.workforceanalyst.com" target="_blank" rel="noopener" class="dir-card-link">workforceanalyst.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Deloitte Future of Work</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Consulting Research</span>
+      <p class="dir-card-desc">Deloitte Insights on workforce trends, AI and automation impact, and enterprise capacity planning. Global Workforce Survey published annually.</p>
+      <a href="https://www2.deloitte.com/us/en/insights/focus/future-of-work.html" target="_blank" rel="noopener" class="dir-card-link">deloitte.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Harvard Business Review Workforce</span><span class="badge badge-freemium">FREEMIUM</span></div>
+      <span class="dir-card-sub">Management Research</span>
+      <p class="dir-card-desc">HBR articles on workforce management, AI leadership, and organizational capacity. Some free articles; full archive requires subscription.</p>
+      <a href="https://hbr.org/topic/subject/workforce-management" target="_blank" rel="noopener" class="dir-card-link">hbr.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">WFM World</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Community & News</span>
+      <p class="dir-card-desc">Online community for WFM professionals with news, discussion forums, job boards, and vendor content. Growing repository of practitioner case studies.</p>
+      <a href="https://www.wfmworld.org" target="_blank" rel="noopener" class="dir-card-link">wfmworld.org ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== ASSOCIATIONS ===== -->
+<section class="dir-section" id="associations">
+  <div class="dir-head"><h2>Professional Associations</h2><span class="count">8 organizations</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">SWPP — Society of Workforce Planning Professionals</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">WFM Association · USA</span>
+      <p class="dir-card-desc">The primary professional association specifically for workforce planning professionals. Annual conference, certification programs, best practice research, and active peer community.</p>
+      <a href="https://www.swpp.org" target="_blank" rel="noopener" class="dir-card-link">swpp.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">ICMI — International Customer Management Institute</span><span class="badge badge-freemium">FREEMIUM</span></div>
+      <span class="dir-card-sub">Contact Center Association</span>
+      <p class="dir-card-desc">Leading global association for contact center management. WFM-specific training, webinars, CCMP certification, and annual contact center conference (ICMI Expo).</p>
+      <a href="https://www.icmi.com" target="_blank" rel="noopener" class="dir-card-link">icmi.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">HDI — Help Desk Institute</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">IT Service Desk Association</span>
+      <p class="dir-card-desc">Professional association for IT service desk and support center professionals. WFM content focused on IT service desk capacity planning and scheduling best practices.</p>
+      <a href="https://www.thinkhdi.com" target="_blank" rel="noopener" class="dir-card-link">thinkhdi.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">SHRM — Society for Human Resource Management</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">HR Association · Global</span>
+      <p class="dir-card-desc">World's largest HR professional association. Workforce planning, AI-in-HR content, capacity modeling resources, and SHRM-CP/SCP certification programs.</p>
+      <a href="https://www.shrm.org" target="_blank" rel="noopener" class="dir-card-link">shrm.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">CIPD — Chartered Institute of Personnel and Development</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">HR Association · UK/Global</span>
+      <p class="dir-card-desc">UK's leading HR professional body with global reach. Strong on workforce strategy, AI & work research, and people analytics professional development.</p>
+      <a href="https://www.cipd.org" target="_blank" rel="noopener" class="dir-card-link">cipd.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">CCA Global — Contact Centre Association</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Contact Center Association · UK</span>
+      <p class="dir-card-desc">UK's primary contact center industry association. Best practice standards, benchmarking, WFM training, and the CCA Global Excellence Awards.</p>
+      <a href="https://www.cca-global.com" target="_blank" rel="noopener" class="dir-card-link">cca-global.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">AIF — Artificial Intelligence Federation for Workforce</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">AI Workforce Emerging Body</span>
+      <p class="dir-card-desc">Emerging body focused on AI integration standards for workforce management. Research publications on responsible AI in workforce operations and agent deployment.</p>
+      <a href="https://aifederation.org" target="_blank" rel="noopener" class="dir-card-link">aifederation.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">WFM Global Network</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Practitioner Community</span>
+      <p class="dir-card-desc">LinkedIn-based global community of WFM practitioners. Active discussions on AI integration, scheduling techniques, and cross-industry best practice sharing.</p>
+      <a href="https://www.linkedin.com/groups/workforce-management" target="_blank" rel="noopener" class="dir-card-link">linkedin.com/groups ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== TRAINING ===== -->
+<section class="dir-section" id="training">
+  <div class="dir-head"><h2>Training, Certification & Learning Resources</h2><span class="count">10 resources</span></div>
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">SWPP CWPP Certification</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">WFM Certification</span>
+      <p class="dir-card-desc">Certified Workforce Planning Professional (CWPP) — the industry-recognized credential for WFM practitioners. Covers forecasting, scheduling, real-time management, and performance management.</p>
+      <a href="https://www.swpp.org/certification" target="_blank" rel="noopener" class="dir-card-link">swpp.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">ICMI CCMP Certification</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Contact Center Certification</span>
+      <p class="dir-card-desc">Certified Contact Center Manager (CCMP) with WFM specialization modules. Vendor-neutral, globally recognized certification for contact center management professionals.</p>
+      <a href="https://www.icmi.com/certification" target="_blank" rel="noopener" class="dir-card-link">icmi.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Coursera Workforce Planning</span><span class="badge badge-freemium">FREEMIUM</span></div>
+      <span class="dir-card-sub">Online Learning</span>
+      <p class="dir-card-desc">University-backed courses on strategic workforce planning, people analytics, and AI in HR from institutions including Michigan, Wharton, and INSEAD.</p>
+      <a href="https://www.coursera.org/search?query=workforce+planning" target="_blank" rel="noopener" class="dir-card-link">coursera.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">LinkedIn Learning WFM</span><span class="badge badge-paid">PAID</span></div>
+      <span class="dir-card-sub">Online Learning</span>
+      <p class="dir-card-desc">Curated learning paths for workforce planning, AI tools for HR, and capacity management. Included with LinkedIn Premium Business and Learning licenses.</p>
+      <a href="https://www.linkedin.com/learning/topics/workforce-management" target="_blank" rel="noopener" class="dir-card-link">linkedin.com/learning ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Call Centre Helper Academy</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Free Training</span>
+      <p class="dir-card-desc">Free webinars, masterclasses, and on-demand training covering Erlang basics through advanced AI scheduling techniques. Practitioner-taught content.</p>
+      <a href="https://www.callcentrehelper.com/events/" target="_blank" rel="noopener" class="dir-card-link">callcentrehelper.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">NICE CXone University</span><span class="badge badge-freemium">FREEMIUM</span></div>
+      <span class="dir-card-sub">Vendor Training</span>
+      <p class="dir-card-desc">NICE's training platform for WFM practitioners. Covers WFM product certification and broader contact center management best practices. Free tier available.</p>
+      <a href="https://university.nice.com" target="_blank" rel="noopener" class="dir-card-link">university.nice.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">injixo Academy</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Free WFM Education</span>
+      <p class="dir-card-desc">Comprehensive free WFM education hub from injixo. Covers Erlang, forecasting methods, scheduling best practices, and AI in WFM. No product purchase required.</p>
+      <a href="https://www.injixo.com/academy/" target="_blank" rel="noopener" class="dir-card-link">injixo.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Workforce Institute (UKG)</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">Research & Education</span>
+      <p class="dir-card-desc">UKG's research think tank publishing annual workforce management studies, AI readiness surveys, and best practice guides. Free access to all publications.</p>
+      <a href="https://workforceinstitute.org" target="_blank" rel="noopener" class="dir-card-link">workforceinstitute.org ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">People Analytics World</span><span class="badge badge-freemium">FREEMIUM</span></div>
+      <span class="dir-card-sub">Conference & Learning</span>
+      <p class="dir-card-desc">Annual conference and year-round content hub for people analytics and workforce planning professionals. Covers AI-driven workforce insights and capacity modeling.</p>
+      <a href="https://www.peopleanalyticsworld.com" target="_blank" rel="noopener" class="dir-card-link">peopleanalyticsworld.com ↗</a>
+    </div>
+    <div class="dir-card">
+      <div class="dir-card-top"><span class="dir-card-name">Google AI for Workforce</span><span class="badge badge-free-access">FREE</span></div>
+      <span class="dir-card-sub">AI Education</span>
+      <p class="dir-card-desc">Google's free AI literacy and application resources for workforce practitioners. Covers AI fundamentals, ML applications in workforce planning, and responsible AI deployment.</p>
+      <a href="https://grow.google/intl/en_us/guide-to-ai/" target="_blank" rel="noopener" class="dir-card-link">grow.google ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== SUBMIT A LISTING ===== -->
+<section class="submit-section" id="submit-listing">
+  <div class="submit-section-header">
+    <h2>Submit a Listing</h2>
+    <p>Vendors and platform teams: submit your product for review and inclusion in the directory. Free listings for open-source and free tools; sponsored placements available for commercial products.</p>
+  </div>
+  <div class="form-wrap">
+    <div class="form-grid">
+      <div class="form-row">
+        <label>Company / Product Name *</label>
+        <input type="text" id="sub-name" placeholder="e.g. Acme WFM Suite">
+      </div>
+      <div class="form-row">
+        <label>Website URL *</label>
+        <input type="url" id="sub-url" placeholder="https://yourproduct.com">
+      </div>
+    </div>
+    <div class="form-grid">
+      <div class="form-row">
+        <label>Primary Category *</label>
+        <select id="sub-category">
+          <option value="">Select a category…</option>
+          <option>WFM Platform</option>
+          <option>Enterprise Capacity Planning</option>
+          <option>AI Agent / Automation</option>
+          <option>Erlang / Staffing Calculator</option>
+          <option>Forecasting & Analytics</option>
+          <option>Scheduling Tool</option>
+          <option>Research / Publication</option>
+          <option>Training / Certification</option>
+          <option>Professional Association</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Pricing Model</label>
+        <select id="sub-pricing">
+          <option value="">Select…</option>
+          <option>Free</option>
+          <option>Freemium</option>
+          <option>Paid / Subscription</option>
+          <option>Enterprise Pricing</option>
+          <option>Open Source</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Brief Description (2–3 sentences) *</label>
+      <textarea id="sub-desc" placeholder="What does your product do, and who is it for?"></textarea>
+    </div>
+    <div class="form-row">
+      <label>Contact Email *</label>
+      <input type="email" id="sub-email" placeholder="you@company.com">
+    </div>
+    <button class="form-submit" onclick="submitListing()">Submit for Review →</button>
+    <p class="form-note">Submissions are reviewed by the MeshForce editorial team within 5 business days. Sponsored placements are clearly labeled. Questions? <a href="mailto:aricroberts@gmail.com" style="color:var(--amber)">aricroberts@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="meshforce-index.html" class="footer-brand"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="38" viewBox="0 0 196 38" role="img" aria-label="MeshForce"><g transform="translate(0,1)"><line x1="0" y1="0" x2="0" y2="34" stroke="#F4A500" stroke-width="1.2"/><line x1="12" y1="0" x2="12" y2="34" stroke="#F4A500" stroke-width="1.2"/><line x1="24" y1="0" x2="24" y2="34" stroke="#9B8BF8" stroke-width="1.2"/><line x1="36" y1="0" x2="36" y2="34" stroke="#22D4C8" stroke-width="1.2"/><line x1="0" y1="0" x2="36" y2="0" stroke="#F4A500" stroke-width="1.2"/><line x1="0" y1="12" x2="36" y2="12" stroke="#F4A500" stroke-width="1.2"/><line x1="0" y1="23" x2="36" y2="23" stroke="#9B8BF8" stroke-width="1.2"/><line x1="0" y1="34" x2="36" y2="34" stroke="#22D4C8" stroke-width="1.2"/><circle cx="0" cy="0" r="2.5" fill="#F4A500"/><circle cx="12" cy="0" r="2.5" fill="#F4A500"/><circle cx="24" cy="0" r="2" fill="#C8B4FA"/><circle cx="36" cy="0" r="2" fill="#22D4C8"/><circle cx="0" cy="12" r="2.5" fill="#F4A500"/><circle cx="12" cy="12" r="2.5" fill="#F4A500"/><circle cx="24" cy="12" r="2" fill="#C8B4FA"/><circle cx="36" cy="12" r="2" fill="#22D4C8"/><circle cx="0" cy="23" r="2" fill="#C8B4FA"/><circle cx="12" cy="23" r="2" fill="#C8B4FA"/><circle cx="24" cy="23" r="3.5" fill="#ffffff" opacity="0.92"/><circle cx="36" cy="23" r="2" fill="#22D4C8"/><circle cx="0" cy="34" r="2" fill="#22D4C8"/><circle cx="12" cy="34" r="2" fill="#22D4C8"/><circle cx="24" cy="34" r="2" fill="#22D4C8"/><circle cx="36" cy="34" r="2" fill="#22D4C8"/></g><text x="46" y="27" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="25" fill="#e8e6e1">MeshForce</text></svg></a>
+      <p class="footer-copy">© 2026 MeshForce · An Aric Civic Labs Project · aricciviclabs.org/meshforce</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="#submit-listing">Submit Listing</a>
+      <a href="#" onclick="openCM();return false;">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitListing() {
+  var name  = (document.getElementById('sub-name').value  || '').trim();
+  var url   = (document.getElementById('sub-url').value   || '').trim();
+  var cat   = (document.getElementById('sub-category').value || '').trim();
+  var desc  = (document.getElementById('sub-desc').value  || '').trim();
+  var email = (document.getElementById('sub-email').value || '').trim();
+  if (!name || !url || !cat || !desc || !email) {
+    alert('Please fill in all required fields before submitting.');
+    return;
+  }
+  var btn = document.querySelector('.form-submit');
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+  fetch('https://formspree.io/f/mbdbkznw', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _replyto: email,
+      _subject: 'MeshForce Listing Submission: ' + name,
+      'Product Name': name,
+      'Website URL': url,
+      'Category': cat,
+      'Description': desc,
+      'Submitter Email': email
+    })
+  })
+  .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
+  .then(function(res) {
+    if (btn) { btn.disabled = false; btn.textContent = 'Submit for Review →'; }
+    if (res.ok) {
+      alert('Thank you for submitting ' + name + '!\n\nYour listing will be reviewed within 5 business days. We\'ll be in touch at ' + email + '.');
+      document.getElementById('sub-name').value = '';
+      document.getElementById('sub-url').value = '';
+      document.getElementById('sub-category').value = '';
+      document.getElementById('sub-desc').value = '';
+      document.getElementById('sub-email').value = '';
+    } else {
+      alert('Submission failed — please email aricroberts@gmail.com directly with your listing details.');
+    }
+  })
+  .catch(function() {
+    if (btn) { btn.disabled = false; btn.textContent = 'Submit for Review →'; }
+    alert('Could not send — please email aricroberts@gmail.com directly.');
+  });
+}
+
+/* ── Contact modal JS ── */
+function openCM(){document.getElementById('contact-modal-overlay').classList.add('open');document.getElementById('cm-name').focus();}
+function closeCM(){document.getElementById('contact-modal-overlay').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCM();});
+var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});
+function sendCM(){
+  var name=(document.getElementById('cm-name').value||'').trim();
+  var email=(document.getElementById('cm-email').value||'').trim();
+  var msg=(document.getElementById('cm-message').value||'').trim();
+  var status=document.getElementById('cm-status');
+  if(!name||!email||!msg){status.style.color='#F0514F';status.textContent='Please fill in all fields.';return;}
+  var btn=document.getElementById('cm-submit');
+  btn.disabled=true;btn.textContent='Sending…';status.textContent='';
+  fetch('https://formspree.io/f/mbdbkznw',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,message:msg,_replyto:email,_subject:'Contact from MeshForce: '+name})
+  })
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+  .then(function(res){
+    btn.disabled=false;btn.textContent='Send Message';
+    if(res.ok){status.style.color='#2ECC8A';status.textContent="Sent! We'll be in touch soon.";
+      setTimeout(function(){closeCM();document.getElementById('cm-name').value='';document.getElementById('cm-email').value='';document.getElementById('cm-message').value='';status.textContent='';},2000);
+    }else{status.style.color='#F0514F';status.textContent='Something went wrong — email aricroberts@gmail.com directly.';}
+  })
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error — email aricroberts@gmail.com directly.';});
+}
+/* ── /Contact modal JS ── */
+</script>
+
+<!-- ── Contact modal ── -->
+<div id="contact-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+  <div id="contact-modal">
+    <button id="cm-close" onclick="closeCM()" aria-label="Close">&times;</button>
+    <h3 id="cm-title">Get in Touch</h3>
+    <div class="cm-row"><label>Name *</label><input id="cm-name" type="text" placeholder="Your name"></div>
+    <div class="cm-row"><label>Email *</label><input id="cm-email" type="email" placeholder="you@example.com"></div>
+    <div class="cm-row"><label>Message *</label><textarea id="cm-message" placeholder="How can we help?"></textarea></div>
+    <button id="cm-submit" onclick="sendCM()">Send Message</button>
+    <div id="cm-status"></div>
+  </div>
+</div>
+<!-- ── /Contact modal ── -->
+</body>
+</html>
