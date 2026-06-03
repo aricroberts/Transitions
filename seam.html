@@ -370,25 +370,25 @@ function runSeamSearch() {
   var btn  = document.getElementById('searchBtn');
   var area = document.getElementById('resultsArea');
   btn.disabled = true;
-  btn.textContent = 'Searching…';
-  area.innerHTML = '<div class="loading-state"><div style="margin-bottom:1rem;font-size:0.875rem">The Seam is searching industry literature…</div><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div>';
+  btn.textContent = 'Searching\u2026';
+  area.innerHTML = '<div class="loading-state"><div style="margin-bottom:1rem;font-size:0.875rem">The Seam is searching industry literature\u2026</div><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div>';
 
   var SYS = 'You are The Seam, an AI intelligence engine for workforce management (WFM) and enterprise capacity planning (ECP) professionals. Synthesize authoritative, current information on workforce management topics.\n\nReturn ONLY a JSON array (no markdown, no preamble, no backticks) with this exact structure:\n[\n  {\n    "source": "SOURCE NAME",\n    "date": "Month Year or Year",\n    "tag": "CATEGORY",\n    "title": "Descriptive Title of Finding",\n    "summary": "2-3 sentence practical summary for WFM/ECP practitioners with specific data or recommendations where available.",\n    "url": "https://actual-source-url.com/page"\n  }\n]\n\nCRITICAL URL RULES: Every result MUST include a real working URL from your web search results. Use the exact URL the search tool returned. Do NOT invent, guess, or leave URLs empty. If you cannot find a real URL for a finding, omit that finding entirely. Never return an empty string or placeholder for url.\n\nCategories: Research, Industry Trend, Best Practice, Tool Update, Vendor News, Case Study, Framework, Academic. Return 3-5 items, every one with a real URL.';
 
   var basePayload = { model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: SYS };
 
-  // Pass 1 — with web search
+  // Pass 1 \u2014 with web search
   apiCall(Object.assign({}, basePayload, {
-    messages: [{ role: 'user', content: 'Synthesize 3-5 current findings on this WFM/ECP topic. Search the web for real sources and include the actual URL for EVERY result — no empty URLs. Topic: ' + query }]
+    messages: [{ role: 'user', content: 'Synthesize 3-5 current findings on this WFM/ECP topic. Search the web for real sources and include the actual URL for EVERY result \u2014 no empty URLs. Topic: ' + query }]
   }), true)
   .then(function(d1) {
     var txt1 = (d1.content || []).map(function(b){ return b.type === 'text' ? b.text : ''; }).join('');
     if (!txt1 || txt1.length < 10) throw new Error('empty response');
     renderResults(area, parseResults(txt1));
-    btn.disabled = false; btn.textContent = 'Search →';
+    btn.disabled = false; btn.textContent = 'Search \u2192';
   })
   .catch(function() {
-    // Pass 2 — training knowledge only
+    // Pass 2 \u2014 training knowledge only
     apiCall(Object.assign({}, basePayload, {
       messages: [{ role: 'user', content: 'Synthesize 3-5 findings on this WFM/ECP topic using your training knowledge of industry research, best practices, and the vendor landscape: ' + query }]
     }), false)
@@ -405,20 +405,18 @@ function runSeamSearch() {
         + 'If you\'re previewing locally, the full intelligence engine is available on aricciviclabs.org/meshforce.</small>'
         + '</div>';
     })
-    .finally(function() { btn.disabled = false; btn.textContent = 'Search →'; });
+    .finally(function() { btn.disabled = false; btn.textContent = 'Search \u2192'; });
   });
 }
 
-var _qi=document.getElementById('queryInput');if(_qi)_qi.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') runSeamSearch();
-});
+document.addEventListener('DOMContentLoaded',function(){var _qi=document.getElementById('queryInput');if(_qi)_qi.addEventListener('keydown',function(e){if(e.key==='Enter')runSeamSearch();});});
 
 
-/* ── Contact modal JS ── */
+/* -- Contact modal JS -- */
 function openCM(){document.getElementById('contact-modal-overlay').classList.add('open');document.getElementById('cm-name').focus();}
 function closeCM(){document.getElementById('contact-modal-overlay').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCM();});
-var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});
+document.addEventListener('DOMContentLoaded',function(){var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});});
 function sendCM(){
   var name=(document.getElementById('cm-name').value||'').trim();
   var email=(document.getElementById('cm-email').value||'').trim();
@@ -426,7 +424,7 @@ function sendCM(){
   var status=document.getElementById('cm-status');
   if(!name||!email||!msg){status.style.color='#F0514F';status.textContent='Please fill in all fields.';return;}
   var btn=document.getElementById('cm-submit');
-  btn.disabled=true;btn.textContent='Sending…';status.textContent='';
+  btn.disabled=true;btn.textContent='Sending\u2026';status.textContent='';
   fetch('https://formspree.io/f/mbdbkznw',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -437,11 +435,11 @@ function sendCM(){
     btn.disabled=false;btn.textContent='Send Message';
     if(res.ok){status.style.color='#2ECC8A';status.textContent='Sent! We\'ll be in touch soon.';
       setTimeout(function(){closeCM();document.getElementById('cm-name').value='';document.getElementById('cm-email').value='';document.getElementById('cm-message').value='';status.textContent='';},2000);
-    }else{status.style.color='#F0514F';status.textContent='Something went wrong — email aricroberts@gmail.com directly.';}
+    }else{status.style.color='#F0514F';status.textContent='Something went wrong \u2014 email aricroberts@gmail.com directly.';}
   })
-  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error — email aricroberts@gmail.com directly.';});
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error \u2014 email aricroberts@gmail.com directly.';});
 }
-/* ── /Contact modal JS ── */
+/* -- /Contact modal JS -- */
 </script>
 
 <!-- ── Contact modal ── -->

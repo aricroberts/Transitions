@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="MeshForce — WFM & AI Workforce Registry">
 <meta name="twitter:description" content="The definitive resource registry for WFM and ECP professionals navigating the human-AI workforce transition.">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"MeshForce — WFM & AI Workforce Registry","url":"https://aricciviclabs.org/meshforce","description":"The definitive resource registry for workforce management and enterprise capacity planning professionals navigating AI agent integration.","publisher":{"@type":"Organization","name":"Aric Civic Labs","url":"https://aricciviclabs.org"}}
+{"@context":"https://schema.org","@type":"WebSite","name":"MeshForce \u2014 WFM & AI Workforce Registry","url":"https://aricciviclabs.org/meshforce","description":"The definitive resource registry for workforce management and enterprise capacity planning professionals navigating AI agent integration.","publisher":{"@type":"Organization","name":"Aric Civic Labs","url":"https://aricciviclabs.org"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -179,11 +179,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:3rem
   <button id="rcp-notice-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('rcpNotice','1')}catch(e){}">&#x2715;</button>
 </div>
 <script>try{if(sessionStorage.getItem('rcpNotice')==='1'){var n=document.getElementById('rcp-notice');if(n)n.style.display='none';}}catch(e){}
-/* ── Contact modal JS ── */
+/* -- Contact modal JS -- */
 function openCM(){document.getElementById('contact-modal-overlay').classList.add('open');document.getElementById('cm-name').focus();}
 function closeCM(){document.getElementById('contact-modal-overlay').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCM();});
-var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});
+document.addEventListener('DOMContentLoaded',function(){var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});});
 function sendCM(){
   var name=(document.getElementById('cm-name').value||'').trim();
   var email=(document.getElementById('cm-email').value||'').trim();
@@ -191,7 +191,7 @@ function sendCM(){
   var status=document.getElementById('cm-status');
   if(!name||!email||!msg){status.style.color='#F0514F';status.textContent='Please fill in all fields.';return;}
   var btn=document.getElementById('cm-submit');
-  btn.disabled=true;btn.textContent='Sending…';status.textContent='';
+  btn.disabled=true;btn.textContent='Sending\u2026';status.textContent='';
   fetch('https://formspree.io/f/mbdbkznw',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -202,11 +202,11 @@ function sendCM(){
     btn.disabled=false;btn.textContent='Send Message';
     if(res.ok){status.style.color='#2ECC8A';status.textContent="Sent! We'll be in touch soon.";
       setTimeout(function(){closeCM();document.getElementById('cm-name').value='';document.getElementById('cm-email').value='';document.getElementById('cm-message').value='';status.textContent='';},2000);
-    }else{status.style.color='#F0514F';status.textContent='Something went wrong — email aricroberts@gmail.com directly.';}
+    }else{status.style.color='#F0514F';status.textContent='Something went wrong \u2014 email aricroberts@gmail.com directly.';}
   })
-  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error — email aricroberts@gmail.com directly.';});
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error \u2014 email aricroberts@gmail.com directly.';});
 }
-/* ── /Contact modal JS ── */
+/* -- /Contact modal JS -- */
 </script>
 <!-- ── /Privacy notice bar ── -->
 

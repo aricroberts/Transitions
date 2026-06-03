@@ -498,11 +498,11 @@ function filterTools() {
 }
 
 
-/* ── Contact modal JS ── */
+/* -- Contact modal JS -- */
 function openCM(){document.getElementById('contact-modal-overlay').classList.add('open');document.getElementById('cm-name').focus();}
 function closeCM(){document.getElementById('contact-modal-overlay').classList.remove('open');}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCM();});
-var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});
+document.addEventListener('DOMContentLoaded',function(){var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});});
 function sendCM(){
   var name=(document.getElementById('cm-name').value||'').trim();
   var email=(document.getElementById('cm-email').value||'').trim();
@@ -510,7 +510,7 @@ function sendCM(){
   var status=document.getElementById('cm-status');
   if(!name||!email||!msg){status.style.color='#F0514F';status.textContent='Please fill in all fields.';return;}
   var btn=document.getElementById('cm-submit');
-  btn.disabled=true;btn.textContent='Sending…';status.textContent='';
+  btn.disabled=true;btn.textContent='Sending\u2026';status.textContent='';
   fetch('https://formspree.io/f/mbdbkznw',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -521,11 +521,11 @@ function sendCM(){
     btn.disabled=false;btn.textContent='Send Message';
     if(res.ok){status.style.color='#2ECC8A';status.textContent='Sent! We\'ll be in touch soon.';
       setTimeout(function(){closeCM();document.getElementById('cm-name').value='';document.getElementById('cm-email').value='';document.getElementById('cm-message').value='';status.textContent='';},2000);
-    }else{status.style.color='#F0514F';status.textContent='Something went wrong — email aricroberts@gmail.com directly.';}
+    }else{status.style.color='#F0514F';status.textContent='Something went wrong \u2014 email aricroberts@gmail.com directly.';}
   })
-  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error — email aricroberts@gmail.com directly.';});
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error \u2014 email aricroberts@gmail.com directly.';});
 }
-/* ── /Contact modal JS ── */
+/* -- /Contact modal JS -- */
 </script>
 
 <!-- ── Contact modal ── -->
