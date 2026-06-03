@@ -187,24 +187,16 @@ function _clearTurns() {
   } catch(e) {}
 })();
 
-/* ── API routing ───────────────────────────────────────────────────────────── */
-var PROXY_URL = 'https://myvalue.onrender.com/api/messages';
-var _DIRECT   = 'https://api.anthropic.com/v1/messages';
-var _isWidget = (function() {
-  try {
-    var h = window.location.hostname || '';
-    return h === 'claude.ai' || h.indexOf('.claude.ai') !== -1;
-  } catch(e) { return false; }
-})();
+/* ── API call ───────────────────────────────────────────────────────────────── */
+var _DIRECT = 'https://api.anthropic.com/v1/messages';
 
 async function apiCall(payload) {
-  var url = _isWidget ? _DIRECT : PROXY_URL;
-  var headers = { 'Content-Type': 'application/json' };
-  if (_isWidget) {
-    headers['anthropic-version'] = '2023-06-01';
-    headers['anthropic-dangerous-direct-browser-access'] = 'true';
-  }
-  var r = await fetch(url, { method: 'POST', headers: headers, body: JSON.stringify(payload) });
+  var headers = {
+    'Content-Type': 'application/json',
+    'anthropic-version': '2023-06-01',
+    'anthropic-dangerous-direct-browser-access': 'true'
+  };
+  var r = await fetch(_DIRECT, { method: 'POST', headers: headers, body: JSON.stringify(payload) });
   if (!r.ok) {
     var eb = await r.json().catch(function(){ return {}; });
     var e = new Error('http ' + r.status);
