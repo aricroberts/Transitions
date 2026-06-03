@@ -1124,7 +1124,11 @@ function downloadPDF(itemId) {
     '<h1>'+esc(item.title)+'</h1>'+
     '<div class="meta">Generated '+today+' · Planning estimates only · Not financial, tax, legal, or investment advice</div>'+
     metricsHtml+rowsHtml+sigHtml+narrativeHtml+planHtml+
-    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. receipts. is a product of ARIC Civic Labs.</div>'+'</body></html>';
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. receipts. is a product of ARIC Civic Labs.</div>'+'
+<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:'DM Sans',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">
+  &copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a>
+</div>
+</body></html>';
 
   var blob = new Blob([fullDoc], {type:'text/html'});
   var url = URL.createObjectURL(blob);
