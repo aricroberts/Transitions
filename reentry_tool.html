@@ -1265,7 +1265,12 @@ function calc(){
     p3.innerHTML='<div class="card"><p class="sl sl-ok"><i class="ti ti-list-check"></i>Action plan</p><div class="plan-grid">'+
       out.plan.map(function(p){
         return '<div class="task '+(p.cls||'')+'"><strong>'+esc(p.label)+'</strong>'+esc(p.text)+'</div>';
-      }).join('')+'</div></div>';
+      }).join('')+'</div></div>'+
+      '<div class="card" style="background:var(--purple-dim);border-color:var(--purple-b);margin-top:.875rem">'+
+        '<p class="sl sl-ai"><i class="ti ti-brain"></i>Heading into the conversation? <span style="font-size:11px;font-weight:400;color:var(--text2);text-transform:none;letter-spacing:0;margin-left:4px">From ARIC Civic Labs</span></p>'+
+        '<p style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:.875rem">InAble coaches you through the live moment — what to say, how to read the room, and how to exit gracefully. Built for introverts navigating high-stakes conversations.</p>'+
+        '<a href="https://inable.app" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--purple);color:#fff;font-size:13px;font-weight:600;border-radius:99px;text-decoration:none;font-family:inherit"><i class="ti ti-external-link" style="font-size:12px"></i>Try InAble — Introvert Able</a>'+
+      '</div>';
   }
 
   // Export tab — monetized
