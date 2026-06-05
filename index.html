@@ -579,7 +579,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 }
 .ecosystem-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:1.5rem;
   margin-top:3rem;
 }
@@ -645,6 +645,10 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 .eco-card-meshforce{background:linear-gradient(135deg,#1a1608 0%,#111827 60%)}
 .eco-card-meshforce:hover{border-color:rgba(244,165,0,.4);box-shadow:0 16px 48px rgba(244,165,0,.08)}
 .eco-meshforce-cta{color:#f4a500}
+.eco-card-inable{background:linear-gradient(135deg,#0e1220 0%,#111827 60%)}
+.eco-card-inable:hover{border-color:rgba(155,139,248,.4);box-shadow:0 16px 48px rgba(155,139,248,.1)}
+.eco-tag-inable{background:rgba(155,139,248,.1);border-color:rgba(155,139,248,.3);color:var(--purple)}
+.eco-inable-cta{background:rgba(155,139,248,.1);border-color:rgba(155,139,248,.35);color:var(--purple)}
 
 @media(max-width:640px){.ecosystem-grid{grid-template-columns:1fr}}
 
@@ -1102,7 +1106,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <section class="ecosystem-section">
   <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
   <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
-  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. All free, private, and built by AricCivicLabs.</p>
+  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. InAble handles the social navigation. All private, built by AricCivicLabs.</p>
 
   <div class="ecosystem-grid">
 
@@ -1125,9 +1129,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
     <!-- MeshForce card -->
     <a class="eco-card eco-card-meshforce reveal" href="https://meshforce.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.1s">
       <div class="eco-card-header">
-        <div style="height:56px;display:flex;align-items:center">
-          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#f4a500;letter-spacing:.01em">MeshForce</span>
-        </div>
+        <img src="meshforce_wordmark.png" alt="MeshForce" class="eco-card-logo-img" style="height:36px"/>
         <span class="eco-tag eco-tag-meshforce">WFM &amp; AI workforce registry</span>
       </div>
       <div class="eco-card-body">
@@ -1156,6 +1158,49 @@ a.ms-card:hover .ms-title::after{opacity:.5}
       </div>
     </a>
 
+    <!-- InAble card -->
+    <a class="eco-card eco-card-inable reveal" href="https://inable.app" target="_blank" rel="noopener" style="transition-delay:.3s">
+      <div class="eco-card-header">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 200" height="36" width="auto" style="overflow:visible;display:block">
+          <defs>
+            <linearGradient id="eco-nl-brandText" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7F77DD"/><stop offset="100%" stop-color="#5DCAA5"/></linearGradient>
+            <linearGradient id="eco-nl-purpleGlass" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#AFA9EC" stop-opacity="0.34"/><stop offset="100%" stop-color="#3C3489" stop-opacity="0.44"/></linearGradient>
+            <linearGradient id="eco-nl-tealGlass" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5DCAA5" stop-opacity="0.9"/><stop offset="100%" stop-color="#5DCAA5" stop-opacity="0.32"/></linearGradient>
+            <linearGradient id="eco-nl-amberGlass" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FAC775" stop-opacity="0.95"/><stop offset="100%" stop-color="#F0997B" stop-opacity="0.55"/></linearGradient>
+            <style>.eco-nl-serif{font-family:"Instrument Serif",Georgia,serif}.eco-nl-sans{font-family:"DM Sans","Segoe UI",Arial,sans-serif}.eco-nl-fine{stroke-linecap:round;stroke-linejoin:round}</style>
+          </defs>
+          <g transform="translate(0,0) scale(0.196)">
+            <rect width="1024" height="1024" rx="210" fill="#07060F"/>
+            <g transform="translate(190 220) scale(1.067)">
+              <path d="M174 168 C235 112 354 112 415 168 M174 168 C116 230 116 350 174 412 M415 168 C474 232 474 348 415 412 M174 412 C235 468 354 468 415 412" fill="none" stroke="#AFA9EC" stroke-opacity="0.24" stroke-width="20" class="eco-nl-fine"/>
+              <path d="M432 286 C470 286 498 286 530 286" fill="none" stroke="#5DCAA5" stroke-opacity="0.75" stroke-width="15" class="eco-nl-fine"/>
+              <g stroke="#EEEDFE" stroke-opacity="0.22" stroke-width="1.4" class="eco-nl-fine">
+                <g transform="translate(170 166) rotate(-8)"><circle cx="0" cy="-44" r="25" fill="url(#eco-nl-purpleGlass)"/><rect x="-34" y="-12" width="68" height="70" rx="20" fill="url(#eco-nl-purpleGlass)"/><path d="M-58 4 h22 M36 4 h22 M-18 58 v35 M18 58 v35" stroke="#7F77DD" stroke-opacity="0.52" stroke-width="15"/><circle cx="-14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/><circle cx="14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/></g>
+                <g transform="translate(414 166) rotate(8)"><circle cx="0" cy="-44" r="25" fill="url(#eco-nl-purpleGlass)"/><rect x="-34" y="-12" width="68" height="70" rx="20" fill="url(#eco-nl-purpleGlass)"/><path d="M-58 4 h22 M36 4 h22 M-18 58 v35 M18 58 v35" stroke="#7F77DD" stroke-opacity="0.52" stroke-width="15"/><circle cx="-14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/><circle cx="14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/></g>
+                <g transform="translate(170 412) rotate(5)"><circle cx="0" cy="-44" r="25" fill="url(#eco-nl-purpleGlass)"/><rect x="-34" y="-12" width="68" height="70" rx="20" fill="url(#eco-nl-purpleGlass)"/><path d="M-58 4 h22 M36 4 h22 M-18 58 v35 M18 58 v35" stroke="#7F77DD" stroke-opacity="0.52" stroke-width="15"/><circle cx="-14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/><circle cx="14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/></g>
+                <g transform="translate(414 412) rotate(-5)"><circle cx="0" cy="-44" r="25" fill="url(#eco-nl-purpleGlass)"/><rect x="-34" y="-12" width="68" height="70" rx="20" fill="url(#eco-nl-purpleGlass)"/><path d="M-58 4 h22 M36 4 h22 M-18 58 v35 M18 58 v35" stroke="#7F77DD" stroke-opacity="0.52" stroke-width="15"/><circle cx="-14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/><circle cx="14" cy="20" r="5" fill="#EEEDFE" opacity="0.76"/></g>
+                <g transform="translate(552 286) rotate(9)"><circle cx="0" cy="-44" r="25" fill="url(#eco-nl-tealGlass)"/><rect x="-34" y="-12" width="68" height="70" rx="20" fill="url(#eco-nl-tealGlass)"/><path d="M-58 4 h22 M36 4 h22 M-18 58 v35 M18 58 v35" stroke="#5DCAA5" stroke-opacity="0.62" stroke-width="15"/><circle cx="-14" cy="20" r="5" fill="#EEEDFE" opacity="0.86"/><circle cx="14" cy="20" r="5" fill="#EEEDFE" opacity="0.86"/></g>
+              </g>
+              <circle cx="500" cy="286" r="18" fill="url(#eco-nl-amberGlass)" stroke="#FAC775" stroke-opacity="0.45"/>
+            </g>
+          </g>
+          <g transform="translate(214, 0)">
+            <text x="0" y="136" class="eco-nl-serif" font-size="140" letter-spacing="-2" fill="url(#eco-nl-brandText)">InAble</text>
+            <text x="4" y="172" class="eco-nl-sans" font-size="22" font-weight="300" letter-spacing="1.8" fill="#EEEDFE" opacity="0.45">INTROVERT ABLE</text>
+          </g>
+        </svg>
+        <span class="eco-tag eco-tag-inable">Social coaching for introverts</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          AI-powered social coaching for introverts. Prep for high-stakes conversations, get real-time coaching, debrief what happened, and decode what others actually meant — so you can show up fully, on your own terms.
+        </p>
+        <span class="eco-card-cta eco-inable-cta">
+          Try InAble →
+        </span>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -1169,6 +1214,8 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   <div class="footer-links">
     <a href="https://aricciviclabs.org">AricCivicLabs.Org</a>
     <a href="https://receipts.aricciviclabs.org">receipts.</a>
+    <a href="https://meshforce.aricciviclabs.org">MeshForce</a>
+    <a href="https://inable.app">InAble</a>
     <a href="legal.html">Privacy & Terms</a>
   </div>
   <div>Transitions is a free tool from AricCivicLabs. No data is collected, stored, or shared. &copy; 2026 AricCivicLabs.</div>
