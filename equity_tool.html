@@ -830,7 +830,7 @@ function openPaywall(itemId) {
         '</button>'+
         '<div class="paywall-secondary">'+
           'Payments processed by Stripe. <a onclick="closePaywall()">Cancel anytime.</a><br>'+
-          'Questions? <a href="mailto:aricroberts@gmail.com">aricroberts@gmail.com</a>'+
+          'Questions? <a href="mailto:support@aricciviclabs.org">support@aricciviclabs.org</a>'+
         '</div>'+
       '</div>'+
     '</div>';
@@ -880,7 +880,7 @@ function handleCheckout() {
   };
   var itemId = _selectedPlan === 'pro' ? 'pro_yr' : (_paywallItem || 'exit-readiness');
   var url = STRIPE_LINKS[itemId];
-  if (!url) { alert('Checkout link not found. Please contact aricroberts@gmail.com'); return; }
+  if (!url) { alert('Checkout link not found. Please contact support@aricciviclabs.org'); return; }
   closePaywall();
   window.location.href = url;
 }
