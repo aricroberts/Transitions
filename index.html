@@ -678,7 +678,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <nav>
   <a class="nav-brand" href="#">
     <img class="wordmark" src="transitions_logo.png" alt="Transitions"/>
-    <span class="nav-lab">A product of AricCivicLabs</span>
+    <span class="nav-lab">A product of AricCivicLabs <span style="opacity:.4;margin:0 .2em">·</span> <span style="color:var(--teal);opacity:.8">💼 Work-Life Enablement</span></span>
   </a>
   <div class="nav-links">
     <a href="#tools">Tools</a>
@@ -1105,76 +1105,137 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <!-- ECOSYSTEM -->
 <section class="ecosystem-section">
   <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
-  <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
-  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. InAble helps introverts navigate any room. All private, built by AricCivicLabs.</p>
+  <h2 class="section-heading reveal">Three pillars. <em>One mission.</em></h2>
+  <p class="section-sub reveal">Transitions and receipts. are both Pillar 1. Here's how all three pillars of AricCivicLabs fit together — and where you can go from here.</p>
 
-  <div class="ecosystem-grid">
+  <!-- ── PILLAR 1 — Work-Life Enablement ── -->
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.875rem;border-bottom:1px solid rgba(255,255,255,.07)">
+      <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.2)">01</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:99px;background:rgba(34,212,200,.08);border:1px solid rgba(34,212,200,.2);color:var(--teal)">💼 Work-Life Enablement</span>
+      <span style="font-size:12px;font-weight:300;font-style:italic;color:var(--text2);margin-left:auto">Know your worth. Prove it. Use it.</span>
+    </div>
+    <div class="ecosystem-grid" style="grid-template-columns:repeat(2,1fr)">
 
-    <!-- receipts card -->
-    <a class="eco-card eco-card-receipts reveal" href="https://receipts.aricciviclabs.org" target="_blank" rel="noopener">
-      <div class="eco-card-header">
-        <img src="receipts_wordmark.png" alt="receipts." class="eco-card-logo-img" style="height:112px"/>
-        <span class="eco-tag eco-tag-receipts">Value proof engine</span>
+      <!-- Transitions — current page -->
+      <div class="eco-card reveal" style="background:linear-gradient(135deg,#0c1a18 0%,#111827 60%);border-color:rgba(34,212,200,.3);position:relative">
+        <div style="position:absolute;top:1rem;right:1rem">
+          <span class="eco-tag eco-tag-lab" style="background:rgba(34,212,200,.15);border-color:rgba(34,212,200,.35);color:var(--teal)">You are here</span>
+        </div>
+        <div class="eco-card-header">
+          <img src="transitions_icon.png" alt="Transitions" class="eco-card-logo" style="height:36px;width:36px;border-radius:8px"/>
+        </div>
+        <div class="eco-card-body">
+          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.5rem">Transitions</div>
+          <p class="eco-card-desc">Six tools for every career financial moment — entry, re-entry, exit, equity, change, and compare. You're already here.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem">
+            <span class="eco-tag eco-tag-lab" style="font-size:10px">Career moments</span>
+            <span class="eco-tag eco-tag-lab" style="font-size:10px">6 tools</span>
+          </div>
+        </div>
       </div>
-      <div class="eco-card-body">
-        <p class="eco-card-desc">
-          Once you've navigated a career moment, you need to prove the value you created. receipts. helps employees, founders, nonprofit leaders, and teams quantify their real impact — and turn it into documents that open doors, make cases, and change conversations.
-        </p>
-        <span class="eco-card-cta eco-receipts-cta">
-          Open receipts. →
-        </span>
-      </div>
-    </a>
 
-    <!-- MeshForce card -->
-    <a class="eco-card eco-card-meshforce reveal" href="https://meshforce.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.1s">
-      <div class="eco-card-header">
-        <img src="meshforce_wordmark.png" alt="MeshForce" class="eco-card-logo-img" style="height:56px"/>
-        <span class="eco-tag eco-tag-meshforce">WFM &amp; AI workforce registry</span>
-      </div>
-      <div class="eco-card-body">
-        <p class="eco-card-desc">
-          The definitive resource registry for workforce management and enterprise capacity planning professionals navigating the human-AI transition. 55+ tools, 120+ platform listings, and The Seam — a live AI intelligence engine for WFM practitioners.
-        </p>
-        <span class="eco-card-cta eco-meshforce-cta">
-          Explore MeshForce →
-        </span>
-      </div>
-    </a>
+      <!-- receipts. -->
+      <a class="eco-card eco-card-receipts reveal" href="https://receipts.aricciviclabs.org" target="_blank" rel="noopener">
+        <div class="eco-card-header">
+          <img src="receipts_wordmark.png" alt="receipts." class="eco-card-logo-img" style="height:80px"/>
+          <span class="eco-tag eco-tag-receipts">Value proof engine</span>
+        </div>
+        <div class="eco-card-body">
+          <p class="eco-card-desc">Once you've navigated a career moment, you need to prove the value you created. receipts. quantifies your real impact and turns it into documents that open doors.</p>
+          <span class="eco-card-cta eco-receipts-cta">Open receipts. →</span>
+        </div>
+      </a>
 
-    <!-- AricCivicLabs card -->
-    <a class="eco-card eco-card-lab reveal" href="https://aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.2s">
-      <div class="eco-card-header">
-        <img src="aric_civic_labs_wordmark.png" alt="AricCivicLabs" class="eco-card-logo-img" style="height:112px"/>
-        <span class="eco-tag eco-tag-lab">Aric Civic Labs</span>
-      </div>
-      <div class="eco-card-body">
-        <p class="eco-card-desc">
-          AricCivicLabs builds AI-powered tools for people who create value that goes unnoticed — workers, nonprofit leaders, small business owners, and communities navigating systems that weren't designed with them in mind.
-        </p>
-        <span class="eco-card-cta eco-lab-cta">
-          Visit AricCivicLabs →
-        </span>
-      </div>
-    </a>
-
-    <!-- InAble card -->
-    <a class="eco-card eco-card-inable reveal" href="https://inable.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.3s">
-      <div class="eco-card-header">
-        <img src="optionihtmllegojoinlogo.png" alt="InAble" class="eco-card-logo-img" style="height:224px"/>
-        <span class="eco-tag eco-tag-inable">Social coaching for introverts</span>
-      </div>
-      <div class="eco-card-body">
-        <p class="eco-card-desc">
-          AI-powered coaching for introverts navigating professional and social situations. Prep for hard conversations, decode what was really said, and debrief after the fact — with a coach that gets how you think.
-        </p>
-        <span class="eco-card-cta eco-inable-cta">
-          Open InAble →
-        </span>
-      </div>
-    </a>
-
+    </div>
   </div>
+
+  <!-- ── PILLAR 2 — Social & Psychological Enablement ── -->
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.875rem;border-bottom:1px solid rgba(255,255,255,.07)">
+      <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.2)">02</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:99px;background:rgba(155,139,248,.08);border:1px solid rgba(155,139,248,.2);color:var(--purple)">🧠 Social &amp; Psychological Enablement</span>
+      <span style="font-size:12px;font-weight:300;font-style:italic;color:var(--text2);margin-left:auto">Navigate the room. Find your voice.</span>
+    </div>
+    <div class="ecosystem-grid" style="grid-template-columns:repeat(3,1fr)">
+
+      <!-- Speaking Coach -->
+      <a class="eco-card eco-card-inable reveal" href="https://transitions.aricciviclabs.org/speaking_coach.html" target="_blank" rel="noopener">
+        <div class="eco-card-header">
+          <span style="font-size:1.75rem">🎤</span>
+          <span class="eco-tag eco-tag-inable" style="font-size:10px">Before</span>
+        </div>
+        <div class="eco-card-body">
+          <div style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.4rem">Speaking Coach</div>
+          <p class="eco-card-desc" style="font-size:12px">Prepare your voice, pitch, and presence before the moment that matters.</p>
+          <span class="eco-card-cta eco-inable-cta" style="font-size:12px">Open Speaking Coach →</span>
+        </div>
+      </a>
+
+      <!-- InAble -->
+      <a class="eco-card eco-card-inable reveal" href="https://inable.aricciviclabs.org" target="_blank" rel="noopener" style="border-color:rgba(155,139,248,.35);border-width:2px;position:relative">
+        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 10px;border-radius:0 0 8px 8px;background:rgba(155,139,248,.25);color:var(--purple)">During</div>
+        <div class="eco-card-header" style="margin-top:.5rem">
+          <img src="optionihtmllegojoinicon.png" alt="InAble" style="height:36px;width:36px;border-radius:8px"/>
+          <span class="eco-tag eco-tag-inable">Social coaching</span>
+        </div>
+        <div class="eco-card-body">
+          <div style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.4rem">InAble</div>
+          <p class="eco-card-desc" style="font-size:12px">Real-time AI coaching for introverts navigating professional and social situations.</p>
+          <span class="eco-card-cta eco-inable-cta" style="font-size:12px">Open InAble →</span>
+        </div>
+      </a>
+
+      <!-- Motivation Coach -->
+      <a class="eco-card eco-card-inable reveal" href="https://transitions.aricciviclabs.org/motivation_coach.html" target="_blank" rel="noopener">
+        <div class="eco-card-header">
+          <span style="font-size:1.75rem">🔋</span>
+          <span class="eco-tag eco-tag-inable" style="font-size:10px">After</span>
+        </div>
+        <div class="eco-card-body">
+          <div style="font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.4rem">Motivation Coach</div>
+          <p class="eco-card-desc" style="font-size:12px">Reflect, recover, and stay in motion after the hard moments.</p>
+          <span class="eco-card-cta eco-inable-cta" style="font-size:12px">Open Motivation Coach →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── PILLAR 3 — Workforce Management Enablement ── -->
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.875rem;border-bottom:1px solid rgba(255,255,255,.07)">
+      <span style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.2)">03</span>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 14px;border-radius:99px;background:rgba(244,165,0,.08);border:1px solid rgba(244,165,0,.2);color:#f4a500">⚙️ Workforce Management Enablement</span>
+      <span style="font-size:12px;font-weight:300;font-style:italic;color:var(--text2);margin-left:auto">Intelligence for WFM practitioners.</span>
+    </div>
+    <div class="ecosystem-grid" style="grid-template-columns:repeat(2,1fr)">
+
+      <a class="eco-card eco-card-meshforce reveal" href="https://meshforce.aricciviclabs.org" target="_blank" rel="noopener">
+        <div class="eco-card-header">
+          <img src="meshforce_wordmark.png" alt="MeshForce" class="eco-card-logo-img" style="height:48px"/>
+          <span class="eco-tag eco-tag-meshforce">WFM registry</span>
+        </div>
+        <div class="eco-card-body">
+          <p class="eco-card-desc">The definitive resource registry for workforce management professionals navigating AI integration. 55+ tools, 120+ platform listings, and The Seam intelligence engine.</p>
+          <span class="eco-card-cta eco-meshforce-cta">Explore MeshForce →</span>
+        </div>
+      </a>
+
+      <a class="eco-card eco-card-lab reveal" href="https://aricciviclabs.org" target="_blank" rel="noopener">
+        <div class="eco-card-header">
+          <img src="aric_civic_labs_wordmark.png" alt="AricCivicLabs" class="eco-card-logo-img" style="height:80px"/>
+          <span class="eco-tag eco-tag-lab">Civic tech org</span>
+        </div>
+        <div class="eco-card-body">
+          <p class="eco-card-desc">See all three pillars, every product, and the founding mission behind AricCivicLabs.Org.</p>
+          <span class="eco-card-cta eco-lab-cta">Visit AricCivicLabs →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
 </section>
 
 <hr class="divider"/>
