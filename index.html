@@ -579,7 +579,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 }
 .ecosystem-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:1.5rem;
   margin-top:3rem;
 }
@@ -645,6 +645,10 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 .eco-card-meshforce{background:linear-gradient(135deg,#1a1608 0%,#111827 60%)}
 .eco-card-meshforce:hover{border-color:rgba(244,165,0,.4);box-shadow:0 16px 48px rgba(244,165,0,.08)}
 .eco-meshforce-cta{color:#f4a500}
+.eco-card-inable{background:linear-gradient(135deg,#0c1018 0%,#111827 60%)}
+.eco-card-inable:hover{border-color:rgba(155,139,248,.4);box-shadow:0 16px 48px rgba(155,139,248,.1)}
+.eco-tag-inable{background:rgba(155,139,248,.1);border-color:rgba(155,139,248,.3);color:var(--purple)}
+.eco-inable-cta{background:rgba(155,139,248,.1);border-color:rgba(155,139,248,.35);color:var(--purple)}
 
 @media(max-width:640px){.ecosystem-grid{grid-template-columns:1fr}}
 
@@ -1102,7 +1106,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <section class="ecosystem-section">
   <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
   <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
-  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. All free, private, and built by AricCivicLabs.</p>
+  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. InAble helps introverts navigate any room. All private, built by AricCivicLabs.</p>
 
   <div class="ecosystem-grid">
 
@@ -1125,9 +1129,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
     <!-- MeshForce card -->
     <a class="eco-card eco-card-meshforce reveal" href="https://meshforce.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.1s">
       <div class="eco-card-header">
-        <div style="height:56px;display:flex;align-items:center">
-          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#f4a500;letter-spacing:.01em">MeshForce</span>
-        </div>
+        <img src="meshforce_wordmark.png" alt="MeshForce" class="eco-card-logo-img" style="height:56px"/>
         <span class="eco-tag eco-tag-meshforce">WFM &amp; AI workforce registry</span>
       </div>
       <div class="eco-card-body">
@@ -1152,6 +1154,22 @@ a.ms-card:hover .ms-title::after{opacity:.5}
         </p>
         <span class="eco-card-cta eco-lab-cta">
           Visit AricCivicLabs →
+        </span>
+      </div>
+    </a>
+
+    <!-- InAble card -->
+    <a class="eco-card eco-card-inable reveal" href="https://inable.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.3s">
+      <div class="eco-card-header">
+        <img src="optionihtmllegojoinlogo.png" alt="InAble" class="eco-card-logo-img" style="height:56px"/>
+        <span class="eco-tag eco-tag-inable">Social coaching for introverts</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          AI-powered coaching for introverts navigating professional and social situations. Prep for hard conversations, decode what was really said, and debrief after the fact — with a coach that gets how you think.
+        </p>
+        <span class="eco-card-cta eco-inable-cta">
+          Open InAble →
         </span>
       </div>
     </a>
