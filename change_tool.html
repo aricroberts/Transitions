@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="grammarly-disable-extension" content="true"/>
-<title>receipts. — Career Transitions</title>
+<title>Transitions · Career Change</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap');
@@ -848,7 +848,7 @@ function openPaywall(itemId) {
     '<div class="paywall-modal" style="position:relative">'+
       '<div class="paywall-dismiss" onclick="closePaywall()"><i class="ti ti-x" style="font-size:12px"></i></div>'+
       '<div class="paywall-header">'+
-        '<div class="paywall-logo">receipts. Pro</div>'+
+        '<div class="paywall-logo">Transitions Pro</div>'+
         '<div class="paywall-title">'+esc(item.title)+'</div>'+
         '<div class="paywall-sub">'+esc(item.desc)+'</div>'+
       '</div>'+
@@ -992,7 +992,7 @@ function buildPDFPreviewHTML(mode, v, out) {
 
   return '<div class="pdf-preview">'+
     '<h1>'+esc(mode.title)+'</h1>'+
-    '<div class="pdf-meta">receipts. · Generated '+today+' · Planning estimates only · Not financial, legal, or investment advice</div>'+
+    '<div class="pdf-meta">Transitions · Generated '+today+' · Planning estimates only · Not financial, legal, or investment advice</div>'+
     metricsHtml+rowsHtml+sigHtml+narrative+
     '<div class="pdf-disclaimer">DISCLAIMER: All figures are self-reported estimates. Not financial, tax, legal, or investment advice.</div>'+
   '</div>';
@@ -1074,7 +1074,7 @@ function renderExportUnlocked() {
 
   var premiumSection =
     '<div class="export-premium">'+
-      '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+      '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>Transitions Pro</span></p>'+
       '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
       toolCfg.items.map(function(item) {
         var unlocked = isUnlocked(item.id);
@@ -1154,7 +1154,7 @@ function downloadPDF(itemId) {
   var narrativeHtml = out.narrative ? '<h2>Analysis</h2><p style="font-size:13px;line-height:1.75;color:#2a2f45">'+out.narrative.replace(/<[^>]+>/g,'')+'</p>' : '';
 
   var fullDoc = '<!DOCTYPE html><html><head><meta charset="UTF-8">'+
-    '<title>'+esc(item.title)+' — receipts.</title>'+
+    '<title>'+esc(item.title)+' — Transitions</title>'+
     '<style>@import url(\'https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&family=DM+Mono:wght@400;500&display=swap\');'+
     'body{font-family:\'DM Sans\',sans-serif;color:#1a1a2e;max-width:700px;margin:0 auto;padding:2.5rem 2rem;font-size:13px;line-height:1.7}'+
     'h1{font-size:26px;font-weight:800;color:#0f0f2e;margin-bottom:4px;letter-spacing:-.02em}'+
@@ -1164,14 +1164,14 @@ function downloadPDF(itemId) {
     '@media print{body{padding:1.5rem}}</style>'+
     '</head><body>'+
     '<div style="display:flex;align-items:center;gap:10px;margin-bottom:1.5rem">'+
-      '<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A9EFF">receipts.</div>'+
+      '<div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A9EFF">Transitions</div>'+
       '<div style="font-size:11px;color:#c0c4d8">·</div>'+
       '<div style="font-size:11px;color:#8a90a8">Transitions</div>'+
     '</div>'+
     '<h1>'+esc(item.title)+'</h1>'+
     '<div class="meta">Generated '+today+' · Planning estimates only · Not financial, tax, legal, or investment advice</div>'+
     metricsHtml+rowsHtml+sigHtml+narrativeHtml+planHtml+
-    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. receipts. is a product of ARIC Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div></body></html>';
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. Transitions is a product of Aric Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div></body></html>';
 
   var blob = new Blob([fullDoc], {type:'text/html'});
   var url = URL.createObjectURL(blob);
@@ -1186,15 +1186,15 @@ function downloadPDF(itemId) {
 // ── Render engine ─────────────────────────────────────────────────────────────
 function render(){
   var mode=MODES[window.TOOLKIT_MODE]||MODES.entry;
-  document.title='receipts. — '+mode.title;
+  document.title='Transitions · '+mode.title;
   byId('app').innerHTML=
     '<div class="app">'+
       '<div class="topbar">'+
-        '<div class="logo"><img src="receipts_wordmark.png" alt="receipts." style="height:26px;display:block;flex-shrink:0"><span class="version-badge">'+ mode.badge +'</span></div>'+
+        '<div class="logo"><img src="transitions_wordmark.png" alt="Transitions" style="height:26px;display:block;flex-shrink:0"><span class="version-badge">'+ mode.badge +'</span></div>'+
         '<div style="display:flex;align-items:center;gap:8px">'+
           '<span class="privacy-pill"><i class="ti ti-shield-lock" style="font-size:13px"></i>Memory-only</span>'+
           '<a href="index.html#transitions" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-arrow-left" style="font-size:12px"></i> Transitions</a>'+
-          '<a href="https://receipts.aricciviclabs.org/index.html" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-home" style="font-size:12px"></i> receipts. home</a>'+
+          '<a href="https://transitions.aricciviclabs.org" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-home" style="font-size:12px"></i> Transitions home</a>'+
         '</div>'+
       '</div>'+
       '<input type="radio" class="tab-radio" id="t1" name="tabs" checked/>'+
@@ -1330,7 +1330,7 @@ function calc(){
 
     var premiumSection=
       '<div class="export-premium">'+
-        '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>receipts. Pro</span></p>'+
+        '<p class="sl sl-ai"><i class="ti ti-sparkles"></i>Premium exports<span class="premium-badge"><i class="ti ti-crown"></i>Transitions Pro</span></p>'+
         '<p style="font-size:12px;color:var(--text2);margin-bottom:1rem;line-height:1.6">'+toolCfg.tagline+'</p>'+
         toolCfg.items.map(function(item){
           var unlocked=isUnlocked(item.id);
@@ -1632,7 +1632,7 @@ function buildResources(mode){
 function makeBrief(mode,v,out){
   var lines=[
     '════════════════════════════════════════════════════',
-    '  receipts.  |  '+mode.title,
+    '  Transitions  |  '+mode.title,
     '  Generated: '+new Date().toLocaleDateString(),
     '════════════════════════════════════════════════════',
     ''
@@ -1763,12 +1763,12 @@ function emailBrief(){
   var email=(emailEl.value||'').trim();
   if(!email||!email.includes('@')){statusEl.style.color='var(--amber)';statusEl.textContent='Please enter a valid email address.';return;}
   statusEl.style.color='var(--text3)';statusEl.textContent='Opening your email client...';
-  var subject='receipts. brief - '+new Date().toLocaleDateString();
+  var subject='Transitions brief - '+new Date().toLocaleDateString();
   var body=briefEl.textContent||'';
-  var bodyShort=body.substring(0,2000)+'\n\n[Full brief - paste from receipts. Export tab]';
+  var bodyShort=body.substring(0,2000)+'\n\n[Full brief - paste from Transitions Export tab]';
   var mailto='mailto:'+encodeURIComponent(email)+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(bodyShort);
   try{window.open(mailto,'_self');}catch(e){}
-  setTimeout(function(){statusEl.style.color='var(--green)';statusEl.textContent='Email client opened. Full delivery coming soon with receipts. Pro.';},600);
+  setTimeout(function(){statusEl.style.color='var(--green)';statusEl.textContent='Email client opened. Full delivery coming soon with Transitions Pro.';},600);
 }
 
 // ── Resource data ─────────────────────────────────────────────────────────────
