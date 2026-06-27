@@ -98,8 +98,7 @@ nav{
   z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:1rem 2rem;
-  background:rgba(8,12,20,.85);
-  backdrop-filter:blur(16px);
+  background:var(--bg);
   border-bottom:1px solid var(--border);
 }
 .nav-brand{
@@ -126,6 +125,7 @@ nav{
 /* ─── HERO ─── */
 .hero{
   position:relative;
+  background:var(--bg);
   min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:9.5rem 2rem 4rem;
@@ -668,6 +668,17 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 .eco-card-meshforce:hover{border-color:rgba(244,165,0,.4);box-shadow:0 16px 48px rgba(244,165,0,.08)}
 .eco-meshforce-cta{color:#f4a500}
 
+.eco-card-inable{background:linear-gradient(135deg,#0d0f1e 0%,#111827 60%)}
+.eco-card-inable:hover{border-color:rgba(139,127,232,.4);box-shadow:0 16px 48px rgba(139,127,232,.1)}
+.eco-tag-inable{background:rgba(139,127,232,.1);border-color:rgba(139,127,232,.3);color:#8B7FE8}
+.eco-inable-cta{background:rgba(139,127,232,.1);border-color:rgba(139,127,232,.35);color:#8B7FE8}
+.eco-card-rights{background:linear-gradient(135deg,#0b1510 0%,#111827 60%);cursor:default}
+.eco-card-rights:hover{border-color:rgba(61,122,87,.4);box-shadow:0 16px 48px rgba(61,122,87,.08);transform:translateY(-4px)}
+.eco-tag-rights{background:rgba(61,122,87,.1);border-color:rgba(61,122,87,.3);color:#4ea37a}
+.eco-rights-links{display:flex;flex-direction:column;gap:4px;margin-top:.25rem}
+.eco-rights-link{font-size:.8125rem;font-weight:600;color:#4ea37a;text-decoration:none;display:flex;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid rgba(61,122,87,.15);transition:color .15s,padding-left .15s}
+.eco-rights-link:last-child{border-bottom:none}
+.eco-rights-link:hover{color:#6cc99a;padding-left:4px}
 @media(max-width:640px){.ecosystem-grid{grid-template-columns:1fr}}
 
 /* ─── SCROLL REVEAL ─── */
@@ -1188,7 +1199,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <section class="ecosystem-section">
   <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
   <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
-  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. All privacy-first, built by AricCivicLabs.</p>
+  <p class="section-sub reveal">Transitions handles the career moments. receipts. proves your value. InAble coaches you through the social side. MeshForce handles workforce intelligence. All privacy-first, built by AricCivicLabs.</p>
 
   <div class="ecosystem-grid">
 
@@ -1211,9 +1222,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
     <!-- MeshForce card -->
     <a class="eco-card eco-card-meshforce reveal" href="https://meshforce.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.1s">
       <div class="eco-card-header">
-        <div style="height:56px;display:flex;align-items:center">
-          <span style="font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;font-weight:700;color:#f4a500;letter-spacing:.01em">MeshForce</span>
-        </div>
+        <img src="meshforce_wordmark.png" alt="MeshForce" class="eco-card-logo-img" style="height:44px"/>
         <span class="eco-tag eco-tag-meshforce">WFM &amp; AI workforce registry</span>
       </div>
       <div class="eco-card-body">
@@ -1242,6 +1251,43 @@ a.ms-card:hover .ms-title::after{opacity:.5}
       </div>
     </a>
 
+
+    <!-- InAble card -->
+    <a class="eco-card eco-card-inable reveal" href="https://inable.aricciviclabs.org" target="_blank" rel="noopener" style="transition-delay:.3s">
+      <div class="eco-card-header">
+        <img src="InAble_Icon.png" alt="InAble" style="height:44px;width:44px;border-radius:10px;flex-shrink:0"/>
+        <span style="font-family:'Syne',system-ui,sans-serif;font-size:1.2rem;font-weight:700;color:#8B7FE8;letter-spacing:.01em">InAble</span>
+        <span class="eco-tag eco-tag-inable">Social coaching</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          AI coaching for introverts navigating social and professional situations — before, during, and after. Prep for difficult conversations, decode what happened, and rebuild confidence with guided reflection.
+        </p>
+        <span class="eco-card-cta eco-inable-cta">
+          Open InAble →
+        </span>
+      </div>
+    </a>
+
+    <!-- Rights Connector card -->
+    <div class="eco-card eco-card-rights reveal" style="transition-delay:.4s">
+      <div class="eco-card-header">
+        <img src="civil_rights_connector.png" alt="Rights Connector" class="eco-card-logo-img" style="height:48px"/>
+        <span class="eco-tag eco-tag-rights">Civic rights · Always free</span>
+      </div>
+      <div class="eco-card-body">
+        <p class="eco-card-desc">
+          A free, nonpartisan directory of verified organizations protecting your civil rights, constitutional freedoms, and community power. No paywall, no sponsors — funded by the rest of AricCivicLabs.
+        </p>
+        <div class="eco-rights-links">
+          <a href="https://aricciviclabs.org/rights_connector.html" target="_blank" rel="noopener" class="eco-rights-link">Rights Connector Hub</a>
+          <a href="https://aricciviclabs.org/rights_connector_constitution.html" target="_blank" rel="noopener" class="eco-rights-link">Defending the Constitution</a>
+          <a href="https://aricciviclabs.org/rights_connector_communities.html" target="_blank" rel="noopener" class="eco-rights-link">Communities Before Shareholders</a>
+          <a href="https://aricciviclabs.org/rights_connector_reps.html" target="_blank" rel="noopener" class="eco-rights-link">Your Representatives</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1252,7 +1298,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   <div style="display:flex;justify-content:center;margin-bottom:1rem">
     <img src="transitions_icon.png" alt="Transitions" style="width:36px;height:36px;border-radius:8px;opacity:.6"/>
   </div>
-  <div>Transitions is a privacy-first toolkit from AricCivicLabs. Tools are free to start; premium outputs available per tool. No data is collected, stored, or shared.</div>
+  <div>Transitions is a privacy-first toolkit from AricCivicLabs. Free to start; premium outputs available per tool. All data lives in your browser — nothing is sent to our servers during tool use. Session data clears when you close the tab; any saved inputs are stored on your device only.</div>
 </footer>
 
 <!-- ACL Suite Footer -->
@@ -1277,6 +1323,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
       <a href="https://aricciviclabs.org/rights_connector.html">Rights Connector</a>
       <a href="https://aricciviclabs.org/rights_connector_constitution.html">The Constitution</a>
       <a href="https://aricciviclabs.org/rights_connector_communities.html">Communities</a>
+      <a href="https://aricciviclabs.org/rights_connector_reps.html">Representatives</a>
     </div>
   </div>
   <div class="acl-suite-meta">
