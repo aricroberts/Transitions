@@ -260,6 +260,24 @@ button:hover{background:var(--surface2)}
 .email-capture-block .ec-consent input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--green);cursor:pointer}
 .email-capture-block .ec-consent span{font-size:11px;color:#A0E8C8;line-height:1.5}
 .email-capture-block .ec-status{font-size:11px;margin-top:5px;min-height:14px}
+
+/* ── Contact modal ── */
+#tcm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+#tcm-overlay.open{display:flex}
+#tcm-box{background:var(--surface2);border:1px solid rgba(155,139,248,.25);border-radius:10px;padding:2rem;width:100%;max-width:420px;margin:1rem;position:relative}
+#tcm-box h3{font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.25rem}
+.tcm-row{margin-bottom:1rem}
+.tcm-row label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);margin-bottom:.35rem}
+.tcm-row input,.tcm-row textarea{width:100%;box-sizing:border-box;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:6px;padding:.6rem .85rem;color:var(--text);font-family:inherit;font-size:.875rem;transition:border-color .2s}
+.tcm-row input:focus,.tcm-row textarea:focus{outline:none;border-color:rgba(155,139,248,.55)}
+.tcm-row textarea{resize:vertical;min-height:90px}
+#tcm-submit{background:var(--purple);color:#fff;border:none;padding:.65rem 1.75rem;border-radius:6px;font-weight:700;font-size:.875rem;cursor:pointer;transition:opacity .2s;width:100%}
+#tcm-submit:hover{opacity:.88}
+#tcm-submit:disabled{opacity:.5;cursor:not-allowed}
+#tcm-status{margin-top:.75rem;font-size:.8125rem;text-align:center;min-height:1.2em}
+#tcm-close{position:absolute;top:.75rem;right:.9rem;background:none;border:none;color:var(--text3);font-size:1.25rem;cursor:pointer;line-height:1}
+#tcm-close:hover{color:var(--text)}
+/* ── /Contact modal ── */
 </style>
 </head>
 <body>
@@ -272,7 +290,7 @@ button:hover{background:var(--surface2)}
 #rcp-notice-close:hover{color:#8A90A8}
 </style>
 <div id="rcp-notice">
-  <span>By using this tool you agree to our <a href="https://aricciviclabs.org/legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are self-reported estimates only &mdash; not professional, legal, or financial advice.</span>
+  <span>By using this tool you agree to our <a href="https://receipts.aricciviclabs.org/legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are self-reported estimates only &mdash; not professional, legal, or financial advice.</span>
   <button id="rcp-notice-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('rcpNotice','1')}catch(e){}">&#x2715;</button>
 </div>
 <script>try{if(sessionStorage.getItem('rcpNotice')==='1'){var n=document.getElementById('rcp-notice');if(n)n.style.display='none';}}catch(e){}</script>
@@ -418,7 +436,7 @@ var lastChangeFetch = '';
 var MODES = {
 
 entry:{
-  icon:'ti-briefcase',badge:'v1 · Workforce Entry',title:'Workforce Entry',tone:'card-ok',
+  icon:'ti-briefcase',badge:'Workforce Entry',title:'Workforce Entry',tone:'card-ok',
   lede:'Turn your first offer or wage into take-home pay, stability targets, and a concrete 90-day plan. Every number is a planning estimate — not advice.',
   fields:[
     ['role','Target role','text','Program assistant'],
@@ -501,7 +519,7 @@ entry:{
 },
 
 reentry:{
-  icon:'ti-door-enter',badge:'v1 · Workforce Re-entry',title:'Workforce Re-entry',tone:'card-teal',
+  icon:'ti-door-enter',badge:'Workforce Re-entry',title:'Workforce Re-entry',tone:'card-teal',
   lede:'Returning to work after a gap is evidence of resilience, adaptability, and self-direction — qualities employers value. This planner translates your gap chapter into runway data, readiness metrics, and resume-ready language.',
   fields:[
     ['target','Target role','text','Operations coordinator'],
@@ -566,7 +584,7 @@ reentry:{
 },
 
 exit:{
-  icon:'ti-sunset-2',badge:'v1 · Workforce Exit',title:'Retirement & Exit Planner',tone:'card-warn',
+  icon:'ti-sunset-2',badge:'Workforce Exit',title:'Retirement & Exit Planner',tone:'card-warn',
   lede:'Price your exit before you give notice. Healthcare, the monthly income gap, and care exposure are much harder to fix after the fact — this planner surfaces them in sequence.',
   fields:[
     ['age','Current age','number','62'],
@@ -632,7 +650,7 @@ exit:{
 },
 
 equity:{
-  icon:'ti-chart-arcs',badge:'v1 · Equity Builder',title:'Equity & Retirement Builder',tone:'card-ai',
+  icon:'ti-chart-arcs',badge:'Equity Builder',title:'Equity & Retirement Builder',tone:'card-ai',
   lede:'Model compound growth, find your employer match value, calculate the cost of waiting, and compare contribution scenarios across decades — before you optimize anything else.',
   fields:[
     ['age','Current age','number','32'],
@@ -698,7 +716,7 @@ equity:{
 },
 
 change:{
-  icon:'ti-route',badge:'v1 · Career Change',title:'Career Change Planner',tone:'card-teal',
+  icon:'ti-route',badge:'Career Change',title:'Career Change Planner',tone:'card-teal',
   lede:'Compare cost, time, and upside of a career pivot — then get AI-identified skills for your target role and check off what you already have to build an accurate readiness picture.',
   fields:[
     ['current','Current role','text','Customer support lead'],
@@ -766,7 +784,7 @@ change:{
 },
 
 compare:{
-  icon:'ti-scale',badge:'v1 · Career Compare',title:'Career Comparison',tone:'card-ai',
+  icon:'ti-scale',badge:'Career Compare',title:'Career Comparison',tone:'card-ai',
   lede:'Side-by-side decision analysis across up to three paths — income, fit, skill match, market demand, training burden. The score is a starting hypothesis; the signals tell you where it breaks down.',
   fields:[
     ['aName','Career A','text','Data analyst'],['aPay','A annual pay','number','78000'],['aFit','A fit %','number','72'],['aSkill','A skill match %','number','60'],['aDemand','A market demand %','number','78'],['aTrain','A training months','number','6'],
@@ -934,7 +952,7 @@ function openPaywall(itemId) {
         '</button>'+
         '<div class="paywall-secondary">'+
           'Payments processed by Stripe. <a onclick="closePaywall()">Cancel anytime.</a><br>'+
-          'Questions? <a href="mailto:support@aricciviclabs.org">support@aricciviclabs.org</a>'+
+          'Questions? <a href="#" onclick="openTCM();return false;">Contact us</a>'+
         '</div>'+
       '</div>'+
     '</div>';
@@ -1228,7 +1246,54 @@ function downloadPDF(itemId) {
     '<h1>'+esc(item.title)+'</h1>'+
     '<div class="meta">Generated '+today+' · Planning estimates only · Not financial, tax, legal, or investment advice</div>'+
     metricsHtml+rowsHtml+sigHtml+narrativeHtml+planHtml+
-    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. Transitions is a product of Aric Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div></body></html>';
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. Transitions is a product of Aric Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://receipts.aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div>
+<!-- ── Contact modal ── -->
+<div id="tcm-overlay" role="dialog" aria-modal="true" aria-labelledby="tcm-title">
+  <div id="tcm-box">
+    <button id="tcm-close" onclick="closeTCM()" aria-label="Close">&times;</button>
+    <h3 id="tcm-title">Get in Touch</h3>
+    <div class="tcm-row"><label>Name</label><input id="tcm-name" type="text" placeholder="Your name" autocomplete="name"></div>
+    <div class="tcm-row"><label>Email</label><input id="tcm-email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+    <div class="tcm-row"><label>Message</label><textarea id="tcm-message" placeholder="How can we help?"></textarea></div>
+    <button id="tcm-submit" onclick="sendTCM()">Send Message</button>
+    <div id="tcm-status"></div>
+  </div>
+</div>
+<!-- ── /Contact modal ── -->
+
+<script>
+/* ── Contact modal ── */
+function openTCM(){document.getElementById('tcm-overlay').classList.add('open');document.getElementById('tcm-name').focus();}
+function closeTCM(){document.getElementById('tcm-overlay').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTCM();});
+var _tcmo=document.getElementById('tcm-overlay');
+if(_tcmo)_tcmo.addEventListener('click',function(e){if(e.target===this)closeTCM();});
+function sendTCM(){
+  var name=(document.getElementById('tcm-name').value||'').trim();
+  var email=(document.getElementById('tcm-email').value||'').trim();
+  var msg=(document.getElementById('tcm-message').value||'').trim();
+  var status=document.getElementById('tcm-status');
+  if(!name||!email||!msg){status.style.color='var(--amber)';status.textContent='Please fill in all fields.';return;}
+  var btn=document.getElementById('tcm-submit');
+  btn.disabled=true;btn.textContent='Sending…';status.textContent='';
+  fetch('https://formspree.io/f/mbdbkznw',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,message:msg,_replyto:email,_subject:'Contact from Transitions: '+name})
+  })
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+  .then(function(res){
+    btn.disabled=false;btn.textContent='Send Message';
+    if(res.ok){
+      status.style.color='var(--green)';status.textContent="Sent — we’ll be in touch soon.";
+      setTimeout(function(){closeTCM();document.getElementById('tcm-name').value='';document.getElementById('tcm-email').value='';document.getElementById('tcm-message').value='';status.textContent='';},2200);
+    }else{status.style.color='var(--amber)';status.textContent='Something went wrong — try again shortly.';}
+  })
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='var(--amber)';status.textContent='Network error — try again shortly.';});
+}
+/* ── /Contact modal ── */
+</script>
+</body></html>';
 
   var blob = new Blob([fullDoc], {type:'text/html'});
   var url = URL.createObjectURL(blob);
@@ -1250,8 +1315,8 @@ function render(){
         '<div class="logo"><img src="transitions_wordmark.png" alt="Transitions" style="height:26px;display:block;flex-shrink:0"><span class="version-badge">'+ mode.badge +'</span></div>'+
         '<div style="display:flex;align-items:center;gap:8px">'+
           '<span class="privacy-pill"><i class="ti ti-shield-lock" style="font-size:13px"></i>Memory-only</span>'+
-          '<a href="index.html#transitions" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-arrow-left" style="font-size:12px"></i> Transitions</a>'+
-          '<a href="https://transitions.aricciviclabs.org" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-home" style="font-size:12px"></i> Transitions home</a>'+
+          '<a href="https://transitions.aricciviclabs.org" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-home" style="font-size:12px"></i> Transitions Home</a>'+
+          '<a href="https://receipts.aricciviclabs.org" style="display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface2);font-size:12px;color:var(--text2);text-decoration:none;white-space:nowrap"><i class="ti ti-home" style="font-size:12px"></i> receipts. Home</a>'+
         '</div>'+
       '</div>'+
       '<input type="radio" class="tab-radio" id="t1" name="tabs" checked/>'+
