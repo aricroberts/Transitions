@@ -337,6 +337,20 @@ function handleEmailSubmit(inputId, checkId, statusId, source) {
 
 <div id="app"></div>
 
+<!-- ── Contact modal ── -->
+<div id="tcm-overlay" role="dialog" aria-modal="true" aria-labelledby="tcm-title">
+  <div id="tcm-box">
+    <button id="tcm-close" onclick="closeTCM()" aria-label="Close">&times;</button>
+    <h3 id="tcm-title">Get in Touch</h3>
+    <div class="tcm-row"><label>Name</label><input id="tcm-name" type="text" placeholder="Your name" autocomplete="name"></div>
+    <div class="tcm-row"><label>Email</label><input id="tcm-email" type="email" placeholder="you@example.com" autocomplete="email"></div>
+    <div class="tcm-row"><label>Message</label><textarea id="tcm-message" placeholder="How can we help?"></textarea></div>
+    <button id="tcm-submit" onclick="sendTCM()">Send Message</button>
+    <div id="tcm-status"></div>
+  </div>
+</div>
+<!-- ── /Contact modal ── -->
+
 <script>
 window.TOOLKIT_MODE = window.TOOLKIT_MODE || 'exit';
 var PROXY = 'https://myvalue.onrender.com/api/messages';
@@ -1841,22 +1855,18 @@ function downloadPDF(itemId) {
     sigHtml+
     narrativeHtml+
     planHtml+
-    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. Transitions is a product of Aric Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://receipts.aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div>
-<!-- ── Contact modal ── -->
-<div id="tcm-overlay" role="dialog" aria-modal="true" aria-labelledby="tcm-title">
-  <div id="tcm-box">
-    <button id="tcm-close" onclick="closeTCM()" aria-label="Close">&times;</button>
-    <h3 id="tcm-title">Get in Touch</h3>
-    <div class="tcm-row"><label>Name</label><input id="tcm-name" type="text" placeholder="Your name" autocomplete="name"></div>
-    <div class="tcm-row"><label>Email</label><input id="tcm-email" type="email" placeholder="you@example.com" autocomplete="email"></div>
-    <div class="tcm-row"><label>Message</label><textarea id="tcm-message" placeholder="How can we help?"></textarea></div>
-    <button id="tcm-submit" onclick="sendTCM()">Send Message</button>
-    <div id="tcm-status"></div>
-  </div>
-</div>
-<!-- ── /Contact modal ── -->
+    '<div class="disclaimer">DISCLAIMER: All figures in this document are self-reported estimates based on inputs provided by the user and have not been independently verified. This document does not constitute financial, tax, legal, investment, or medical advice. Consult a qualified professional before making significant financial or career decisions. Transitions is a product of Aric Civic Labs.</div>'+'<div style="text-align:center;padding:1.25rem 1rem;font-size:11px;color:#8A90A8;font-family:\'DM Sans\',system-ui,sans-serif;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem">&copy; 2026 AricCivicLabs.Org &middot; All rights reserved &middot; <a href="https://receipts.aricciviclabs.org/legal.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy &amp; Terms</a></div>'+
+    '</body></html>';
 
-<script>
+  var blob = new Blob([fullDoc], {type:'text/html'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'receipts-'+esc(itemId)+'-'+new Date().toISOString().slice(0,10)+'.html';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 /* ── Contact modal ── */
 function openTCM(){document.getElementById('tcm-overlay').classList.add('open');document.getElementById('tcm-name').focus();}
 function closeTCM(){document.getElementById('tcm-overlay').classList.remove('open');}
@@ -1880,24 +1890,13 @@ function sendTCM(){
   .then(function(res){
     btn.disabled=false;btn.textContent='Send Message';
     if(res.ok){
-      status.style.color='var(--green)';status.textContent="Sent — we’ll be in touch soon.";
+      status.style.color='var(--green)';status.textContent="Sent — we'll be in touch soon.";
       setTimeout(function(){closeTCM();document.getElementById('tcm-name').value='';document.getElementById('tcm-email').value='';document.getElementById('tcm-message').value='';status.textContent='';},2200);
     }else{status.style.color='var(--amber)';status.textContent='Something went wrong — try again shortly.';}
   })
   .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='var(--amber)';status.textContent='Network error — try again shortly.';});
 }
 /* ── /Contact modal ── */
-</script>
-</body></html>';
-
-  var blob = new Blob([fullDoc], {type:'text/html'});
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'receipts-'+esc(itemId)+'-'+new Date().toISOString().slice(0,10)+'.html';
-  a.click();
-  URL.revokeObjectURL(url);
-}
 
 render();
 
