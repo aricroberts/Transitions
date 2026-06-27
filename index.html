@@ -35,7 +35,7 @@
 }
 
 /* ── ACL Eco Bar ── */
-.acl-eco-bar{display:flex;align-items:center;padding:0 28px;height:34px;background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.055);}
+.acl-eco-bar{position:fixed;top:0;left:0;right:0;z-index:101;display:flex;align-items:center;padding:0 28px;height:34px;background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.055);}
 .acl-eco-org{font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;color:rgba(255,255,255,0.45);text-decoration:none;white-space:nowrap;flex-shrink:0;}
 .acl-eco-org:hover{color:rgba(255,255,255,0.78);}
 .acl-eco-div{flex:1;height:1px;background:rgba(255,255,255,0.07);margin:0 16px;}
@@ -94,7 +94,7 @@ body::before{
 
 /* ─── NAV ─── */
 nav{
-  position:fixed;top:0;left:0;right:0;
+  position:fixed;top:34px;left:0;right:0;
   z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:1rem 2rem;
@@ -128,7 +128,7 @@ nav{
   position:relative;
   min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:7rem 2rem 4rem;
+  padding:9.5rem 2rem 4rem;
   text-align:center;
   overflow:hidden;
 }
@@ -750,22 +750,10 @@ a.ms-card:hover .ms-title::after{opacity:.5}
     <a href="#how">How it works</a>
     <a href="#who">Who it's for</a>
   </div>
-  <a href="#tools" class="nav-cta">Find my tool →</a>
+  <a href="#tools" class="nav-cta">Find your path →</a>
 </nav>
 
 <!-- HERO -->
-<div class="email-capture-block">
-  <p class="ec-label"><i class="ti ti-mail" style="font-size:12px"></i> Get updates on new Transitions tools</p>
-  <div class="ec-row">
-    <input type="email" id="ec-transitions-landing-email" class="ec-input" placeholder="you@example.com" autocomplete="email"/>
-    <button class="ec-btn" onclick="handleEmailSubmit('ec-transitions-landing-email','ec-transitions-landing-check','ec-transitions-landing-status','transitions-landing')">Save</button>
-  </div>
-  <label class="ec-consent">
-    <input type="checkbox" id="ec-transitions-landing-check">
-    <span>Send me occasional updates from receipts. / AricCivicLabs. Unsubscribe anytime. We never sell your data.</span>
-  </label>
-  <div class="ec-status" id="ec-transitions-landing-status"></div>
-</div>
 
 <section class="hero">
   <div class="hero-glow"></div>
@@ -782,7 +770,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   </h1>
 
   <p class="hero-sub">
-    Eight specialized tools — one for every major career moment. Free to use, private by default, built around the decisions that actually matter.
+    Eight specialized tools — one for every major career moment. Free to start, private by default, built around the decisions that actually matter.
   </p>
 
   <div class="hero-actions">
@@ -813,6 +801,22 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   <div class="stat-item">
     <div class="stat-num">∞</div>
     <div class="stat-label">Career moments</div>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div style="display:flex;justify-content:center;padding:2rem 1.5rem 0;">
+  <div class="email-capture-block" style="max-width:480px;width:100%;">
+    <p class="ec-label"><i class="ti ti-mail" style="font-size:12px"></i> Get updates on new Transitions tools</p>
+    <div class="ec-row">
+      <input type="email" id="ec-transitions-landing-email" class="ec-input" placeholder="you@example.com" autocomplete="email"/>
+      <button class="ec-btn" onclick="handleEmailSubmit('ec-transitions-landing-email','ec-transitions-landing-check','ec-transitions-landing-status','transitions-landing')">Save</button>
+    </div>
+    <label class="ec-consent">
+      <input type="checkbox" id="ec-transitions-landing-check">
+      <span>Send me occasional updates from receipts. / AricCivicLabs. Unsubscribe anytime. We never sell your data.</span>
+    </label>
+    <div class="ec-status" id="ec-transitions-landing-status"></div>
   </div>
 </div>
 
@@ -1174,7 +1178,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   <h2 class="cta-heading reveal">Your next chapter<br>starts <em>right now.</em></h2>
   <p class="cta-sub reveal">Pick the tool that matches your moment. Everything else follows.</p>
   <div class="hero-actions reveal">
-    <a href="#tools" class="btn-primary">Find my tool →</a>
+    <a href="#tools" class="btn-primary">Find your path →</a>
   </div>
 </section>
 
@@ -1184,7 +1188,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 <section class="ecosystem-section">
   <p class="section-label reveal">Part of the AricCivicLabs ecosystem</p>
   <h2 class="section-heading reveal">Tools that work <em>together.</em></h2>
-  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. All free, private, and built by AricCivicLabs.</p>
+  <p class="section-sub reveal">Transitions handles the career moments. receipts. handles the proof. MeshForce handles the workforce intelligence. All privacy-first, built by AricCivicLabs.</p>
 
   <div class="ecosystem-grid">
 
@@ -1248,7 +1252,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
   <div style="display:flex;justify-content:center;margin-bottom:1rem">
     <img src="transitions_icon.png" alt="Transitions" style="width:36px;height:36px;border-radius:8px;opacity:.6"/>
   </div>
-  <div>Transitions is a free tool from AricCivicLabs. No data is collected, stored, or shared.</div>
+  <div>Transitions is a privacy-first toolkit from AricCivicLabs. Tools are free to start; premium outputs available per tool. No data is collected, stored, or shared.</div>
 </footer>
 
 <!-- ACL Suite Footer -->
