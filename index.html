@@ -680,6 +680,24 @@ a.ms-card:hover .ms-title::after{opacity:.5}
 .email-capture-block .ec-consent input[type=checkbox]{margin-top:2px;flex-shrink:0;accent-color:var(--green);cursor:pointer}
 .email-capture-block .ec-consent span{font-size:11px;color:#A0E8C8;line-height:1.5}
 .email-capture-block .ec-status{font-size:11px;margin-top:5px;min-height:14px}
+
+/* ── Contact modal ── */
+#tcm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9000;align-items:center;justify-content:center;backdrop-filter:blur(3px)}
+#tcm-overlay.open{display:flex}
+#tcm-box{background:#0c1120;border:1px solid rgba(155,139,248,.25);border-radius:10px;padding:2rem;width:100%;max-width:420px;margin:1rem;position:relative}
+#tcm-box h3{font-family:'Syne',system-ui,sans-serif;font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:1.25rem;letter-spacing:.01em}
+.tcm-row{margin-bottom:1rem}
+.tcm-row label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--text2);margin-bottom:.35rem}
+.tcm-row input,.tcm-row textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:6px;padding:.6rem .85rem;color:var(--text);font-family:'Syne',system-ui,sans-serif;font-size:.875rem;transition:border-color .2s}
+.tcm-row input:focus,.tcm-row textarea:focus{outline:none;border-color:rgba(155,139,248,.55)}
+.tcm-row textarea{resize:vertical;min-height:90px}
+#tcm-submit{background:var(--purple);color:var(--bg);border:none;padding:.65rem 1.75rem;border-radius:6px;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;cursor:pointer;transition:opacity .2s;width:100%}
+#tcm-submit:hover{opacity:.88}
+#tcm-submit:disabled{opacity:.5;cursor:not-allowed}
+#tcm-status{margin-top:.75rem;font-size:.8125rem;text-align:center;min-height:1.2em}
+#tcm-close{position:absolute;top:.75rem;right:.9rem;background:none;border:none;color:var(--text3);font-size:1.25rem;cursor:pointer;line-height:1}
+#tcm-close:hover{color:var(--text)}
+/* ── /Contact modal ── */
 </style>
 </head>
 <body>
@@ -1197,6 +1215,7 @@ a.ms-card:hover .ms-title::after{opacity:.5}
     <a href="https://aricciviclabs.org">AricCivicLabs.Org</a>
     <a href="https://receipts.aricciviclabs.org">receipts.</a>
     <a href="https://aricciviclabs.org/legal.html">Privacy & Terms</a>
+    <a href="#" onclick="openTCM();return false;">Contact</a>
   </div>
   <div>Transitions is a free tool from AricCivicLabs. No data is collected, stored, or shared. &copy; 2026 AricCivicLabs.</div>
 </footer>
@@ -1253,6 +1272,59 @@ window.addEventListener('scroll', function() {
     nav.style.padding = '1rem 2rem';
   }
 });
+</script>
+
+<!-- ── Contact modal ── -->
+<div id="tcm-overlay" role="dialog" aria-modal="true" aria-labelledby="tcm-title">
+  <div id="tcm-box">
+    <button id="tcm-close" onclick="closeTCM()" aria-label="Close">&times;</button>
+    <h3 id="tcm-title">Get in Touch</h3>
+    <div class="tcm-row"><label>Name</label><input id="tcm-name" type="text" placeholder="Your name"></div>
+    <div class="tcm-row"><label>Email</label><input id="tcm-email" type="email" placeholder="you@example.com"></div>
+    <div class="tcm-row"><label>Message</label><textarea id="tcm-message" placeholder="How can we help?"></textarea></div>
+    <button id="tcm-submit" onclick="sendTCM()">Send Message</button>
+    <div id="tcm-status"></div>
+  </div>
+</div>
+<!-- ── /Contact modal ── -->
+
+<script>
+/* ── Contact modal ── */
+function openTCM(){document.getElementById('tcm-overlay').classList.add('open');document.getElementById('tcm-name').focus();}
+function closeTCM(){document.getElementById('tcm-overlay').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeTCM();});
+var _tcmo=document.getElementById('tcm-overlay');
+if(_tcmo)_tcmo.addEventListener('click',function(e){if(e.target===this)closeTCM();});
+function sendTCM(){
+  var name=(document.getElementById('tcm-name').value||'').trim();
+  var email=(document.getElementById('tcm-email').value||'').trim();
+  var msg=(document.getElementById('tcm-message').value||'').trim();
+  var status=document.getElementById('tcm-status');
+  if(!name||!email||!msg){status.style.color='var(--amber)';status.textContent='Please fill in all fields.';return;}
+  var btn=document.getElementById('tcm-submit');
+  btn.disabled=true;btn.textContent='Sending\u2026';status.textContent='';
+  fetch('https://formspree.io/f/mbdbkznw',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,message:msg,_replyto:email,_subject:'Contact from Transitions: '+name})
+  })
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+  .then(function(res){
+    btn.disabled=false;btn.textContent='Send Message';
+    if(res.ok){
+      status.style.color='var(--green)';status.textContent="Sent! We'll be in touch soon.";
+      setTimeout(function(){
+        closeTCM();
+        document.getElementById('tcm-name').value='';
+        document.getElementById('tcm-email').value='';
+        document.getElementById('tcm-message').value='';
+        status.textContent='';
+      },2000);
+    }else{status.style.color='var(--amber)';status.textContent='Something went wrong \u2014 try again shortly.';}
+  })
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='var(--amber)';status.textContent='Network error \u2014 try again shortly.';});
+}
+/* ── /Contact modal ── */
 </script>
 </body>
 </html>
